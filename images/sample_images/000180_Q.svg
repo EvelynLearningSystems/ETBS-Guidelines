@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="134px" height="52px" viewBox="0 0 134 52" style="background-color: #ffffff00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" >
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 1996.6,2740.54 L 1990.6,2744 L 1984.6,2740.22 L 1984.6,2452.54 L 1996.6,2459.46 L 1996.6,2740.54 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 2240,2881.07 L 2240,2894.93 L 1990.88,2751.09 L 1990.6,2744 L 1996.6,2740.54 L 2240,2881.07 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 2483.4,2740.54 L 2495.4,2747.46 L 2240,2894.93 L 2240,2881.07 L 2483.4,2740.54 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 2483.4,2459.46 L 2489.4,2456 L 2495.4,2459.96 L 2495.4,2747.46 L 2483.4,2740.54 L 2483.4,2459.46 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 2240,2318.93 L 2240,2305.07 L 2488.97,2448.82 L 2489.4,2456 L 2483.4,2459.46 L 2240,2318.93 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 1996.6,2459.46 L 1984.6,2452.54 L 2240,2305.07 L 2240,2318.93 L 1996.6,2459.46 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 1747.2,2920.23 L 1741.2,2888 L 1716.29,2866.69 L 1984.6,2740.22 L 1990.6,2744 L 1990.88,2751.09 L 1747.2,2920.23 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 1488.8,2749.2 L 1494.8,2738.8 L 1716.29,2866.69 L 1741.2,2888 L 1735.2,2891.46 L 1488.8,2749.2 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 1747.2,3176 L 1735.2,3176 L 1735.2,2891.46 L 1741.2,2888 L 1747.2,2920.23 L 1747.2,3176 Z " />
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 61.4439 10.1864)" style="font:normal normal normal 200px 'Helvetica'" >
+OTf</text>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 2630.82,2339.7 L 2660.82,2391.66 L 2495.4,2459.96 L 2489.4,2456 L 2488.97,2448.82 L 2630.82,2339.7 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 3976,2566 L 3253.4,2566 L 3253.4,2554 L 3976,2554 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 4080,2560 C 4080,2560 3960,2591 3960,2591 C 3960,2591 3975,2573.56 3975,2560 C 3975,2546 3960,2528 3960,2528 C 3960,2528 4080,2560 4080,2560 C 4080,2560 4080,2560 4080,2560 " />
+<path stroke="#000000" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -72 -109)" d="M 4080,2560 C 4080,2560 3960,2591 3960,2591 C 3960,2591 3975,2573.56 3975,2560 C 3975,2546 3960,2528 3960,2528 C 3960,2528 4080,2560 4080,2560 C 4080,2560 4080,2560 4080,2560 " />
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 99.7354 15.6664)" style="font:normal normal normal 200px 'Helvetica'" >
+KCN</text>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 96 29.67)" style="font:normal normal normal 200px 'Helvetica'" >
+DMSO</text>
+</svg>
