@@ -1,0 +1,206 @@
+
+<head/><h2>Solution Components</h2>
+
+<p>This page provides detailed instructions for the different components used when authoring solutions.</p>
+<nav>
+    <a data-link="answer" class="navlink">Answer</a> |
+    <a data-link="sample_response" class="navlink">Sample Response</a> | 
+    <a data-link="explanation" class="navlink">Explanation</a> |
+    <a data-link="step_by_step" class="navlink">Step-by-step</a> | 
+    <!-- <a data-link="hint" class="navlink">Hints</a> |  -->
+    <!-- <a data-link="link" class="navlink">Links</a> |  -->
+    <a data-link="parts" class="navlink">Question Parts</a>
+</nav>
+
+<div class="line"></div>
+
+<h2 name="answer">Answer</h2>
+
+<p>The answer component consists of the final answer for the question. The answer can take the form of:</p>
+    <ul>
+        <li>a letter designator or multiple letter deisgnators</li>
+            <ul>
+                <li>one letter deisgnator for MCQ</li>
+                <li>one or more letter designators for MS</li>
+                <li>one letter designator for TCQ</li>
+            </ul>
+        <li>text</li>
+            <ul>
+                <li>single words or phrases for FIB, TCQ, MAT, and SA</li>
+                <li>1 or more sentences for SA</li>
+            </ul>
+        <li>a number</li>
+            <ul>
+                <li>a numeric solution to a calculation for CALC</li>
+                <li>a date or numeric response that does not require a calculation for SA</li>
+                <li>an assigned grouping or ordering for CL and ORD</li>
+            </ul>
+        <li>an image for DRW</li>
+        <li>a graph developed in JSXGraph for GR</li>
+        <li>a Google sheets table created from a template for LDGR</li>
+    </ul>
+
+<div class="line"></div>
+
+<h2 name="sample_response">Sample Response</h2>
+
+<p>When a question is open ended and more than one correct response is possible, the solution will include a sample response component in place of an answer component. The sample repsonse can take the form of:</p>
+<ul>
+    <li>text or number</li>
+        <ul>
+            <li>for some SA and CALC questions</li>
+            <li>for all ES questions</li>
+        </ul>
+    <li>image or graph</li>
+    <ul>
+        <li>for some DRW and GR questions where the image or graph response can vary</li>
+    </ul>
+</ul>
+
+<div class="line"></div>
+
+<h2 name="explanation">Explanation and Wrong Explanation</h2>
+
+<p>The explanation component consists of the explanation for the correct answer option or solution. The explanation can take the form of:</p>
+    <ul>
+        <li>text</li>
+        <li>step-by-step</li>
+        <li>image</li>
+    </ul>
+
+<p>The wrong explanation component is similar in composition to the explanation component, but it provides an explanation for the incorrect options.</p>
+
+<div class="alert alert-primary" role="alert">
+    <p>The following are key features of a <b>quality</b> explanation and wrong explanation:</p>
+    <ul>
+        <li>supports a student's understanding of the overall concept being assessed (avoids superficial explanations)</li>
+        <li>is specific and concise</li>
+        <li>uses precise subject matter terminology</li>
+        <li>is 100% accurate</li>
+        <li>is clear of grammar and mechanical issues</li>
+        <li>targets the appropriate audience in terms of student-friendly language and appropriate content</li>
+        <li>is original work in the SME’s own words</li>
+        <li>does not cue the correct response (for incorrect answer option explanations)</li>
+    </ul>
+</div>
+
+<div class="line"></div>
+
+<h2 name="step_by_step">Step-by-step</h2>
+
+<p>The step-by-step component is most often used within the explanation section in a solution. A step-by-step provides a clear breakdown or instructions directing students how to solve the problem to arrive at the answer. The step-by-step component is used most often in CALC, GR, LDGR, and DRW solutions, but is not limited to these question types.</p>
+
+<div class="alert alert-primary" role="alert">
+        <p>The following are key features of a <b>quality</b> step-by-step explanation:</p>
+
+        <ul>
+            <li>steps should be broken down into logical chunks that the student would be able to understand even if they struggle to understand the entire problem</li>
+            <li>steps should focus on including conceptual-level steps and not separate steps for each simplification of a math formula</li>
+            <li>the first step should outline the conceptual approach to solving the problem (and will serve as the first hint a student receives)</li>
+            <li>each step should include a brief description of what's occurring in that step in the left column and the actual computation ("work") for the step in the right column</li>
+            <li>content provided in the left column will consist primarily of text since it will be a description of what is occurring in the step. The description of the step should explain why this is the logical next step in the process and any pertinent information (vocabulary terms, basic formulas, etc.) that is required to show the work in that step.</li>
+            <li>content provided in the right column will consist of a mix of formulas (formatted as KaTeX) and text. Any formulas needed to solve the step should be shown both as a reference and with the variables for the problem plugged in.</li>
+            <li>the explanation should not exceed eight steps total for any solution (to prevent exceeding eight steps, several steps may need to be grouped together in a logical way)</li>
+        </ul>
+    </div>
+
+<!-- 
+<div class="line"></div>
+
+<h2 name="hint">Hints</h2>
+
+<p>Hints are available to students when presented with the interactive version of a question (i.e., where they can attempt to answer the question before seeing the solution). They are intended to help get a student unstuck or unblocked.</p>
+<p>One or more hints will be included for most solutions, with the exception of a few question types (see below). 
+Hints are generally authored at the overall question level (not for a specific answer option or explanation), but exceptions might arise where a hint is warranted for part of the question (see guidelines on authoring hints for MAT and ORD question types below). 
+The following categories will be applied to authoring hints:</p>
+<ul>
+    <li>One hint: TCQ (TF) and SA</li>
+    <li>1–4 hints : MCQ, MS, FIB, ORD, MAT, and CL</li>
+    <li>No support for hints: DRW, LDGR, and ES</li>
+    <li>Step-by-step templates will automatically be used as hints: CALC, DRW, LDGR, GR, and any question type that includes a step-by-step </li>
+</ul>
+
+<div class="alert alert-primary" role="alert">
+    <p><b>Important:</b> if a step-by-step template is not included in the solution for CALC and GR solutions, 1–4 hints should be authored per the normal process.</b></p>
+</div>
+
+<div class="alert alert-primary" role="alert">
+    <p>Hints should help guide a student in determining the correct response, but should never overtly cue the correct response. <br>Hints can take the form of:</p>
+    <ul>
+        <li>suggesting an approach to reasoning through the problem</li>
+        <li>suggesting a first step to solving the problem</li>
+        <li>reminding the student about a critical concept, rule, or skill that would aid in solving the problem</li>
+        <li>suggesting an approach to eliminating certain answer options</li>
+        <li>providing key prerequisite knowledge, such as a definition or formula</li>
+    </ul>
+</div>
+
+<div class="alert alert-primary" role="alert">
+    <p>The following guidelines should be followed when authoring hints.</p>
+    <ul>
+        <li>Format hints as complete sentences and limit the hint to two full sentences in length.</li>
+        <li>Hints should not contain unnecessary language (e.g., “Recall that...,” “Remember that…” “Consider…”). Concise and to the point is preferred.</li>
+        <li>A hint can be specific to question parts when necessary, but a reference to the targeted part should be included at the beginning of the hint (e.g., "When calculating part (a), the components of the atom's nucleus should be included in the calculation. ").</li>
+        <li>When adding two or more hints, order hints so each subsequent hint gets progressively more leading in terms of the information it provides and how close it gets the student to determining the correct response.</li>
+        <li>Do not add superfluous hints (i.e., if a single hint will suffice, it's acceptable to provide one hint only for MCQ, MS, FIB, ORD, and MAT in some cases).</li>
+        <li>If it is not possible to author a helpful hint for a question, a note should be left to this effect for the reviewer.</li>
+    </ul>
+</div>
+
+<div class="alert alert-primary" role="alert">
+        <p>Specific Guidelines per Question Type</p>
+        <ul>
+            <li><b>MAT:</b> A hint can be provided for specific pairs or for groups of words. In general, authors can choose to author hints for the words they believe students will struggle with the most.</li>
+            <li><b>ORD:</b> When possible, the first hint will point students toward the correct first response or choice in the order.</li>
+        </ul>
+    </div>
+
+
+
+
+
+<div class="line"></div>
+
+<h2 name="link">Links</h2>
+
+<p>Links are recommended and supported for all question types. Links should be provided at the question level to help support 
+    deeper learning of the overall concept and/or help mitigate for any student misunderstandings or deficiencies.
+    External links should be vetted and are limited to YouTube.
+</p>
+
+<p>
+    Authors should spend approximately 5 minutes vetting the link, which includes watching portions to confirm that the video:
+</p>
+    <ul>
+        <li>conveys accurate information</li>
+        <li>meets a minimum production quality standard so it does not prevent the student from viewing and learning the content (e.g., poor audio should be avoided)</li>
+        <li>does not include controversial or inappropriate content</li>
+    </ul>
+
+<p>
+    Authors can reference a list of external links that have been compiled per subject area <a href="#">here</a>. Authors should also add any links they've vetted to this reference list.
+</p>
+
+<div class="alert alert-primary" role="alert">
+        <p>The following guidelines should also be followed when adding external links:</p>
+        <ul>
+            <li>Videos will comprise the majority of linked resources, but external links are not limited to videos.</li>
+            <li>Never link to a competitor's site or video on YouTube (e.g., Chegg, ClutchPrep, Byju's).</li>
+            <li>For Khan Academy produced videos, link to the video hosted on YouTube.</li>
+            <li>Do not incude links to Evelyn Learning's videos, as these will be pulled in automatically on the site.</li>
+            <li>Do not add superfluous links (i.e., if it is not possible to identify an appropriate resource from a reputable source, it is acceptable to omit a link from the solution).</li>
+        </ul>
+</div> -->
+
+<div class="line"></div>
+
+<h2 name="parts">Question Parts</h2>
+
+<p> Questions that are divided into explicit parts should be authored per the following guidelines:</p>
+    <ul>
+        <li>Content in a previous part can be referenced as needed.</li>
+        <li>A single hint per part should be authored as long as the question type for that part supports hints.</li>
+        <li>External links should still target the question concept level.</li>
+    </ul>
+
+<br>

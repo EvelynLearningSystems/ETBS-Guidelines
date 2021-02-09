@@ -1,0 +1,598 @@
+
+<head/><h1>Question Types</h1>
+<p>This page provides instructions for authoring solutions for different question types.</p>
+<nav>
+    <a data-link="mcq" class="navlink">MCQ</a> |
+    <a data-link="ms" class="navlink">MS</a> |
+    <a data-link="tcq" class="navlink">TCQ (TF)</a>|
+    <a data-link="fib" class="navlink">FIB</a> |
+    <a data-link="sa" class="navlink">SA</a> |
+    <a data-link="es" class="navlink">ES</a> |
+    <a data-link="calc" class="navlink">CALC</a> |
+    <a data-link="ord" class="navlink">ORD</a> |
+    <a data-link="gr" class="navlink">GR</a> |
+    <a data-link="drw" class="navlink">DRW</a> |
+    <a data-link="ldgr" class="navlink">LDGR</a> |
+    <a data-link="mat" class="navlink">MAT</a> |
+    <a data-link="cl" class="navlink">CL</a>
+</nav>
+<div class="line"></div>
+
+<div>
+    <h2 name="mcq">Multiple Choice (MCQ)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A multiple choice question is a problem that has a prompt and provides several possible discrete answer options where <b>only 1</b>of the provided answer options is the correct answer.
+        <br><b>Note: </b>If more than one answer option could be selected as a response, the <b>MS</b> question type solution should be used. If there are only two answer options, the <b>TCQ</b> question type solution should be used.
+    </div>
+
+    <p>Example:</p>
+    <p><i>Which of the following is a type of plant?
+        <br/>A) fern
+        <br/>B) canine
+        <br/>C) mushroom
+        <br/>D) shark</i>
+    </p>
+    <p>There is one and only one correct response to this question: A) fern</p>
+
+    <h4>Directions for authoring MCQ solutions:</h4>
+    <p>There are always three types of <code>&lt;section&gt;</code> blocks present in an MCQ solution: </p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+        <li>wrong_explanation</li>
+    </ul>
+    <p>
+        For the first <code>&lt;answer&gt;</code> section, the solution is provided and the letter of the correct answer option is provided in the format that matches the textbook (uppercase vs. lowercase). </p>
+    <p>
+        For the second <code>&lt;explanation&gt;</code> section, the explanation for the correct answer option is provided to the student. 
+        Provide an explanation for why this is the correct answer. The explanation should be relevant
+        to the overall question and help a student better understand the concept being tested. Do not include the text
+        of the stem or the answer option (as it appears in the textbook) in your solution.
+    </p>
+
+    <p>
+        For the third and all subsequent <code>&lt;wrong_explanation&gt;</code> sections, the explanations for the incorrect answer options are provided to the student. There will be a wrong_explanation section block provided for each incorrect answer option. 
+        <!-- The attributes for the section are <code>class="wrong_explanation"</code> and <code>data-type="text"</code>. The <code>data-answer</code> attribute is set to be the letter of the incorrect answer option for that section. [Note: it is possible to assign a <code>data-type</code> attribute other than "text" in some instances. See the <a href="#templates" onclick="loadHTML('content/templates.html')">Solution Template</a> page for a list of possible data types.] -->
+        The explanation should be relevant to the overall question and help a student better understand
+        the concept being tested. Do not include the text of the stem or the answer option (as it appears
+        in the textbook) in your solution.
+    </p>
+
+    <div class="line"></div>
+
+    <h2 name="ms">Multiple Select (MS)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A multiple select question is a problem that has a prompt and clearly provides several possible answer options where <b>more than 1 </b>of the answer options could be a correct answer. Note: some MS questions can have a single answer option keyed, but the question prompt allows for more than one answer option to be selected (e.g., "Select all the apply.").
+    </div>
+
+    <p>Example:</p>
+    <p><i>Which of the following are plants? Select ALL that apply.
+        <br/>A) fern
+        <br/>B) canine
+        <br/>C) mushroom
+        <br/>D) tree</i>
+    </p>
+    <p>There are two correct answer options that should both be keyed as part of the correct response: Option (A) and Option (D).</p>
+
+    <h4>Directions for authoring MS solutions:</h4>
+    <p>There are always three types of <code>&lt;section&gt;</code> blocks present in an MS solution: </p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+        <li>wrong_explanation</li>
+    </ul>
+    <p>
+        For an MS question, there can be multiple answer <code>&lt;section&gt;</code> blocks depending on how many answer options 
+        are correct. Each answer <code>&lt;section&gt;</code> block includes the letter of a correct answer option (provided 
+        in the format that matches the textbook, uppercase vs. lowercase).
+    </p>
+
+    <p>
+        For the next <code>&lt;section&gt;</code> blocks, an explanation for each correct answer option is provided to the student. 
+    </p>
+
+    <p>
+        For the final <code>&lt;section&gt;</code> blocks, the explanations for the incorrect answer options are provided to the student. There will be a <code>&lt;wrong_explanation&gt;</code> section block provided for each incorrect answer option. 
+    </p>
+
+    <div class="line"></div>
+
+    <h2 name="tcq">Two Choice (TCQ)</h2>
+
+<div class="alert alert-primary" role="alert">
+    A two choice question is a problem that has a prompt and provides two possible discrete answer options where <b>only 1 </b>of the provided answer options is the correct answer. This question type should be used for TF.
+</div>
+
+<p>Non-TF Example:</p>
+<p><i>For the following cost, determine whether it is a fixed or variable cost:
+    <br/>Purchase of a new truck</i>
+</p>
+<p>There is one and only one correct response for this question: <br>fixed</p>
+
+<h4>Directions for authoring TCQ solutions:</h4>
+<p>There are three types of <code>&lt;section&gt;</code> blocks present in a non-TF TCQ solution: </p>
+<ul>
+    <li>answer</li>
+    <li>wrong_answer</li>
+    <li>explanation</li>
+</ul>
+<p>
+    For the first <code>&lt;section&gt;</code> block, the correct answer is provided, this should generally be no longer than a couple words.
+</p>
+<p>
+    For the second <code>&lt;section&gt;</code> block, the incorrect answer option is provided to the student, similar to the previous section.
+</p>
+
+<p>
+    For the third <code>&lt;section&gt;</code> block, the explanation for the correct & incorrect answer options is provided to the student.
+</p>
+
+<div class="line"></div>
+
+    <p>True or False (TF) Example:</p>
+
+    <div class="alert alert-primary" role="alert">
+            A True or False TCQ question is a problem for which the correct answer can only be true or false.
+    </div>
+
+    <p><i>Is this statement true or false? A fern is a type of plant.</i>
+    </p>
+    <p>The correct response is "true."</p>
+
+    <h4>Directions for authoring TF solutions:</h4>
+
+    <p>There are always two types of <code>&lt;section&gt;</code> blocks present in a TF solution:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+    <p>
+        For a TF question, there is a single answer <code>&lt;section&gt;</code>. The answer can only be "true" or "false".
+    </p>
+
+    <p>
+        For the second <code>&lt;section&gt;</code>, an explanation for the answer (true or false) is provided to the student.
+    </p>
+
+    <div class="line"></div>
+
+    <h2 name="fib">Fill-in-the-Blank (FIB)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A Fill-in-the-Blank problem is a statement that includes a blank space (or spaces) for the answer. The statement only makes sense if the correct answer(s) is filled in the provided blank(s). Answer choices may be selected from a given set, or not given at all.
+    </div>
+
+    <p>Example:</p>
+    <p><i>The capital of California is _____________ and the capital of Colorado is _____________.</i>
+    </p>
+    <p>The correct response is Sacramento and Denver.</p>
+
+    <h4>Directions for authoring FIB solutions:</h4>
+
+    <p>There are always two types of <code>&lt;section&gt;</code> blocks present in a FIB solution:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+    <p>
+        For a FIB question, there can be multiple answer <code>&lt;section&gt;</code> blocks depending on how many blanks are present in the question stem. An answer <code>&lt;section&gt;</code> is provided for each blank.
+    </p>
+
+    <p>
+        For the next <code>&lt;section&gt;</code> blocks, an explanation for each blank is provided to the student.
+    </p>
+
+    <div class="line"></div>
+
+    <h2 name="sa">Short Answer (SA)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A Short Answer question is a problem for which an answer can be provided by writing a short response that may or may not require full sentences. SA questions may require answers in the form of definitions, names/lists, explanations, comparisons between ideas that expect a short response, or a step-by-step process. Examples of answers could be the name of a person or the date of a historical event, yes or no, or a single paragraph that contains an explanation for a specific topic. Responses should be fewer than 100 words.
+    </div>
+
+    <p>Example:</p>
+    <p><i>What are some of the major differences between the structure of plant and animal cells?</i>
+    </p>
+    <p>Plant and animal cells differ in some of the following ways:</p>
+    <ul>
+        <li>Chloroplasts are present in plants and some algae, but are not found in animal cells. Photosynthesis takes place in chloroplasts.</li>
+        <li>Cell walls are present in plants, but not in animal cells.</li>
+        <li>Vacuoles are membrane-bound sacs that function in storage and transport. A large central vacuole is found in plant cells, but not in animal cells.                             (Animal cells contain many smaller vacuoles.)</li>
+        <li>Centrioles are found in centrosomes and are present in animal cells, but are absent from plant cells.</li>
+        <li>Lysosomes are present in animal cells, but are rarely seen in plant cells. Lysosomes help digest cellular macromolecules.</li>
+        <li>Cilia are usually observed in animal cells, but are absent from plant cells. Cilia are microtubules that help the cell move.</li>
+    </ul>
+
+    <h4>Directions for authoring SA solutions:</h4>
+
+    <p>When there is a single correct answer possible, the SA solution should include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+
+    <p>Answers should be direct responses to the question prompt, while explanations provide supporting information. 
+        This structure helps to reduce redundancy between the two sections. 
+        In most non-MCQ or non-MS question types, students will always see the answer and explanation paired together.
+    </p>
+
+    <p>When the SA question is considered open-ended and more than one correct response is possible, the SA solution will normally include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample response (required)</li>
+        <li>explanation (optional)</li>
+    </ul>
+    <p>
+        A sample response is often used when a question asks for an example or opinion, leaving the question highly open-ended.
+        This format is used when the answer and explanation would be identical.
+    </p>
+
+    <p>The <code>answer</code>, <code>sample_response</code>, or <code>explanation</code> sections can be formatted with bulleted lists or html tables to make the content more concise and easier to parse.</p>
+
+    <h4>Special Cases of SA Question</h4>
+
+    <table class="table table-light">
+        <thead>
+            <tr>
+                <th width="30%">Case number</th>
+                <th width="70%">Case defined</th>
+            </tr>
+            <tr>
+                <td>Special Case 1</td>
+                <td>When the question is somewhat like this- <em>“<bold>Explain</bold> ecosystem”</em></td>
+            </tr>
+            <tr>
+                <td>Special Case 2</td>
+                <td>When the term <em><bold>“explain”</bold></em> is present in the latter part of the question. <em>(Define ecosystem and <bold>explain</bold> its components)</em></td>
+            </tr>
+            <tr>
+                <td>Special Case 3*</td>
+                <td>SA template merged with Step-by-step</td>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <p><bold>Note:</bold> The solution template will vary slightly in each case.</p>
+    <p><bold>Special case 1</bold>- When the question is single-lined and has the term <bold><em>“Explain”</em></bold> in the beginning</p>
+    <p>
+        <ul>
+            <li>The short answer solution will include <bold>just 1 section</bold> block, which is: <bold>“Answer”</bold></li>
+            <li>Here, the final answer and the supporting information will be merged and written under the <bold>“Answer”</bold> section.</li>
+        </ul>
+    </p>
+    <p><bold>Special case 2</bold>- When the question has the term <bold><em>“Explain”</em></bold> in latter part of the question.</p>
+    <p><ul><li>Here, the solution template will contain <bold>2 sections</bold>- answer and explanation. Use the Answer template field for the answer to the part of the question prompt before "and.“ In other words, you use the answer template field to address the "Define" part and include the "Explain" part in the explanation template field</li></ul></p>
+    <p><bold>Note:</bold> This case is applicable just on SA questions and that too with the question containing the term ‘Explain’. In rest of the question types (ES, CALC, FIB etc.), all the components of the question have to be written/addressed in the answer section, followed by their explanation in the ‘explanation’ section.</p>
+    <p><bold>Special case 3</bold>- When the solution has step by step calculation involved and the answer has text/short phrases/statements.</p>
+    <p><ul><li>Here, the solution template will contain <bold>2 sections</bold>- answer and step by step explanation.</li></ul></p>
+    <br>
+    <p><center><bold>SA- Solution template- special case 1</bold></center></p>
+    <p><bold>Question: <em>Explain</em></bold> Ecosystem</p>
+    <p><img src="/images/sample_images/sa-special-1.png" height="" width="775px" alt="SA special case 1"><br><bold>Note:</bold> This is just a dummy question.</p>
+    <br>
+
+    <p><center><bold>SA- Sample question-Special case 2</bold></center></p>
+    <p><bold>Question</bold>- Define ecosystem and <bold>explain</bold> its components.</p>
+    <p><img src="/images/sample_images/sa-special1.png" height="430px" width="775px" alt="SA Sample special case 2"><br><bold>Note:</bold> This is just a dummy question.</p>
+    <br>
+
+    <p><center><bold>SA- Solution template- special case 3</bold></center></p>
+    <p><bold>Question:</bold> A student incorrectly simplified the radical expression $4\sqrt{2}-\sqrt{2}$ to obtain 4. What went wrong? Simplify the expression correctly.</p>
+
+    <img src="/images/sample_images/sa-special3.png" height="650px" wdith="900px" alt="sa special case">
+
+
+    <div class="line"></div>
+
+    <h2 name="es">Essay (ES)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        <p>An essay question is a problem for which an answer can be provided by writing a more in-depth response that requires full sentences. The question may provide a prompt with a situation or topic, and should include instructions for what the essay should include (e.g, specifying a minimum word count or number of pages, requiring a summary/introduction, or specifying the format of the essay [double-spaced, APA, etc.]). The answer would typically include full sentences and consist of one or more paragraphs. Responses should be more than 100 words.</p>
+    </div>
+
+    <p>Example:</p>
+    <p><i>How has the discovery of DNA been important to society?</i>
+    </p>
+
+    <h4>Directions for authoring ES solutions:</h4>
+
+    <p>The ES solution will include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample response</li>
+        <li>explanation</li>
+    </ul>
+
+
+    <p>The <code>explanation</code> section can be formatted with a bulleted list to make the content (guidelines on how to construct the essay) more concise and easier to parse.</p>
+
+    <div class="line"></div>
+
+    <h2 name="calc">Calculation (CALC)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        <p>A question or problem that requires computation to solve. It may instruct the student to solve or prove it. CALC problems often include equations in the questions and/or words such as Solve for x, Calculate x, Find x, Prove that xâ€¦, How manyâ€¦ etc. The answers could be a number, a rate, or an equation that proves a math equation is true. CALC questions will usually require step-by-step solutions.</p>
+    </div>
+
+    <p>Example:</p>
+    <p><i>Find the value of each permutation: P(6,2)</i></p>
+
+    <h4>Directions for authoring CALC solutions:</h4>
+    <p>The CALC solution will normally include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>step_by_step</li>
+    </ul>
+
+    <p>When a CALC question is more open-ended and more than one correct response is possible, the CALC solution will include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample response</li>
+        <li>step_by_step</li>
+    </ul>
+
+    <p>The first section, the <code>answer</code> or <code>sample_response</code> section, will include the numeric answer for the question.</p>
+
+    <p>
+        The second section, the <code>step_by_step</code> section, provides clear step-by-step instructions directing students how to solve the problem to arrive at the answer.
+        While most CALC questions will include a step-by-step solution, it's acceptable in certain cases to include an <code>explanation</code> section instead of a <code>step_by_step</code> section. This is reserved for cases 
+        where a solution does not warrant a step-by-step template (e.g., does not require a true calculation or requires a single step and doesn't warrant a step-by-step template).
+    </p>
+    <div class="line"></div>
+
+    <h2 name="ord">Ordering (ORD)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question for which the answer requires the ranking or sequencing of several items provided by the prompt. These questions commonly include the words Rank or Order in the question and ask for a ranking of the items based on a specific criteria.
+    </div>
+
+    <p>Example:</p>
+    <p><i>Place the following measurements in order from shortest to longest: 1 m, 10 cm, 1,000 in, 2 ft</i>
+    </p>
+    <p>The correct order is: 3,1,4,2</p>
+
+    <h4>Directions for authoring ORD solutions:</h4>
+    <p>There are always two types of <code>&lt;section&gt;</code> blocks present in an ORD solution:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+    <p>
+        For an ORD question, there will be multiple answer <code>&lt;section&gt;</code> blocks.
+    </p>
+
+    <p>
+        For the next <code>&lt;section&gt;</code> blocks, an explanation for each option is provided to the student.
+    </p>
+
+    <div class="line"></div>
+
+    <h2 name="gr">Graphing (GR)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question for which the answer must be a graph. Examples includes business questions that ask for a line or curve to be drawn on a provided graph or a graph of a function. Questions will sometimes include the word Graph or Label. Note that circle graphs (pie charts) or bar graphs should be treated as DRW questions.
+    </div>
+    <p>Example:</p>
+    <p>Graph <span>$y=2x+1$</span></p>
+    <h4>Directions for authoring GR solutions:</h4>
+    <p>The GR solution should include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>step_by_step</li>
+    </ul>
+
+    <p>When a GR question is more open-ended and more than one correct response is possible, the GR solution will include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample_response</li>
+        <li>step_by_step</li>
+    </ul>
+
+    <p>The first section, the <code>answer</code> or <code>sample_response</code> section, will include the script for the JSXGraph.
+    </p>
+
+    <p>
+        The second section, the <code>step_by_step</code> section, provides clear step-by-step instructions directing students how to develop, label, and format their graphs to fully satisfy the requirements of the question.
+        While most GR questions will incude a step-by-step solution, it's acceptable in certain cases to include an <code>explanation</code> section instead of a <code>step_by_step</code> section. This is reserved for cases 
+        where a solution does not warrant a step-by-step template.
+    </p>
+
+    <div class="line"></div>
+
+    <h2 name="drw">Drawing (DRW) </h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question for which the answer must be drawn by the student. Examples include questions that ask for a sketch or diagram. Questions will sometimes include the word Draw or Label. Note: graphs that cannot be developed using the JSXGraph tool will be considered DRW questions and an image should be developed for the required graph.
+    </div>
+
+    <p>Example:</p>
+    <p><i>Draw a Punnett Square to show the genotypes that would result from a cross of two parents heterozygous for an allele (genotype Tt).</i>
+    </p>
+    <p>The correct response is:</p>
+    <br>
+    <div class="text-center">
+        <script data-pagespeed-no-defer>//<![CDATA[
+(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','http://3.87.105.237/authoring_guidelines/content/question_types.html','8Xxa2XQLv9',true,false,'f4RzYBZD2Go');
+//]]></script><img width=20% src="images/Punnett.png" data-pagespeed-url-hash="3425493583" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+    </div>
+    <br>
+    <ul>
+        <li>A correct Punnett Square shows that the resulting genotypes (allele combinations) of the offspring are TT, Tt, and tt in the ratio 1:2:1.</li>
+        <li>To set up the Punnett Square, the parents' alleles are separated and placed across the top of the Punnett Square (for one parent) and repeated to the                             left of the Punnett Square (for the other parent).</li>
+        <li>Each cell in the Punnett Square is a possible allele combination for an offspring.</li>
+    </ul>
+
+    <h4>Directions for authoring DRW solutions:</h4>
+    <p>When there is a single correct answer possible, the DRW solution should include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+
+    <p>When the DRW question is open-ended and more than one correct response is possible, the DRW solution will include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample response</li>
+        <li>explanation</li>
+    </ul>
+
+
+    <p>The first section, the <code>answer</code> or <code>sample_response</code> section will include a single image (svg) file. </p>
+
+    <p>The second section, the <code>explanation</code> section, can be formatted as a bulleted list or step-by-step template to make the content more concise and easier to parse.</p>
+
+    <div class="line"></div>
+
+    <h2 name="ldgr">Ledger (LDGR) </h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question for which the answer is a ledger, journal, or accounting statement. 
+    </div>
+
+    <p>Example:</p>
+    <p><i>ABC Company creates a journal entry for June 1, 2018 detailing the companyâ€™s issuing of common stock (credit) in exchange for <span>&#36;</span>100,000 in cash (debit). The cash account number is 1000, and the stock account number is 3000. Create a journal entry for the ABC Company.
+            </i></p>
+            </div>
+
+    <h4>Directions for authoring LDGR solutions:</h4>
+    <p>The LDGR solution should include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+
+    <p>The first section, the <code>answer</code> section, will include the image (svg) file of the accounting statement. It will be created using the ledger templates provided in Google sheets and a screenshot of the ledger (without gridlines) will be uploaded as the image.</p>
+
+    <p>The second section, the <code>explanation</code> section, is commonly formatted as a step-by-step that details the steps taken to develop the ledger or statement (but is not required to be a step-by-step).</p>
+
+    <div class="line"></div>
+
+    <h2 name="mat">Matching (MAT)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question where there is a set of givens and a set of choices and the question instructs you to match the givens with the choices in a 1:1 way by labelling, writing them in a space, etc.
+    </div>
+
+    <p>Example:</p>
+    <p><i>Match each organism with the best description.</i></p>
+</div>
+
+<div class="col-container">
+    <div class="col1">
+        <div>____ cat</div>
+        <div>____ trout</div>
+        <div>____ snake</div>
+        <div>____ frog</div>
+    </div>
+
+    <div class="col2">
+        <div>a. amphibian</div>
+        <div>b. mammal</div>
+        <div>c. reptile</div>
+        <div>d. fish</div>
+    </div>
+</div>
+
+<p>The correct answer is:</p>
+<p>
+    b<br>
+    d<br>
+    c<br>
+    a<br>
+</p>
+
+<h4>Directions for authoring MAT solutions:</h4>
+<p>There are always two types of <code>&lt;section&gt;</code> blocks present in a MAT solution:</p>
+<ul>
+    <li>answer</li>
+    <li>explanation</li>
+</ul>
+
+<p>
+    For a MAT question, there will be multiple answer <code>&lt;section&gt;</code> blocks, the total depending on how many matches (often with corresponding blanks) are being made in the question stem.
+</p>
+
+<!-- <div class="line"></div> -->
+
+<p>
+    For the next <code>&lt;section&gt;</code> blocks, an explanation for each match is provided to the student. 
+</p>
+
+<div class="line"></div>
+
+<h2 name="cl">Classifying (CL)</h2>
+
+<div class="alert alert-primary" role="alert">
+    A question where a set of options are classified into a given group (usually two or more).
+</div>
+
+<p>Example:</p>
+<p><i>For the following organelles, classify them as organelles that are found in <br><b>I. animal cells, II. plant cells, or III. both animal and plant cells</b>. </i></p>
+</div>
+
+<div class="col-container">
+    <div>
+        <div>a. cell wall</div>
+        <div>b. nucleus</div>
+        <div>c. central vacuole</div>
+        <div>d. ribosome</div>
+        <div>e. centriole</div>
+    </div>
+</div>
+
+<p>The correct answer is:</p>
+<p>
+    <b>I. Animal cells:</b> e. centriole<br>
+    <b>II. Plant cells:</b> a. cell wall, c. central vacuole<br>
+    <b>III. Both animal and plant cells:</b> b. nucleus, d. ribosome
+</p>
+
+<h4>Directions for authoring CL solutions:</h4>
+
+<p>
+    In the example provided here, <b>"I. Animal cells"</b>, <b>II. "Plant cells"</b>, and <b>III. "Both animal and plant cells"</b> are the group names. When determining the group names,
+    follow these guidelines:
+    <ol>
+        <li>The groups are the categories the options will be sorted into.</li>
+        <li>If there is a designator used for groups in the book (e.g., I, II, III, a, b, c, or 1, 2, 3), include them with the group names.</li>
+        <li>If the group name is five words or less, include the full group name from the book. Be aware that certain group names 
+            will need to be modified to avoid infringement (e.g., proper nouns). These can be abbreviated.</li>
+        <li>If the group name is over 5 words, abbreviate or truncate it.</li>
+    </ol>
+</p>
+<p>
+    In the example provided here, "a. cell wall", "b. nucleus", etc. are the answer options. When determining what text to include for the answer
+    options, follow these guidelines:
+    <ol>
+        <li>The answer options are sorted into the groups provided in the textbook. Depending on the question,
+            a group may have one answer option sorted into it, more than one answwer option in it, or no answer options sorted into it.
+        </li>
+        <li>If there is a designator used for the answer options in the book (e.g., a, b, c, or 1, 2, 3), include them with the anwer option.</li>
+        <li>If the answer option is five words or less, include the full answer option text from the book. Be aware that certain answer options 
+            will need to be modified to avoid infringement (e.g., proper nouns). These can be abbreviated.</li>
+        <li>In a question where all or some of the the answer options' text is over 5 words (e.g., full sentences), you may include 
+            just the letter designator for the answer options (and no text).</li>
+    </ol>
+</p>
+
+
+<p>
+    For the next <code>&lt;section&gt;</code> blocks, an explanation for each group (that discusses all the options classified into that group) is provided to the student.</p>
+
+<p>
+        Some complex CL questions require the student to classify the answer options into groups and then to perform an additional task 
+        in their response (e.g., to classify the answer options again or to provide additional information for each answer option). In these
+        cases, the Short Answer question type template should be used instead of the Classifying template. For example, a dual classifying 
+        question (Group A/B and then Group 1/2) can be authored as a Short Answer and include a matrix (simple table) in the answer to clearly display the groupings:
+</p>
+<br>
+<div>
+        <table>
+            <tr style="text-align:center"><th></th><th>Group A</th><th>Group B</th></tr>
+            <tr style="text-align:center"><th>Group 1</th><td>answer option (a)</td><td>answer option (c)</td></tr>
+            <tr style="text-align:center"><th>Group 2</th><td>answer option (b)</td><td>answer option (d)</td></tr>
+        </table>
+</div>
+
+
+<div class="line"></div>

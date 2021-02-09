@@ -1,0 +1,181 @@
+
+<head/><h2>General Metadata</h2>
+<p>Metadata is the backbone of our textbook solution authoring project. Without it, there is no way for us to organize the huge amount of content and information we are creating. Accuracy and attention to detail are the extremely important when working with metadata.</p>
+
+<h4>Definitions</h4>
+<table>
+    <colgroup><col width="25%"><col width="75%"></colgroup>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr>
+        <td>Title</td>
+        <td>A published work, independent of form. Titles may be published in different formats (hard copy, ebook, looseleaf, etc.) and different packages (bundled with access codes,
+            other titles, etc.). One title may have many ISBNs. Two ISBNs are the same title if they contain 99% the same educational content.</td>
+    </tr>
+    <tr>
+        <td>Family</td>
+        <td>A family of textbooks is a set of titles where >5%+ of the content is shared between the titles.</td>
+    </tr>
+    <tr>
+        <td>ISBN</td>
+        <td>Numeric commercial book identifier which is intended to be unique, but uniqueness is not guaranteed. There is potentially a many to many mapping between titles and ISBNs</td>
+    </tr>
+    <tr>
+        <td>Parent ISBN</td>
+        <td>An arbitrarily chosen ISBN that serves as the primary ISBN for a title.</td>
+    </tr>
+</table>
+
+<h4>Textbook Title Metadata</h4>
+<p>This table records high level information about each title that we are going to author.</p>
+<table>
+    <colgroup><col width="25%"><col width="75%"></colgroup>
+    <tr><th>Column</th><th>Description</th></tr>
+    <tr><td><b>textbook_code</b></td>           <td>Unique 3 letter code for every title. This will be automatically generated sequentially.</td></tr>
+    <tr><td><b>parent_isbn</b></td>             <td>See above. Arbitrarily chosen ISBN for the title, select the ISBN of the physical copy that we first author from.</td></tr>
+    <tr><td><b>canonical_title</b></td>         <td>Simple and familiar title for the book, for internal reference.</td></tr>
+    <tr><td><b>canonical_author</b></td>        <td>Simple and familiar author for the book (use the primary author's last name), for internal reference.</td></tr>
+    <tr><td><b>publisher</b></td>               <td>The publisher of the title.</td></tr>
+    <tr><td><b>edition</b></td>                 <td>Numeric edition for the ISBN</td></tr>
+</table>
+
+<h5>Example:</h5>
+<div class="row">
+    <div class="col">
+        <p>College Algebra by Sullivan has the following metadata.</p>
+    </div>
+    <div class="col-8">
+        <table>
+            <tr><th>textbook_code</th><th>parent_isbn</th><th>canonical_title</th><th>canonical_author</th><th>publisher</th><th>edition</th></tr>
+            <tr><td>001</td><td>9780321979476</td><td>College Algebra</td><td>Sullivan</td><td>Pearson</td><td>10</td></tr>
+        </table>
+    </div>
+</div>
+
+<h5>Validations:</h5>
+<ul>
+    <li><b>parent_isbn</b> must be unique for every row</li>
+    <li><b>textbook_code</b> must be unique for every row</li>
+</ul>
+
+<h4>Title Organization Metadata</h4>
+<p>This table records how textbooks are organized, allowing us to use various short forms during the rest of the process. Most of this information can be found
+in the table of contents.</p>
+<table>
+    <colgroup><col width="25%"><col width="75%"></colgroup>
+    <tr><th>Column</th><th>Description</th></tr>
+    <tr><td><b>textbook_code</b></td>    <td>Unique 3 letter code for every title. This will come from the <i>Textbook Title Metadata</i>.</td></tr>
+    <tr><td><b>type</b></td>             <td>The type of organization. One of:
+                                         <ul>
+                                             <li><u>chapter</u> - The highest organizational level, generally a number or letter with a full title</li>
+                                             <li><u>section</u> - Subsection of a chapter, usually numbered in reference to the parent chapter</li>
+                                             <li><u>heading</u> - A header separating a set of questions from other sets. This does not include headers separating all questions in a section or chapter</li>
+                                         </ul>
+                                         </td></tr>
+    <tr><td><b>short_form</b></td>       <td>The short form reference. Generally a number or letter. Should not include the phrases "Chapter", "Section", etc.
+                                         If the full title has no simple letters or numbers, take its acronym.</td></tr>
+    <tr><td><b>long_form</b></td>        <td>The full title. Should not include the phrases "Chapter", "Section", etc.</td></tr>
+</table>
+
+<h5>Example:</h5>
+<div class="row">
+    <div class="col">
+        <p>A calculus textbook with "Chapter 3: Solving Derivatives". In Chapter 3 is "Section 3.4 - The Chain Rule". Practice questions at the end of the chapter
+            are split into "Test your Understanding" and "Apply what you know" areas.</p>
+    </div>
+    <div class="col">
+        <table>
+            <tr><th>textbook_code</th><th>type</th><th>short_form</th><th>long_form</th></tr>
+            <tr><td>000</td><td>chapter</td><td>3</td><td>Solving Derivatives</td></tr>
+            <tr><td>000</td><td>section</td><td>3.4</td><td>The Chain Rule</td></tr>
+            <tr><td>000</td><td>heading</td><td>TU</td><td>Test your Understanding</td></tr>
+            <tr><td>000</td><td>heading</td><td>AWYK</td><td>Apply what you know</td></tr>
+        </table>
+    </div>
+</div>
+
+<h5>Validations:</h5>
+<ul>
+    <li>(textbook_code, type, short_form) must be unique for every row</li>
+</ul>
+
+<h4>Question Metadata</h4>
+<p>This table holds detailed information for every single question in a title. This will be the basis of our everyday work.</p>
+<table>
+    <colgroup><col width="25%"><col width="75%"></colgroup>
+    <tr><th>Column</th><th>Description</th></tr>
+    <tr><td><b>question_code</b></td>   <td>Unique code for every written question in every title. First three digits are the textbook_code, last three digits are unique to the question.
+                                            This will be automatically generated sequentially</td></tr>
+
+    <tr><td><b>reference_isbn</b></td>  <td>The specific ISBN of the text used when generating this information. Either a numeric ISBN or "parent" to indicate that the parent_isbn was used.</td></tr>
+    <tr><td><b>page</b></td>            <td>The page number that the question is on. If the question spans multiple pages, enter the page that it starts on.</td></tr>
+    <tr><td><b>chapter</b></td>         <td>The chapter that the question is from. Use the short_form value from <em>Title Organization Metadata</em></td></tr>
+    <tr><td><b>section</b></td>         <td>The section that the question is from. Use the short_form value from <em>Title Organization Metadata</em>.
+                                        If the title doesn't have sections, leave this blank.</td></tr>
+    <tr><td><b>heading</b></td>         <td>The heading that the question is under. Use the short_form value from <em>Title Organization Metadata</em>.
+                                        If the chapter/section doesn't have headings, leave this blank.</td></tr>
+    <tr><td><b>q_number</b></td>        <td>The number for the question (generally numeric)</td></tr>
+    <tr><td><b>q_part</b></td>          <td>The letter for the subpart of the question (if applicable)</td></tr>
+    <tr><td><b>q_type</b></td>          <td>The type of question. See the <a href="#question_types" onclick="loadHTML('content/question_types.html')">Question Type Guidelines</a></td></tr>
+    <tr><td><b>related_group</b></td>   <td>A unique number of each group of questions that share instructions or a reference figure. These numbers should increase sequentially and be unique for each group.</td></tr>
+    <tr><td><b>solution_id</b></td>     <td>Numeric id for every answer that we <em>author</em> (many tb_question_id's may have the same solution_id if the questions are the same).
+                                        If a question has multiple parts, they will usually all point to the same solution_id and be authored together. A single solution_id
+                                        represents a unit of work for a tutor.</td></tr>
+</table>
+
+<h5>Examples:</h5>
+<div class="row">
+    <div class="col">
+        <p>Assuming the Metadata organization above. We have 3 questions. The first is a simple multiple choice question and is in the "Test your Understanding" section. The second and third refer to Figure 1.
+        The second question has three parts, each asking to draw a graph. The third is an essay question and is in the "Apply what you know" section.</p>
+    </div>
+    <div class="col">
+        <table>
+            <tr><th>question_code</th><th>reference_isbn</th><th>page</th><th>chapter</th><th>section</th><th>heading</th><th>q_number</th><th>q_part</th><th>q_type</th><th>related_group</th><th>solution_id</th></tr>
+            <tr><td>000001</td><td>parent</td><td>123</td><td>3</td><td>3.4</td><td>TU</td><td>1</td><td></td><td>MCQ</td><td></td><td>1</td></tr>
+            <tr><td>000002</td><td>parent</td><td>123</td><td>3</td><td>3.4</td><td>AWYK</td><td>2</td><td>a</td><td>GR</td><td>1</td><td>2</td></tr>
+            <tr><td>000003</td><td>parent</td><td>123</td><td>3</td><td>3.4</td><td>AWYK</td><td>2</td><td>b</td><td>GR</td><td>1</td><td>2</td></tr>
+            <tr><td>000004</td><td>parent</td><td>123</td><td>3</td><td>3.4</td><td>AWYK</td><td>2</td><td>c</td><td>GR</td><td>1</td><td>2</td></tr>
+            <tr><td>000005</td><td>parent</td><td>123</td><td>3</td><td>3.4</td><td>AWYK</td><td>3</td><td></td><td>ES</td><td>1</td><td>3</td></tr>
+        </table>
+    </div>
+</div>
+
+<h5>Validations:</h5>
+<ul>
+    <li><b>question_code</b> must be unique for every row</li>
+    <li><b>Concatenation of chapter, section, heading, q_number, and q_part</b> must be unique for every row</li>
+    <li><b>q_part</b>, <b>section</b>, <b>heading</b>, and <b>related_group</b> are the only optional columns</li>
+</ul>
+
+<h4>ISBN Metadata</h4>
+<table>
+    <colgroup><col width="25%"><col width="75%"></colgroup>
+    <tr><th>Column</th><th>Description</th></tr>
+    <tr><td><b>isbn</b></td>            <td>The actual ISBN.</td></tr>
+    <tr><td><b>textbook_code</b></td>   <td>The 3 letter code for the title</td></tr>
+    <tr><td><b>title</b></td>           <td>Specific title for the ISBN</td></tr>
+    <tr><td><b>format</b></td>          <td>Format of the ISBN. One of {package, hardcover, softcover, ebook, looseleaf, school_specific, add_on}</td></tr>
+</table>
+
+<h5>Example:</h5>
+<div class="row">
+    <div class="col">
+        <p>An example <a href="https://www.cengage.com/c/essentials-of-statistics-for-business-and-economics-9e-anderson">Cengage Title</a></p>
+    </div>
+    <div class="col-8">
+        <table>
+            <tr><th>isbn</th><th>textbook_code</th><th>title</th><th>format</th></tr>
+            <tr><td>9780357045435</td><td>000</td><td>Essentials of Statistics for Business and Economics</td><td>hardcover</td></tr>
+            <tr><td>9780357391334</td><td>000</td><td>Essentials of Statistics for Business and Economics</td><td>ebook</td></tr>
+            <tr><td>9780357031421</td><td>000</td><td>WebAssign for Essentails of Statistics for Business & Economics 5 Months</td><td>add_on</td></tr>
+            <tr><td>9780357252970</td><td>000</td><td>WebAssign Single Term + Essentials Loose-leaf Version</td><td>package</td></tr>
+        </table>
+    </div>
+</div>
+
+<h4>Notes</h4>
+<ul>
+    <li>Most spreadsheets will have an <b>author_email</b> column which should have your email address, for tracking purposes.</li>
+    <li>Most spreadsheets will have a <b>date_created</b> column which should contain the date the row was first created, for tracking purposes.</li>
+</ul>
+

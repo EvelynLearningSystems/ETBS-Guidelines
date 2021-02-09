@@ -1,0 +1,19 @@
+article main section.answer:before {
+    content: "Answer:";
+    color: red;
+}
+
+article main section.explanation:before {
+    content: "Explanation:";
+    color: red;
+}
+
+article main section.step_by_step:before {
+    content: "Step By Step Explanation:";
+    color: red;
+}
+
+article header:before {
+    content: "Header:";
+    color: red;
+}

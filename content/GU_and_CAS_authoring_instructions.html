@@ -1,0 +1,422 @@
+<head/><h2>GU AND CAS INSTRUCTIONS</h2>
+
+<p>Textbook instructions typically include directions such as “Use a graphing utility to …” or have an icon indicating that technology is required. Evelyn requires that authors answer these questions. This document provides instructions and examples for how to author these questions.</p>
+<div class="line"></div>
+<h3>Table of Contents</h3>
+<p>
+    <nav>
+        <a data-link="General_Instructions" class="navlink">General Instructions</a><br>
+        <a data-link="Examples" class="navlink">Examples of an author using a GU to assess needed options/functionality</a><br>
+        <a data-link="GU_Solution_Exemplar" class="navlink">GU Solution Exemplar</a><br>
+        <a data-link="CAS_Solution_Exemplar" class="navlink">CAS Solution Exemplar</a><br>
+    </nav>
+</p>
+<div class="line"></div>
+
+<h4 name="General_Instructions">General Instructions</h4>
+<p>Every graphing utility (GU) and computer algebra system (CAS) is slightly different, so it is important to focus on the core functionality that a user would utilize with any standard GU or CAS to arrive at an answer. Although each utility is slightly different, almost all of them have the same base functionality. As a result, we can author solutions that do not rely on a specific utility (such as a TI-84 calculator or Maple).</p>
+<p>Since the goal is to write a solution that is GU/CAS agnostic, an author can utilize any major tool to understand what functionality and/or options are needed to write a quality content-accurate solution.<bold>It is important to note that an author should not indicate the GU/CAS that was utilized to test the process, nor should they reference any tool-specific language or menu/navigation features.</bold></p>
+<p>All GU/CAS-oriented solutions should include: 
+    <ol>
+        <li>which option(s)/functionality a student will utilize (GU agnostic)</li>
+        <li>the order in which a user should utilize the options/functionality</li>
+        <li>JSXGraph(s), whenever applicable, to show the desired output</li>
+        <li>an explanation of what the results should be and how a user should interpret them to arrive at the answer</li>
+        <li>the answer</li>
+    </ol>
+</p>
+
+
+<div class="line"></div>
+
+
+<h4 name="Examples">Examples of an author using a GU to assess needed options/functionality</h4>
+
+<p><em>The given examples show how an author can utilize a GU to understand generic options and functions, as well as desired output to arrive at the answer.</em></p>
+<p><bold>Points of Intersection</bold>
+<ul>
+    <li>Enter both equations into a graphing utility and use the INTERSECT function to find one of the $x$- and $y$-values. For some online utilities, simply highlight or hover over the point of intersection and the coordinates will be displayed.</li>
+    <li>Use the function again to find any other value(s). </li>
+    <li>Most graphing utilities are accurate to at least five decimal places. All of them are accurate to three decimal places.</li>
+
+</ul>
+</p>
+<br>
+<p><bold>Solving Equations</bold>
+<p>There are several options for solving an equation with a graphing utility:
+    <ul>
+        <li>Use the SOLVER function.</li>
+        <li>Manipulate the equation so that zero is on one side of the equal sign. Then, find the zeros of the expression that is on the other side.</li>
+        <li>Find the INTERSECTION of the graphs of:
+            <ul>
+                <li>$y= \text{(the left side)}$</li>
+                <li>$y= \text{(the right side)}$</li>
+            </ul>
+        </li>
+
+    </ul>
+</p>
+</p>
+<br>
+<p><bold>Performing Regressions</bold>
+<ul>
+    <li>Enter the data into a graphing utility. (Many utilities use the command EDIT to enter data.) </li>
+    <li>Calculate the Quadratic Regression for the data.</li>
+    <li>Most graphing utilities assume that the output required is the general form of a Quadratic Equation, $y=ax^{2}+bx+c$, and will return the values for $a$, $b$, and $c$.</li>
+</ul>
+</p>
+
+
+<div class="line"></div>
+
+
+<h4 name="GU_Solution_Exemplar">GU Solution Exemplar</h4>
+<br>
+
+<table class="table table-light" style="width:80%"> 
+    <tr> 
+        <th colspan="4"><center>CALC Question</center></th> 
+    </tr> 
+    <tr> 
+        <td width="25%">Question Code:</td> 
+        <td width="25%"></td> 
+        <td width="25%">Solution ID:</td>
+        <td width="25%"></td>
+    </tr> 
+    <tr>
+        <td width="25%">Answer: <br>
+            ▢ Sample Response:</td>
+        <td width="75%" colspan="3">
+            $x=1.70$
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 1</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>Graph the equation using a graphing utility. </p>
+            <p>Adjust the window as needed. The graph below uses Xmin=-5, Xmax=5, Ymin=-20, Ymax=20.</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <div id="jxgboxa" style="width:600px; height:600px" class="graph">
+                <script>
+                    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+                       axis: true,
+                       showCopyright: false,
+                       showNavigation: false,
+                       registerEvents: false
+                    });
+                    board.setBoundingBox([-5,20,5,-20]);
+                    board.create("functiongraph",  [function(x){ return x*x*x*x+1.2*x*x*x-7.46*x*x-4.692*x+15.2881}]);
+                 </script>
+                 
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td width=25%>Graph Script:</td>
+        <td width="75%" colspan="3">
+            
+&lt;script&gt; <br>
+&emsp;var board = JXG.JSXGraph.initBoard("jxgboxa", {<br>
+    &emsp;&emsp;axis: true,<br>
+    &emsp;&emsp;showCopyright: false,<br>
+    &emsp;&emsp;showNavigation: false,<br>
+    &emsp;&emsp;registerEvents: false<br>
+    &emsp;});<br>
+    &emsp;board.setBoundingBox([-5,20,5,-20]);<br>
+    &emsp;board.create("functiongraph",  [function(x){ return x*x*x*x+1.2*x*x*x-7.46*x*x-4.692*x+15.2881}]);<br>
+&lt;/script&gt;
+                 
+            
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 2</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>Using the “ZERO” or “ROOT” function of the graphing utility, find the positive $x$-intercept. Write the answer to two decimal places.</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <p>$x=1.70$</p>
+        </td>
+    </tr>
+    
+</table>
+
+
+<div class="line"></div>
+
+
+<h4 name="CAS_Solution_Exemplar">CAS Solution Exemplar</h4>
+
+<table class="table table-light" style="width:80%"> 
+    <tr> 
+        <th colspan="4"><center>CALC Question</center></th> 
+    </tr> 
+    <tr> 
+        <td width="25%">Question Code:</td> 
+        <td width="25%"></td> 
+        <td width="25%">Solution ID:</td>
+        <td width="25%"></td>
+    </tr> 
+    <tr>
+        <td width="25%">Answer: <br>
+            ▢ Sample Response:</td>
+        <td width="75%" colspan="3">
+            <p>$ \lim_{k \rightarrow \infty} A^k= \begin {pmatrix} 0.285 & 0.285 & 0.285 \\0.428 & 0.428 & 0.428 \\0.285 & 0.285 & 0.285 \end {pmatrix} $
+
+                <br> and <br>
+                $ \lim_{k \rightarrow \infty} B^k= \begin {pmatrix} 0.202 & 0.202 & 0.202 \\
+0.370 & 0.370 & 0.370 \\
+0.427 & 0.427 & 0.427 \end {pmatrix} $
+            </p>
+            <p>The sum of entries of every column for both $A$ and $B$ is $1$.</p>
+            <p>For any matrix $Q$, which is of the same type as $A$ and $B$, the higher powers of $Q$ tend toward a matrix $Q_0$, where—for any fixed row $i \in \{ 1,2,3 \}$—all the entries of $i^\text{th}$ row are equal, and the sum of the entries of each column is approximately $1$.</p>
+            
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 1</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>
+                Use any computer algebra system (CAS) to compute the matrices. </p>
+            <p>
+            Calculate the matrix $ A^2 $ by using CAS code. An example of CAS code that may be utilized is: <br>
+            Matrix(3, 3, [[.4, .2, .3], [.3, .6, .3], [.3, .2, .4]])^2. </p>
+            <p>
+            Calculate the matrix $ B^2 $ by using CAS code. An example of CAS code that may be utilized is: <br>
+            Matrix(3, 3, [[0, .2, .3], [.1, .6, .3], [.9, .2, .4]])^2.
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <p>
+                $ A^2=\begin{pmatrix}0.31&0.26&0.3\\
+0.39&0.48&0.39\\
+0.3&0.26&0.31\end{pmatrix} $ <br><br>
+$ B^2=\begin{pmatrix}0.29&0.18&0.18\\
+0.33&0.44&0.33\\
+0.38&0.38&0.49\end{pmatrix} $
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 2</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>Calculate the matrix $ A^4 $ by using CAS code. An example of CAS code that may be utilized is:
+               <br> Matrix(3, 3, [[.4, .2, .3], [.3, .6, .3], [.3, .2, .4]])^4.
+                </p>
+                <p>
+                    Calculate the matrix $B^4$ by using CAS code. An example of CAS code that may be utilized is:
+<br>Matrix(3, 3, [[0, .2, .3], [.1, .6, .3], [.9, .2, .4]])^4.
+
+                </p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <p>
+                $ A^4=\begin{pmatrix}0.2875&0.2834&0.2874\\
+0.4251&0.4332&0.4251\\
+0.2874&0.2834&0.2875\end{pmatrix} $ <br><br>
+$ B^4=\begin{pmatrix}0.2119&0.1998&0.1998\\
+0.3663&0.3784&0.3663\\
+0.4218&0.4218&0.4339\end{pmatrix} $
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 3</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>Calculate the matrix $ A^8 $ by using CAS code. An example of CAS code that may be utilized is:
+              <br>  Matrix(3, 3, [[.4, .2, .3], [.3, .6, .3], [.3, .2, .4]])^8.
+                </p>
+                <p>Calculate the matrix $B^8$ by using CAS code. An example of CAS code that may be utilized is:
+                   <br> Matrix(3, 3, [[0, .2, .3], [.1, .6, .3], [.9, .2, .4]])^8.
+                    </p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <p>
+                $ A^8=\begin{pmatrix}0.28572835&0.28569554&0.28572834\\
+                0.42854331&0.42860892&0.42854331\\
+                0.28572834&0.28569554&0.28572835\end{pmatrix} $    <br><br>  
+                $ B^8=\begin{pmatrix}0.20236399&0.20221758&0.20221758\\
+                0.37073223&0.37087864&0.37073223\\
+                0.42690378&0.42690378&0.42705019\end{pmatrix} $
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 4</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>
+                Calculate the matrix $ A^{16} $ by using CAS code. An example of CAS code that may be utilized is:
+<br>Matrix(3, 3, [[.4, .2, .3], [.3, .6, .3], [.3, .2, .4]])^16.
+
+            </p>
+            <p>Calculate the matrix $B^{16}$ by using CAS code. An example of CAS code that may be utilized is:
+               <br> Matrix(3, 3, [[0, .2, .3], [.1, .6, .3], [.9, .2, .4]])^16.
+                </p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <p>$ A^{16}=\begin{pmatrix} .285714286636716 & .285714284484379 & .285714286636715 \\
+                .428571426726569 & .428571431031241 & .428571426726569 \\
+                .285714286636715 & .285714284484379 & .285714286636715 \end{pmatrix} $
+                <br><br>
+                $ B^{16}=\begin{pmatrix} .202247208111776 & .202247186675888 & .202247186675888 \\
+                .370786508905794 & .370786530341682 & .370786508905794 \\
+                .426966282982430 & .426966282982430 & .426966304418318 \end{pmatrix} $</p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 5</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>Compare the entries of the matrices $A^8$ and $A^{16}$, and $B^8$ and $B^{16}$, to check the number of places after the decimal point at which the entries are repeated to arrive at the answer.</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <p>$ A^k \rightarrow \begin {pmatrix} 0.285 & 0.285 & 0.285 \\
+                0.428 & 0.428 & 0.428 \\
+                0.285 & 0.285 & 0.285 \end {pmatrix} $ as $k \rightarrow \infty$, and <br><br>
+                $B^k \rightarrow \begin {pmatrix} 0.202 & 0.202 & 0.202 \\
+                0.370 & 0.370 & 0.370 \\
+                0.427 & 0.427 & 0.427 \end {pmatrix} $ as $k \rightarrow \infty$.</p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 6</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>The sum of entries of every column of matrices $A$ and $B$ is $1$.</p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <p>$\displaystyle \sum_{i=1}^{3}a_{ij}=1$  and $\displaystyle \sum_{i=1}^{3}b_{ij}=1$ for $j=1,2,3$, where <br><br>
+                $a_{ij}$ denotes the $\left ( i,j \right ) ^{th}$ entry of $A$, and <br><br>
+                $b_{ij}$ denotes the $\left ( i,j \right ) ^{th}$ entry of $B$.
+               </p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 7</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>Consider another matrix $P$ and calculate the matrices $P^2$, $P^4$, $P^8$, and $P^{16}$ using a CAS.</p>
+            <p>For $P^2$, use CAS code. An example of CAS code that may be utilized is:
+              <br>  Matrix(3, 3, [[0, .5, .5], [.5, 0, .5], [.5, .5, 0]])^2. 
+                </p>
+                <p>For $P^4$, use CAS code. An example of CAS code that may be utilized is:
+                   <br> Matrix(3, 3, [[0, .5, .5], [.5, 0, .5], [.5, .5, 0]])^4.
+                    </p>
+                    <p>For $P^8$, use CAS code. An example of CAS code that may be utilized is:
+                       <br> Matrix(3, 3, [[0, .5, .5], [.5, 0, .5], [.5, .5, 0]])^8.
+                        </p>
+                        <p>And for $P^{16}$, use CAS code. An example of CAS code that may be utilized is:
+                           <br> Matrix(3, 3, [[0, .5, .5], [.5, 0, .5], [.5, .5, 0]])^16.
+                            </p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <p>$P=\begin{pmatrix}0&0.5&0.5\\
+                0.5&0&0.5\\
+                0.5&0.5&0\end{pmatrix}$ <br><br>
+                
+                $ P^2=\begin{pmatrix}0.5&0.25&0.25\\
+                0.25&0.5&0.25\\
+                0.25&0.25&0.5\end{pmatrix} $<br><br>
+                
+                $ P^4=\begin{pmatrix}0.375&0.3125&0.3125\\
+                0.3125&0.375&0.3125\\
+                0.3125&0.3125&0.375\end{pmatrix} $<br><br>
+                
+                $ P^8=\begin{pmatrix}0.3359375&0.33203125&0.33203125\\
+                0.33203125&0.3359375&0.33203125\\
+                0.33203125&0.33203125&0.3359375\end{pmatrix} $<br><br>
+                
+                $ P^{16}=\begin{pmatrix} .333343505859375 & .333328247070312 & .333328247070312 \\
+                .333328247070312 & .333343505859375 & .333328247070312 \\
+                .333328247070312 & .333328247070312 & .333343505859375 \end{pmatrix} $</p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="4"><center>Step-by-step 8</center></td>
+    </tr>
+    <tr>
+        <td width="25%">Description:</td>
+        <td width="75%" colspan="3">
+            <p>For any matrix $Q$ of the type mentioned in the Answer, the higher powers of $Q$ tend toward a matrix $Q_0$ where, for any fixed row $i \in \{ 1,2,3 \}$, all the entries of $i^{th}$ row are equal. Moreover, the sum of the entries of each column is $1$. </p>
+        </td>
+    </tr>
+    <tr>
+        <td width="25%">Calculation:</td>
+        <td width="75%" colspan="3">
+            <p>$\displaystyle \lim_{k \rightarrow \infty} Q^k=Q_0$, where $Q_0=\begin{pmatrix}a&a&a\\
+                b&b&b\\
+                c&c&c\end{pmatrix}$ such that $a+b+c \sim 1$.</p>
+        </td>
+    </tr>
+    
+</table>
+
+
+<div class="line"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

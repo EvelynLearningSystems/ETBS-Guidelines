@@ -1,0 +1,248 @@
+
+<head/><h2>Graphs</h2>
+<p>We will use <a href="https://jsxgraph.uni-bayreuth.de/wp/index.html">JSXGraph</a> to create graphs for our solutions.
+    JSXGraph is a very powerful graphing tool that uses Javascript to render SVG graphs.</p>
+
+    <nav>
+            <a data-link="point" class="navlink">Point</a> |
+            <a data-link="line" class="navlink">Line</a> |
+            <a data-link="functiongraph" class="navlink">Functiongraph</a> |
+            <a data-link="custom_elements" class="navlink">Custom Elements</a>
+        </nav>
+        <div class="line"></div>
+
+<p>To add a graph to your solution, set the “data-type” of your element to “graph”. Within your “graph” element, surround the graph definition with <code>&lt;script&gt;</code> tags.  Within these tags, we will use Javascript to define the graph. The following functions may be used in order to build a graph:</p>
+<ul>
+    <li>board.create(type, [function]) - creates a graph. The first argument is the type of graph, the second is the function to graph. There is a good Javascript math reference <a href="https://www.w3schools.com/jsref/jsref_obj_math.asp">here</a> to help you build your functions. See the list below for an explanation of the different graph types and their uses.</li>
+    <li>board.setBoundingBox(box) - set the bounding box (max and min values for the x and y axes). Defined as [x1, y1, x2, y2]. The bounding box should be set to allow the student to focus on the most important part of the graph.</li>
+</ul>
+
+<p>
+    Graphs can be included within step-by-step portions of solutions or integrated into explanations. They are not limited to GR question types only.
+</p>
+
+<div class="line"></div>
+
+<h3>Graph Types</h3>
+<p>Point, line, functiongraph are common types that make up the first argument for graphing functionality.</p>
+
+<h4 name="point">Point</h4>
+
+<p>Point - Draws a point on the graphing board.<br>
+    <code>board.create('point',[x, y]);</code></p>
+
+<p>Example: <code>board.create('point', [2, 2]);</code></p>
+
+<p>Points can be created and assigned to a variable using the keyword “var”. Assigning a point to a variable allows for increased flexibility when utilizing that point in more than one instance, such as using two points to draw a line.</p>
+
+<p>Example: <code>var p1=board.create('point', [2, 2]);</code></p>
+
+<p>Individual points assigned to a board default to utilization of the uppercase English alphabet, 
+    beginning with the letter A and proceeding through the alphabet as needed.  However, points 
+    can be named using the name attribute that is encased in curly brackets { } and appended to 
+    the end of the parameter list: {name: ‘name’}.</p>
+
+<p>Example: <code>board.create("point", [2, 2], {name: '1A'});</code></p>
+
+<p>While the color of a point defaults to red, a point’s color can be changed by appending the strokeColor 
+    attribute to the end of the parameter list.  Only <a href="#">Evelyn Learning approved colors (Slide 14)</a> may be used for points.  
+    All colors need to be formatted as hex codes.</p>
+
+<p>Example: <code>board.create("point", [2, 2], {name: '1A', strokeColor: '#3eabc9'});</code></p>
+
+<p><b>Example college algebra question:</b></p>
+<p><i>Plot the following points on a graph: A= (1, 0), B= (2, 2), C = (3.5, 4.5)</i></p>
+
+<p>JavaScript Code:</p>
+
+<div class="row">
+    <div class="col">
+        <pre><code>&lt;span class=&quot;right&quot; data-type=&quot;graph&quot;&gt;
+        &lt;script&gt;
+            board.setBoundingBox([-5, 5, 5, -5]);
+            var p1 = board.create('point', [1, 0]);
+            var p2 = board.create('point', [2, 2]);
+            var p3 = board.create('point', [3.5, 4.5]);
+        &lt;/script&gt;
+&lt;/span&gt;</code></pre>
+    </div>
+    <div class="col">
+        <div id="jxgboxa" style="width:300px; height:300px" class="graph">
+            <script>var board=JXG.JSXGraph.initBoard('jxgboxa',{axis:true,showCopyright:false,showNavigation:false,registerEvents:false});board.setBoundingBox([-5,5,5,-5]);var p1=board.create('point',[1,0]);var p2=board.create('point',[2,2]);var p3=board.create('point',[3.5,4.5]);</script>
+        </div>
+    </div>
+</div>
+
+
+<h4 name="line">Line</h4>
+
+<p><b>Line</b> - Draws a line on the graphing board.<br>
+    <b>Arrow</b> - Draws an arrow on the graphing board. Arrow follows all rules that lines do. The arrow head will point towards the second point.</p>
+
+<p>Lines can be constructed from two or more points on a graphing board. Lines can be drawn with no points visible, one point visible or multiple visible points. Lines are solid by default.</p>
+
+<p><b>Lines have additional supported options:</b><br>
+    <ul>
+        <li>Lines can begin at the first point by using the option straightFirst:false</li>
+        <li>Lines can end at the second point by using the option straightLast:false</li>
+        <li>Lines can be created as dashed by using the option dash:2</li>
+            <ul>
+                <li>Dashes can be smaller if dash:1 is used.</li>
+                <li>Dash options should only be a 1 or 2.</li>
+            </ul>
+    </ul>
+</p>
+
+<p>While the default color of a line is blue, a line’s color can be changed by appending the strokeColor attribute 
+    to the end of the parameter list. Only <a href="#">Evelyn Learning approved colors (Slide 14)</a>
+     may be used for lines.  All colors need to be formatted as hex code.</p>
+
+<p>Example: <code>board.create("line", [[-1,8], [5,-2]], {strokeColor: '#3eabc9'});</code></p>
+        
+        
+
+<p>Examples:<br>
+<p>Two points assigned to variables p1 (4.5, 2.0) and p2 (1.0, 2.0):<br>
+<code>var p1 = board.create('point', [4.5, 2.0]);<br>
+    var p2 = board.create('point', [1.0, 2.0]);</code></p>
+
+<p>A line can be created from points 1 and 2 where both points are visible:<br>
+    <code>var 12 = board.create('line', [p1, p2]);</code></p>
+
+<p>A line can be constructed with point 1 being visible and the second point being invisible:<br>
+    <code>var l1 = board.create('line', [p1, [1.0, 1.0]]);</code></p>
+
+<p>A line can be drawn with two invisible points:<br>
+    <code>var l1 = board.create('line', [[0, 0], [1.0, 2.0]]);</code></p>
+
+<p>A line can be drawn beginning at the first point and ending at the end point and be a dashed line:<br>
+    <code>board.create("line", [[-4, 2], [-4,-3]], {straightFirst:false, straightLast: false, dash:2});</code></p>
+        
+<p>An arrow can be drawn beginning at point [-4, 2] and ending at [-4,-3] with the arrow head pointing towards the second point, [-4,-3]:<br>
+    <code>board.create("arrow", [[-4, 2], [-4,-3]], {straightFirst:false, straightLast: false});</code></p>
+
+<p><b>Example college algebra question:</b><br>
+<i>Draw a line on a graph that connects points (0, -1) and (3, 4).</i></p>
+
+<p>JavaScript Code:</p>
+
+<div class="row">
+    <div class="col">
+        <pre><code>&lt;span class=&quot;right&quot; data-type=&quot;graph&quot;&gt;
+        &lt;script&gt;
+            board.setBoundingBox([-5, 5, 5, -5]);
+            var p1 = board.create('point', [0, -1]);
+            var p2 = board.create('point', [3, 4]);
+            var l1 = board.create('line', [p1, p2]);
+        &lt;/script&gt;
+&lt;/span&gt;</code></pre>
+    </div>
+    <div class="col">
+        <div id="jxgboxb" style="width:300px; height:300px" class="graph">
+            <script>var board=JXG.JSXGraph.initBoard('jxgboxb',{axis:true,showCopyright:false,showNavigation:false,registerEvents:false});board.setBoundingBox([-5,5,5,-5]);var p1=board.create('point',[0,-1]);var p2=board.create('point',[3,4]);var l1=board.create('line',[p1,p2]);</script>
+        </div>
+    </div>
+</div>
+
+<h4 name="functiongraph">Functiongraph</h4>
+
+<p>functiongraph - Graphs the line defined by your function.<br>
+    There is a good Javascript math reference <a href="https://www.w3schools.com/jsref/jsref_obj_math.asp">here</a> to help you build your functions.</p>
+
+<p>Example: <code>board.create('functiongraph', [function(x){ return x*x }]);</code></p>
+
+<p>Example question:<br>
+    <i>Graph the following function: f(x) = x<sup>*</sup>x</i></p>
+
+<p>
+    A functiongraph accepts intervals by adding a minimum and maximum after the expression to be graphed. 
+    In the example below, the expression being graphed is x<sup>*</sup>x, and the minimum is -2 and the maximum is 2.
+</p>
+
+<p>Example: <code>board.create("functiongraph",  [function(x){ return x*x}, -2, 2]);</code></p>
+
+
+<p>JavaScript Code:</p>
+
+<div class="row">
+    <div class="col">
+        <pre><code>&lt;span class=&quot;right&quot; data-type=&quot;graph&quot;&gt;
+        &lt;script&gt;
+            board.setBoundingBox([-5, 5, 5, -5]);
+            board.create('functiongraph',  [function(x){ return x*x }]);
+        &lt;/script&gt;
+&lt;/span&gt;</code></pre>
+    </div>
+    <div class="col">
+        <div id="jxgboxc" style="width:300px; height:300px" class="graph">
+            <script>var board=JXG.JSXGraph.initBoard('jxgboxc',{axis:true,showCopyright:false,showNavigation:false,registerEvents:false});board.setBoundingBox([-5,5,5,-5]);board.create('functiongraph',[function(x){return x*x}]);</script>
+        </div>
+    </div>
+</div>
+
+<h4 name="custom_elements">Custom Element</h4>
+
+<p>
+        <b>Creating Custom Elements With the Graph Generator</b><br>
+        The Evelyn Learning Graph Generator custom element(s) field accepts one or more JSXgraph element creation strings. 
+        This field is utilized to add custom element(s) to a graph or to experiment with constructing JSXgraph strings.  
+        While the Graph Generator point, line and graph function expression fields provide basic functionality, the custom 
+        element(s) field allows a user to utilize attributes that customize and style points, lines and function graphs.
+</p>
+        
+<p>
+        <b>Using the Mockup Tool to Visualize Full JSXgraph Scripts</b><br>
+        The Evelyn Learning Mockup Tool can be utilized to test full JSXgraph script visualizations.  To visualize a script (that is enclosed in the <code>&lt;script&gt; &lt;/script&gt;</code> tags), include the following shell html:
+</p>
+
+<div class="row">
+    <div class="col">
+        <pre><code>&lt;article&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;graph&quot;&gt;
+            &lt;script&gt;
+                Insert script here.
+            &lt;/script&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+    </div>
+</div>
+
+    <p>Example script for an interval graph:</p>
+
+    <div class="row">
+            <div class="col">
+                <pre><code>&lt;span class=&quot;right&quot; data-type=&quot;graph&quot;&gt;
+    &lt;script&gt;
+        var board = JXG.JSXGraph.initBoard('jxgboxa', {
+            showCopyright: false,
+            showNavigation: false,
+            registerEvents: false
+        });
+    var axisx = board.create('axis', [[0,0], [1,0]], 
+      {
+        firstArrow: true,
+        lastArrow: true,
+        ticks: {
+            drawZero: true,
+            ticksDistance: 1,
+            majorHeight: 30,
+            tickEndings: [1,1],
+            minorTicks: 0
+      }       
+    });
+        board.setBoundingBox([-5, 0.5, 5, -0.1]);
+        board.create(&quot;arrow&quot;, [[-3,0], [3,0]], {straightFirst:false, straightLast: false});
+        board.create('point', [-3, 0], {size:5, fillColor: 'none'});
+    &lt;/script&gt;
+&lt;/span&gt;</code></pre>
+</div>
+        
+        <div class="col">
+            <div id="jxgboxd" style="width:300px; height:300px" class="graph">
+                    <script>var board=JXG.JSXGraph.initBoard('jxgboxd',{showCopyright:false,showNavigation:false,registerEvents:false});var axisx=board.create('axis',[[0,0],[1,0]],{firstArrow:true,lastArrow:true,ticks:{drawZero:true,ticksDistance:1,majorHeight:30,tickEndings:[1,1],minorTicks:0}});board.setBoundingBox([-5,0.5,5,-0.1]);board.create("arrow",[[-3,0],[3,0]],{straightFirst:false,straightLast:false});board.create('point',[-3,0],{size:5,fillColor:'none'});</script>
+            
+            </div>
+        </div>
+    </div>

@@ -1,0 +1,85 @@
+
+<head/><h2>JSXGraph Solution Generator</h2>
+
+<a href="#">Explanations and Instructions for Use</a>
+
+
+<div class="line"></div>
+
+<form onsubmit="return false">
+    <div class="row">
+        <div class="col">
+            <label class="form-check-label" for="graph_bounding_box">Graph Bounding Box</label>
+            <input type="text" class="form-control" placeholder=" x1, y1, x2, y2" id="graph_bounding_box" aria-describedby="boundingBoxHelpBlock" value="-5,5,5,-5">
+            <small id="boundingBoxHelpBlock" class="form-text text-muted">
+                Used to create a graph. x2 and y1 are max ranges for x- and y-axis. x1 and y2 are minimum ranges for x- and y-axis.
+            </small>
+        </div>
+        <div class="col">
+            <label class="form-check-label" for="euclidean_points">Euclidean Point(s)</label>
+            <input type="text" class="form-control" placeholder="[x,y],[x,y],[x,y]" id="euclidean_points" aria-describedby="euclideanPointsBoxHelpBlock" size="6">
+            <small id="euclideanPointsBoxHelpBlock" class="form-text text-muted">
+                One or more points may be entered. Each point should be a Euclidean point surrounded by [ ] with a comma and no spaces  between each point. One or more points may be used.
+            </small>
+        </div>
+    </div>
+
+    <br>
+
+
+    <div class="row">
+        <div class="col">
+            <label class="form-check-label" for="line">Line(s)</label>
+            <input type="text" class="form-control" placeholder="[x,y], [x,y]" id="line" aria-describedby="lineBoxHelpBlock">
+            <small id="lineBoxHelpBlock" class="form-text text-muted">
+                Lines are constructed with 2 points. Each point should be a Euclidean point surrounded by [ ] with a comma and one space between points. A semicolon may be used to delineate multiple lines.
+            </small>
+        </div>
+        <div class="col">
+            <label class="form-check-label" for="function_expression">Function Expression</label>
+            <input type="text" class="form-control" placeholder="x*x" id="function_expression" aria-describedby="functionExpressionBoxHelpBlock">
+            <small id="functionExpressionBoxHelpBlock" class="form-text text-muted">
+                Used to state an expression of a function that will be graphed.  A good Javascript math reference can be found here to help you build your functions.
+            </small>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col">
+            <label class="form-check-label" for="custom_element">Custom Element(s)</label>
+            <textarea class="form-control" placeholder="board.create('ellipse',[[-1,4],[-1,-4],[1,1]]);" id="custom_element" aria-describedby="lineBoxHelpBlock"></textarea>
+            <small id="customBoxHelpBlock" class="form-text text-muted">
+                Enter custom elements here.
+            </small>
+        </div>
+    </div>
+
+    <div class="row">
+            <div>
+                <br><button class="btn btn-primary" onclick="generate()">Generate</button>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="line"></div>
+
+<div class="row">
+    <div class="col" style="text-align: center;">
+<pre><code class="html"><textarea style="width: 600px; height: 400px;" id="output">
+
+</textarea></code></pre>
+
+<script type="text/javascript">function generate(){var graph_bounding_box=$('#graph_bounding_box').val();var euclidean_points=JSON.parse('['+$('#euclidean_points').val()+']');var line=$('#line').val().split(';').filter(Boolean);var function_expression=$('#function_expression').val();var custom_element=$('#custom_element').val().split(/\n/).filter(Boolean);var code='';var i;if(!graph_bounding_box)code+='graph_bounding_box missing\n';if(code){return;}code='   var board = JXG.JSXGraph.initBoard("jxgboxa", {\n'+'      axis: true,\n'+'      showCopyright: false,\n'+'      showNavigation: false,\n'+'      registerEvents: false\n'+'   });\n'+'   board.setBoundingBox(['+graph_bounding_box+']);\n';if(euclidean_points.length>0){for(i=0;i<euclidean_points.length;i++){code+='   board.create("point", ['+euclidean_points[i][0]+', '+euclidean_points[i][1]+']);\n';}}if(line.length>0){for(i=0;i<line.length;i++){code+='   board.create("line", ['+line[i]+']);\n';}}if(function_expression){code+='   board.create("functiongraph",  [function(x){ return '+function_expression+'}]);\n';}if(custom_element.length>0){for(i=0;i<custom_element.length;i++){code+='   '+custom_element[i]+'\n';}}try{eval(code);}catch(error){code=error.message}$('#output').text('<scr'+'ipt>\n'+code+'</scr'+'ipt>');}</script>
+
+</div>
+
+    <div class="col">
+        <div id="jxgboxa" style="width:300px; height:300px" class="jxgboxa">
+        </div>
+    </div>
+</div>
+
+
+
+

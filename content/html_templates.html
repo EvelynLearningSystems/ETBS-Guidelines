@@ -1,0 +1,1197 @@
+
+<head/><h1>Question Types</h1>
+<p>This page provides instructions for authoring HTML solutions using different question type templates. For instructions on how to complete the <code>&lt;header&gt;</code> block, see the <a href="#templates" onclick="loadHTML('content/templates.html')">Solution Template</a> page.</p>
+<nav>
+    <a data-link="mcq" class="navlink">MCQ</a> |
+    <a data-link="ms" class="navlink">MS</a> |
+    <a data-link="tcq" class="navlink">TCQ (TF)</a>|
+    <a data-link="fib" class="navlink">FIB</a> |
+    <a data-link="sa" class="navlink">SA</a> |
+    <a data-link="es" class="navlink">ES</a> |
+    <a data-link="calc" class="navlink">CALC</a> |
+    <a data-link="ord" class="navlink">ORD</a> |
+    <a data-link="gr" class="navlink">GR</a> |
+    <a data-link="drw" class="navlink">DRW</a> |
+    <a data-link="ldgr" class="navlink">LDGR</a> |
+    <a data-link="mat" class="navlink">MAT</a> |
+    <a data-link="cl" class="navlink">CL</a>
+</nav>
+<div class="line"></div>
+
+<div>
+    <h2 name="mcq">Multiple Choice (MCQ)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A multiple choice question is a problem that has a prompt and provides several possible discrete answer options where <b>only 1 </b>of the provided answer options is the correct answer.
+    </div>
+
+    <p>Example:</p>
+    <p><i>Which of the following is a type of plant?
+        <br/>A) fern
+        <br/>B) canine
+        <br/>C) mushroom
+        <br/>D) shark</i>
+    </p>
+    <p>There is one and only one correct response to this question: A) fern</p>
+
+    <h4>Directions for authoring MCQ solutions:</h4>
+    <p>There are always three types of <code>&lt;section&gt;</code> blocks present in an MCQ solution: </p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+        <li>wrong_explanation</li>
+    </ul>
+
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;mcq_option&quot;&gt;
+            A
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;A&quot;&gt;
+            [Explanation for A]
+        &lt;/section&gt;
+        &lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot; data-answer=&quot;B&quot;&gt;
+            [Explanation for B]
+        &lt;/section&gt;
+        &lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot; data-answer=&quot;C&quot;&gt;
+            [Explanation for C]
+        &lt;/section&gt;
+        &lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot; data-answer=&quot;D&quot;&gt;
+            [Explanation for D]
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+    <p>
+        For the first <code>&lt;section&gt;</code> block, the solution is provided and the letter of the correct answer option is provided in the format that matches the textbook (uppercase vs. lowercase). The attributes for the section are always <code>class="answer"</code> and <code>data-type="mcq_option"</code>.
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;mcq_option&quot;&gt;
+    A
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>
+        For the second <code>&lt;section&gt;</code> block, the explanation for the correct answer option is provided to the student. The attributes for the section are <code>class="explanation"</code> and <code>data-type="text"</code>. The <code>data-answer</code> attribute is always set to be the letter of the correct answer option. [Note: it is possible to assign a <code>data-type</code> attribute other than "text" in some instances. See the <a href="#templates" onclick="loadHTML('content/templates.html')">Solution Template</a> page for a list of possible data types.]
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer="A"&gt;
+    Provide an explanation for why this is the correct answer. The explanation should be relevant
+    to the overall question and help a student better understand the concept being tested. Do not include the text
+    of the stem or the answer option (as it appears in the textbook) in your solution.
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>
+        For the third and all subsequent <code>&lt;section&gt;</code> blocks, the explanations for the incorrect answer options are provided to the student. There will be a wrong_explanation section block provided for each incorrect answer option. The attributes for the section are <code>class="wrong_explanation"</code> and <code>data-type="text"</code>. The <code>data-answer</code> attribute is set to be the letter of the incorrect answer option for that section. [Note: it is possible to assign a <code>data-type</code> attribute other than "text" in some instances. See the <a href="#templates" onclick="loadHTML('content/templates.html')">Solution Template</a> page for a list of possible data types.]
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot; data-answer="B"&gt;
+    Provide an explanation for why answer option B is an incorrect answer to the question.
+    The explanation should be relevant to the overall question and help a student better understand
+    the concept being tested. Do not include the text of the stem or the answer option (as it appears
+    in the textbook) in your solution.
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <div class="alert alert-primary" role="alert">
+        <p>The following are key features of a <b>quality</b> explanation:</p>
+        <ul>
+            <li>supports a student's understanding of the overall concept being assessed (avoids superficial explanations)</li>
+            <li>is specific and concise</li>
+            <li>uses precise subject matter terminology</li>
+            <li>is 100% accurate</li>
+            <li>is clear of grammar and mechanical issues</li>
+            <li>targets the appropriate audience in terms of student-friendly language and appropriate content</li>
+            <li>is original work in the SME’s own words</li>
+            <li>does not cue the correct response (for incorrect answer option explanations)</li>
+        </ul>
+    </div>
+
+    <div class="line"></div>
+
+    <h2 name="ms">Multiple Select (MS)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A multiple select question is a problem that has a prompt and clearly provides several possible answer options where <b>more than 1 </b>of the answer options could be a correct answer. Note: some MS questions can have a single answer option keyed, but the question prompt allows for more than one answer option to be selected (e.g., "Select all the apply.").
+    </div>
+
+    <p>Example:</p>
+    <p><i>Which of the following are plants? Select ALL that apply.
+        <br/>A) fern
+        <br/>B) canine
+        <br/>C) mushroom
+        <br/>D) tree</i>
+    </p>
+    <p>There are two correct answer options that should both be keyed as part of the correct response: Option (A) and Option (D).</p>
+
+    <h4>Directions for authoring MS solutions:</h4>
+    <p>There are always three types of <code>&lt;section&gt;</code> blocks present in an MS solution: </p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+        <li>wrong_explanation</li>
+    </ul>
+    <p>The main difference between an MCQ and an MS solution is that an MS solution can have multiple <code>class="answer"</code> and <code>class="explanation"</code> sections.</p>
+
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;mcq_option&quot;&gt;
+            A
+        &lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;mcq_option&quot;&gt;
+            D
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;A&quot;&gt;
+            [Explanation for A]
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;D&quot;&gt;
+            [Explanation for D]
+        &lt;/section&gt;
+        &lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot; data-answer=&quot;B&quot;&gt;
+            [Explanation for B]
+        &lt;/section&gt;
+        &lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot; data-answer=&quot;C&quot;&gt;
+            [Explanation for C]
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+    <p>
+        For an MS question, there can be multiple answer <code>&lt;section&gt;</code> blocks depending on how many answer options are correct. Each answer <code>&lt;section&gt;</code> block includes the letter of a correct answer option (provided in the format that matches the textbook, uppercase vs. lowercase). The attributes for each answer section block are always <code>class="answer"</code> and <code>data-type="mcq_option"</code>.
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;mcq_option&quot;&gt;
+    A
+&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;mcq_option&quot;&gt;
+    D
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>
+        For the next <code>&lt;section&gt;</code> blocks, an explanation for each correct answer option is provided to the student. The attributes for the section are <code>class="explanation"</code> and <code>data-type="text"</code>. The <code>data-answer</code> attribute is always set to be the letter of the correct answer option. [Note: it is possible to assign a <code>data-type</code> attribute other than "text" in some instances. See the <a href="#templates" onclick="loadHTML('content/templates.html')">Solution Template</a> page for a list of possible data types.]
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer="A"&gt;
+    Provide an explanation for why this is the correct answer. The explanation should be relevant
+    to the overall question and help a student better understand the concept being tested. Do not include the text
+    of the stem or the answer option (as it appears in the textbook) in your solution.
+&lt;/section&gt;
+&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer="D"&gt;
+    This is an explanation for the second correct answer option: option (D).
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>
+        For the final <code>&lt;section&gt;</code> blocks, the explanations for the incorrect answer options are provided to the student. There will be a wrong_explanation section block provided for each incorrect answer option. The attributes for the section are <code>class="wrong_explanation"</code> and <code>data-type="text"</code>. The <code>data-answer</code> attribute is set to be the letter of the incorrect answer option for that section. [Note: it is possible to assign a <code>data-type</code> attribute other than "text" in some instances. See the <a href="#templates" onclick="loadHTML('content/templates.html')">Solution Template</a> page for a list of possible data types.]
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot; data-answer="B"&gt;
+    Provide an explanation for why answer option B is an incorrect answer to the question.
+    The explanation should be relevant to the overall question and help a student better understand
+    the concept being tested. Do not include the text of the stem or the answer option (as it appears
+    in the textbook) in your solution.
+&lt;/section&gt;
+&lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot; data-answer="C"&gt;
+    Provide an explanation for why answer option C is an incorrect answer to the question.
+    The explanation should be relevant to the overall question and help a student better understand
+    the concept being tested. Do not include the text of the stem or the answer option (as it appears
+    in the textbook) in your solution.
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <div class="alert alert-primary" role="alert">
+        <p>The following are key features of a <b>quality</b> explanation:</p>
+        <ul>
+            <li>supports a student's understanding of the overall concept being assessed (avoids superficial explanations)</li>
+            <li>is specific and concise</li>
+            <li>uses precise subject matter terminology</li>
+            <li>is 100% accurate</li>
+            <li>is clear of grammar and mechanical issues</li>
+            <li>targets the appropriate audience in terms of student-friendly language and appropriate content</li>
+            <li>is original work in the SME’s own words</li>
+            <li>does not cue the correct response (for incorrect answer option explanations)</li>
+        </ul>
+    </div>
+
+    <div class="line"></div>
+
+    <h2 name="tcq">Two Choice (TCQ)</h2>
+
+<div class="alert alert-primary" role="alert">
+    A two choice question is a problem that has a prompt and provides two possible discrete answer options where <b>only 1 </b>of the provided answer options is the correct answer. This question type should be used for TF.
+</div>
+
+<p>Non-TF Example:</p>
+<p><i>For the following cost, determine whether it is a fixed or variable cost:
+    <br/>Purchase of a new truck</i>
+</p>
+<p>There is one and only one correct response for this question: <br>fixed</p>
+
+<h4>Directions for authoring TCQ solutions:</h4>
+<p>There are three types of <code>&lt;section&gt;</code> blocks present in a non-TF TCQ solution: </p>
+<ul>
+    <li>answer</li>
+    <li>wrong_answer</li>
+    <li>explanation</li>
+</ul>
+
+<pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot;&gt;
+            fixed
+        &lt;/section&gt;
+        &lt;section class=&quot;wrong_answer&quot; data-type=&quot;text&quot;&gt;
+            variable
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+            Variable costs are costs that vary with output, while fixed costs do not change regardless of the level of output.
+            The cost of purchasing a truck does not change regardless of the number of trips it makes, so the cost is fixed.
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+<div class="line"></div>
+<p>
+    For the first <code>&lt;section&gt;</code> block, the correct answer is provided, this should generally be no longer than a couple words. The attributes for the section are always <code>class="answer"</code> and <code>data-type="text"</code>.
+    <br><br>Example:
+</p>
+<pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;text&quot;&gt;
+    fixed
+&lt;/section&gt;</code></pre>
+
+<div class="line"></div>
+
+<p>
+    For the second <code>&lt;section&gt;</code> block, the incorrect answer option is provided to the student, similar to the previous section. The attributes for the section are <code>class="wrong_answer"</code> and <code>data-type="text"</code>.
+    <br><br>Example:
+</p>
+<pre><code class="html">&lt;section class=&quot;wrong_answer&quot; data-type=&quot;text&quot;&gt;
+    variable
+&lt;/section&gt;</code></pre>
+
+<div class="line"></div>
+
+<p>
+    For the third <code>&lt;section&gt;</code> block, the explanation for the correct & incorrect answer options is provided to the student. The attributes for the section are <code>class="explanation"</code> and <code>data-type="text"</code>.
+    <br><br>Example:
+</p>
+<pre><code class="html">&lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot;&gt;
+    Variable costs are costs that vary with output, while fixed costs do not change regardless of the level of output.
+    The cost of purchasing a truck does not change regardless of the number of trips it makes, so the cost is fixed.
+&lt;/section&gt;</code></pre>
+
+<div class="line"></div>
+
+<div class="alert alert-primary" role="alert">
+    <p>The following are key features of a <b>quality</b> explanation:</p>
+    <ul>
+        <li>supports a student's understanding of the overall concept being assessed (avoids superficial explanations)</li>
+        <li>is specific and concise</li>
+        <li>uses precise subject matter terminology</li>
+        <li>is 100% accurate</li>
+        <li>is clear of grammar and mechanical issues</li>
+        <li>targets the appropriate audience in terms of student-friendly language and appropriate content</li>
+        <li>is original work in the SME’s own words</li>
+    </ul>
+</div>
+
+<div class="line"></div>
+
+    <p>True or False (TF) Example:</p>
+
+    <div class="alert alert-primary" role="alert">
+            A True or False TCQ question is a problem for which the correct answer can only be “true” or “false.”
+    </div>
+
+    <p><i>Is this statement true or false? A fern is a type of plant.</i>
+    </p>
+    <p>The correct response is "true."</p>
+
+    <h4>Directions for authoring TF solutions:</h4>
+
+    <p>There are always two types of <code>&lt;section&gt;</code> blocks present in a TF solution:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;boolean&quot;&gt;
+            true/false
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+            [Explanation]
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+    <p>
+        For a TF question, there is a single answer <code>&lt;section&gt;</code>. The attributes for the answer section block are always <code>class="answer"</code> and <code>data-type="boolean"</code>. The answer can only be "true" or "false".
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;boolean&quot;&gt;
+    true
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>
+        For the second <code>&lt;section&gt;</code>, an explanation for the answer (true or false) is provided to the student. The attributes for the section are <code>class="explanation"</code> and <code>data-type="text"</code>.
+    </p>
+    <pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+    Provide an explanation for why the answer is either true or false. The explanation should be relevant
+    to the overall question and help a student better understand the concept being tested. Do not include the text
+    of the stem (as it appears in the textbook) in your solution.
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <h2 name="fib">Fill-in-the-Blank (FIB)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A Fill-in-the-Blank problem is a statement that includes a blank space (or spaces) for the answer. The statement only makes sense if the correct answer(s) is filled in the provided blank(s). Answer choices may be selected from a given set, or not given at all.
+    </div>
+
+    <p>Example:</p>
+    <p><i>The capital of California is _____________ and the capital of Colorado is _____________.</i>
+    </p>
+    <p>The correct response is Sacramento and Denver.</p>
+
+    <h4>Directions for authoring FIB solutions:</h4>
+
+    <p>There are always two types of <code>&lt;section&gt;</code> blocks present in a FIB solution:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;[answer for first blank]&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;[answer for second blank]&lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;
+            [Explanation for blank 1]
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;
+            [Explanation for blank 2]
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+    <p>
+        For a FIB question, there can be multiple answer <code>&lt;section&gt;</code> blocks depending on how many blanks are present in the question stem. An answer <code>&lt;section&gt;</code> is provided for each blank and numbered sequentially. The attributes for each answer section block are always <code>class="answer"</code>, <code>data-type="text"</code>, and <code>data-answer="#"</code> numbered sequentially to correspond with the blanks.
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;[answer for first blank]&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;[answer for second blank]&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>
+        For the next <code>&lt;section&gt;</code> blocks, an explanation for each blank is provided to the student. The attributes for the section are <code>class="explanation"</code> and <code>data-type="text"</code>. The <code>data-answer</code> attribute matches the sequence number assigned to that blank in the answer sections.
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;
+    A separate explanation is provided for each answer (e.g., for each blank). The explanation and included content
+    should be relevant to the overall question and help a student better understand the concept being tested.
+&lt;/section&gt;
+&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;
+    A separate explanation is provided for each answer (e.g., for each blank). The explanation and included content
+    should be relevant to the overall question and help a student better understand the concept being tested.
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <h2 name="sa">Short Answer (SA)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A Short Answer question is a problem for which an answer can be provided by writing a short response that may or may not require full sentences. SA questions may require answers in the form of definitions, names/lists, explanations, comparisons between ideas that expect a short response, or a step-by-step process. Examples of answers could be the name of a person or the date of a historical event, yes or no, or a single paragraph that contains an explanation for a specific topic. Responses should be less than 100 words.
+    </div>
+
+    <p>Example:</p>
+    <p><i>What are some of the major differences between the structure of plant and animal cells?</i>
+    </p>
+    <p>Plant and animal cells differ in some of the following ways:</p>
+    <ul>
+        <li>Chloroplasts are present in plants and some algae, but are not found in animal cells. Photosynthesis takes place in chloroplasts.</li>
+        <li>Cell walls are present in plants, but not in animal cells.</li>
+        <li>Vacuoles are membrane-bound sacs that function in storage and transport. A large central vacuole is found in plant cells, but not in animal cells.                             (Animal cells contain many smaller vacuoles.)</li>
+        <li>Centrioles are found in centrosomes and are present in animal cells, but are absent from plant cells.</li>
+        <li>Lysosomes are present in animal cells, but are rarely seen in plant cells. Lysosomes help digest cellular macromolecules.</li>
+        <li>Cilia are usually observed in animal cells, but are absent from plant cells. Cilia are microtubules that help the cell move.</li>
+    </ul>
+
+    <h4>Directions for authoring SA solutions:</h4>
+
+    <p>When there is a single correct answer possible, the SA solution should include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot;&gt;
+            [answer text]
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+            [explanation]
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <p>When the SA question is more open-ended and more than one correct response is possible, the SA solution will normally include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample response (required)</li>
+        <li>explanation (optional)</li>
+    </ul>
+
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;sample_response&quot; data-type=&quot;text&quot;&gt;
+            [sample response text]
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+            [explanation or guidance]
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>The <code>answer</code>, <code>sample_response</code>, or <code>explanation</code> sections can be formatted with bulleted lists or html tables to make the content more concise and easier to parse.</p>
+
+    <pre><code class="html">&lt;section class=&quot;sample_response&quot; data-type=&quot;text&quot;&gt;
+    &lt;ul&gt;
+        &lt;li&gt;First point of the sample response.&lt;/li&gt;
+        &lt;li&gt;Second point of the sample response.&lt;/li&gt;
+        &lt;li&gt;Third point of the sample response.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+    &lt;p&gt;
+        The explanation can focus on a rationale for the correct answer or provide guidance to the student on what should
+        be included in their answer (for open-ended questions).
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;First point of guidance.&lt;/li&gt;
+        &lt;li&gt;Second point of guidance.&lt;/li&gt;
+        &lt;li&gt;Third point of guidance.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+
+    <div class="line"></div>
+
+    <h2 name="es">Essay (ES)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        <p>An essay question is a problem for which an answer can be provided by writing a more in-depth response that requires full sentences. The question may provide a prompt with a situation or topic, and should include instructions for what the essay should include (e.g, specifying a minimum word count or number of pages, requiring a summary/introduction, or specifying the format of the essay [double-spaced, APA, etc.]). The answer would typically include full sentences and consist of one or more paragraphs. Responses should be more than 100 words.</p>
+    </div>
+
+    <p>Example:</p>
+    <p><i>How has the discovery of DNA been important to society?</i>
+    </p>
+
+    <h4>Directions for authoring ES solutions:</h4>
+
+    <p>The ES solution will include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample_response</li>
+        <li>explanation</li>
+    </ul>
+
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;sample_response&quot; data-type=&quot;text&quot;&gt;
+            &lt;p&gt;first paragraph of sample response text&lt;/p&gt;
+            &lt;p&gt;second paragraph of sample response text&lt;/p&gt;
+            &lt;p&gt;third paragraph of sample response text&lt;/p&gt;
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+            [explanation and guidance]
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>The <code>explanation</code> section can be formatted with a bulleted list to make the content (guidelines on how to construct the essay) more concise and easier to parse.</p>
+
+    <pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+    &lt;p&gt;
+        The explanation should focus on providing guidance to the student on what should
+        be included in their essay.
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;First point of guidance&lt;/li&gt;
+        &lt;li&gt;Second point of guidance&lt;/li&gt;
+        &lt;li&gt;Third point of guidance&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+
+    <div class="line"></div>
+
+    <h2 name="calc">Calculation (CALC)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        <p>A question or problem that requires computation to solve. It may instruct the student to solve or prove it. CALC problems often include equations in the questions and/or words such as “Solve for x,” “Calculate x,” “Find x,” “Prove that x…”, “How many…” etc. The answers could be a number, a rate, or an equation that proves a math equation is true. CALC questions will usually require step-by-step solutions.</p>
+    </div>
+
+    <p>Example:</p>
+    <p><i>Find the value of each permutation: P(6,2)</i></p>
+
+    <h4>Directions for authoring CALC solutions:</h4>
+    <p>The CALC solution will normally include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>step_by_step</li>
+    </ul>
+
+    <p>When a CALC question is more open-ended and more than one correct response is possible, the CALC solution will include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample response</li>
+        <li>step_by_step</li>
+    </ul>
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;number&quot;&gt;
+            #
+        &lt;/section&gt;
+        &lt;section class=&quot;step_by_step&quot;&gt;
+            &lt;div data-type=&quot;step&quot; data-id=&quot;1&quot;&gt;
+               &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+                   XXX
+               &lt;/span&gt;
+               &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+                   XXX
+               &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div data-type=&quot;step&quot; data-id=&quot;2&quot;&gt;
+               &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+                   XXX
+               &lt;/span&gt;
+               &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+                   XXX
+               &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>The first section, the <code>answer</code> or <code>sample_response</code> section, will include the numeric answer for the question. The attributes for this section block are <code>class="answer"</code> or <code>class="sample_response"</code>, and <code>data-type="number"</code>. Note: the <code>data-type</code> attribute can also be set to <code>data-type="text"</code> if text needs to be included in addition to the numeric answer (e.g., units, descriptions).</p>
+
+    <pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;number&quot;&gt;
+        #
+&lt;/section&gt;
+</code></pre>
+
+    <div class="line"></div>
+
+    <p>
+        The second section, the <code>step_by_step</code> section, provides clear step-by-step instructions directing students how to solve the problem to arrive at the answer.
+        While most CALC questions will incude a step-by-step solution, it's acceptable in certain cases to include an <code>explanation</code> section instead of a <code>step_by_step</code> section. This is reserved for cases 
+        where a solution does not warrant a step-by-step template (e.g., does not require a true calculation or requires a single step and doesn't warrant a step-by-step template).
+    </p>
+
+    <pre><code class="html">&lt;section class=&quot;step_by_step&quot;&gt;
+    &lt;div data-type=&quot;step&quot; data-id=&quot;1&quot;&gt;
+       &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+           XXX
+       &lt;/span&gt;
+       &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+           XXX
+       &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-type=&quot;step&quot; data-id=&quot;2&quot;&gt;
+       &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+           XXX
+       &lt;/span&gt;
+       &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+           XXX
+       &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+    <div class="line"></div>
+
+    <div class="alert alert-primary" role="alert">
+        <p>The following are key features of a <b>quality</b> step-by-step explanation:</p>
+
+        <ul>
+            <li>steps should be broken down into logical chunks that the student would be able to understand even if they struggle to understand the entire problem</li>
+            <li>steps should focus on including conceptual-level steps and not separate steps for each simplification of a math formula</li>
+            <li>the first step should outline the conceptual approach to solving the problem (and will serve as the first hint a student receives)</li>
+            <li>each step should include a brief description of what's occurring in that step in the left column and the actual computation ("work") for the step in the right column</li>
+            <li>content provided in the left column will consist primarily of text since it will be a description of what is occurring in the step. The description of the step should explain why this is the logical next step in the process and any pertinent information (vocabulary terms, basic formulas, etc.) that is required to show the work in that step.</li>
+            <li>content provided in the right column will consist of a mix of formulas (formatted as KaTeX) and text. Any formulas needed to solve the step should be shown both as a reference and with the variables for the problem plugged in.</li>
+            <li>the explanation should not exceed eight steps total for any CALC solution (to prevent exceeding eight steps, several steps may need to be grouped together in a logical way)</li>
+        </ul>
+    </div>
+
+    <div class="line"></div>
+
+    <h2 name="ord">Ordering (ORD)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question for which the answer requires the ranking or sequencing of several items provided by the prompt. These questions commonly include the words “Rank” or “Order” in the question and ask for a ranking of the items based on a specific criteria.
+    </div>
+
+    <p>Example:</p>
+    <p><i>Place the following measurements in order from shortest to longest: 1 m, 10 cm, 1,000 in, 2 ft</i>
+    </p>
+    <p>The correct order is: 3,1,4,2</p>
+
+    <h4>Directions for authoring ORD solutions:</h4>
+    <p>There are always two types of <code>&lt;section&gt;</code> blocks present in an ORD solution:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;number&quot; data-answer=&quot;1&quot;&gt;[order for option 1]&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;number&quot; data-answer=&quot;2&quot;&gt;[order for option 2]&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;number&quot; data-answer=&quot;3&quot;&gt;[order for option 3]&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;number&quot; data-answer=&quot;4&quot;&gt;[order for option 4]&lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;
+            XXX
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;
+            XXX
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;3&quot;&gt;
+            XXX
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;4&quot;&gt;
+            XXX
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+    <p>
+        For an ORD question, there will be multiple answer <code>&lt;section&gt;</code> blocks. The attributes for the answer section blocks are <code>class="answer"</code>, <code>data-type="number" or "text"</code>, and <code>data-answer="#"</code>. The <code>data-answer</code> corresponds to the given options and reflects how the options are provided in the question stem. The solution (correct order) for each option is entered as a number.
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;number&quot; data-answer=&quot;1&quot;&gt;3&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;number&quot; data-answer=&quot;2&quot;&gt;1&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;number&quot; data-answer=&quot;3&quot;&gt;4&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;number&quot; data-answer=&quot;4&quot;&gt;2&lt;/section&gt;
+    </code></pre>
+
+    <div class="line"></div>
+
+    <p>
+        For the next <code>&lt;section&gt;</code> blocks, an explanation for each option is provided to the student in separate section blocks. The attributes for the sections are <code>class="explanation"</code>, <code>data-type="text"</code>, and <code>data-answer</code>. The <code>data-answer</code> attribute matches the original sequence number of the options shown in the question stem (e.g., <code>data-answer=&quot;1&quot;</code> refers to the first option in the list of possible options given in the question stem).
+        <br><br>Example:
+    </p>
+    <pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;
+    A separate explanation is provided for each option. The explanation and included content
+    should be relevant to the ordering and help a student better understand the concept being tested.
+&lt;/section&gt;
+&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;
+    This would be a separate explanation for the second option.
+&lt;/section&gt;
+&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;3&quot;&gt;
+    This would be a separate explanation for the third option.
+&lt;/section&gt;
+&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;4&quot;&gt;
+    This would be a separate explanation for the fourth option.
+&lt;/section&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <h2 name="gr">Graphing (GR)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question for which the answer must be a graph. Examples includes business questions that ask for a line or curve to be drawn on a provided graph or a graph of a function. Questions will sometimes include the word “Graph” or “Label.” Note that circle graphs (pie charts) or bar graphs should be treated as DRW questions.
+    </div>
+    <p>Example:</p>
+    <p>Graph <span>$y=2x+1$</span></p>
+    <h4>Directions for authoring GR solutions:</h4>
+    <p>The GR solution should include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>step_by_step</li>
+    </ul>
+
+    <p>When a GR question is more open-ended and more than one correct response is possible, the GR solution will include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample_response</li>
+        <li>step_by_step</li>
+    </ul>
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;graph&quot;&gt;
+            &lt;script&gt;
+                var board = JXG.JSXGraph.initBoard('jxgboxa', {
+                    axis: true,
+                    showCopyright: false,
+                    showNavigation: false,
+                    registerEvents: false
+                });
+                board.setBoundingBox([-3.5, 0.5, 3.5, -0.1]);
+                board.create('functiongraph', [function(x){ return X}]);
+            &lt;/script&gt;
+        &lt;/section&gt;
+        &lt;section class=&quot;step_by_step&quot;&gt;
+            &lt;div data-type=&quot;step&quot; data-id=&quot;1&quot;&gt;
+               &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+                   XXX
+               &lt;/span&gt;
+               &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+                   XXX
+               &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div data-type=&quot;step&quot; data-id=&quot;2&quot;&gt;
+               &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+                   XXX
+               &lt;/span&gt;
+               &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+                   XXX
+               &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>The first section, the <code>answer</code> or <code>sample_response</code> section, will include the script for the JSXGraph. The attributes for this section block are <code>class="answer"</code> or <code>class="sample_response"</code>, and <code>data-type="graph"</code>.</p>
+
+    <pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;graph&quot;&gt;
+    &lt;script&gt;
+        var board = JXG.JSXGraph.initBoard('jxgboxa', {
+            axis: true,
+            showCopyright: false,
+            showNavigation: false,
+            registerEvents: false
+        });
+        board.setBoundingBox([-3.5, 0.5, 3.5, -0.1]);
+        board.create('functiongraph', [function(x){ return X}]);
+    &lt;/script&gt;
+&lt;/section&gt;
+</code></pre>
+
+    <div class="line"></div>
+
+    <p>
+        The second section, the <code>step_by_step</code> section, provides clear step-by-step instructions directing students how to develop, label, and format their graphs to fully satisfy the requirements of the question.
+        While most GR questions will incude a step-by-step solution, it's acceptable in certain cases to include an <code>explanation</code> section instead of a <code>step_by_step</code> section. This is reserved for cases 
+        where a solution does not warrant a step-by-step template.
+    </p>
+
+    <pre><code class="html">&lt;section class=&quot;step_by_step&quot;&gt;
+    &lt;div data-type=&quot;step&quot; data-id=&quot;1&quot;&gt;
+       &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+           XXX
+       &lt;/span&gt;
+       &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+           XXX
+       &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-type=&quot;step&quot; data-id=&quot;2&quot;&gt;
+       &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+           XXX
+       &lt;/span&gt;
+       &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+           XXX
+       &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+    <div class="line"></div>
+
+    <h2 name="drw">Drawing (DRW) </h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question for which the answer must be drawn by the student. Examples includes questions that ask for a sketch or diagram. Questions will sometimes include the word “Draw” or “Label.” Note: graphs that cannot be developed using the JSXGraph tool will be considered DRW questions and an image should be developed for the required graph.
+    </div>
+
+    <p>Example:</p>
+    <p><i>Draw a Punnett Square to show the genotypes that would result from a cross of two parents heterozygous for an allele (genotype Tt).</i>
+    </p>
+    <p>The correct response is:</p>
+    <br>
+    <div class="text-center">
+        <script data-pagespeed-no-defer>//<![CDATA[
+(function(){for(var g="function"==typeof Object.defineProperties?Object.defineProperty:function(b,c,a){if(a.get||a.set)throw new TypeError("ES3 does not support getters and setters.");b!=Array.prototype&&b!=Object.prototype&&(b[c]=a.value)},h="undefined"!=typeof window&&window===this?this:"undefined"!=typeof global&&null!=global?global:this,k=["String","prototype","repeat"],l=0;l<k.length-1;l++){var m=k[l];m in h||(h[m]={});h=h[m]}var n=k[k.length-1],p=h[n],q=p?p:function(b){var c;if(null==this)throw new TypeError("The 'this' value for String.prototype.repeat must not be null or undefined");c=this+"";if(0>b||1342177279<b)throw new RangeError("Invalid count value");b|=0;for(var a="";b;)if(b&1&&(a+=c),b>>>=1)c+=c;return a};q!=p&&null!=q&&g(h,n,{configurable:!0,writable:!0,value:q});var t=this;function u(b,c){var a=b.split("."),d=t;a[0]in d||!d.execScript||d.execScript("var "+a[0]);for(var e;a.length&&(e=a.shift());)a.length||void 0===c?d[e]?d=d[e]:d=d[e]={}:d[e]=c};function v(b){var c=b.length;if(0<c){for(var a=Array(c),d=0;d<c;d++)a[d]=b[d];return a}return[]};function w(b){var c=window;if(c.addEventListener)c.addEventListener("load",b,!1);else if(c.attachEvent)c.attachEvent("onload",b);else{var a=c.onload;c.onload=function(){b.call(this);a&&a.call(this)}}};var x;function y(b,c,a,d,e){this.h=b;this.j=c;this.l=a;this.f=e;this.g={height:window.innerHeight||document.documentElement.clientHeight||document.body.clientHeight,width:window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth};this.i=d;this.b={};this.a=[];this.c={}}function z(b,c){var a,d,e=c.getAttribute("data-pagespeed-url-hash");if(a=e&&!(e in b.c))if(0>=c.offsetWidth&&0>=c.offsetHeight)a=!1;else{d=c.getBoundingClientRect();var f=document.body;a=d.top+("pageYOffset"in window?window.pageYOffset:(document.documentElement||f.parentNode||f).scrollTop);d=d.left+("pageXOffset"in window?window.pageXOffset:(document.documentElement||f.parentNode||f).scrollLeft);f=a.toString()+","+d;b.b.hasOwnProperty(f)?a=!1:(b.b[f]=!0,a=a<=b.g.height&&d<=b.g.width)}a&&(b.a.push(e),b.c[e]=!0)}y.prototype.checkImageForCriticality=function(b){b.getBoundingClientRect&&z(this,b)};u("pagespeed.CriticalImages.checkImageForCriticality",function(b){x.checkImageForCriticality(b)});u("pagespeed.CriticalImages.checkCriticalImages",function(){A(x)});function A(b){b.b={};for(var c=["IMG","INPUT"],a=[],d=0;d<c.length;++d)a=a.concat(v(document.getElementsByTagName(c[d])));if(a.length&&a[0].getBoundingClientRect){for(d=0;c=a[d];++d)z(b,c);a="oh="+b.l;b.f&&(a+="&n="+b.f);if(c=!!b.a.length)for(a+="&ci="+encodeURIComponent(b.a[0]),d=1;d<b.a.length;++d){var e=","+encodeURIComponent(b.a[d]);131072>=a.length+e.length&&(a+=e)}b.i&&(e="&rd="+encodeURIComponent(JSON.stringify(B())),131072>=a.length+e.length&&(a+=e),c=!0);C=a;if(c){d=b.h;b=b.j;var f;if(window.XMLHttpRequest)f=new XMLHttpRequest;else if(window.ActiveXObject)try{f=new ActiveXObject("Msxml2.XMLHTTP")}catch(r){try{f=new ActiveXObject("Microsoft.XMLHTTP")}catch(D){}}f&&(f.open("POST",d+(-1==d.indexOf("?")?"?":"&")+"url="+encodeURIComponent(b)),f.setRequestHeader("Content-Type","application/x-www-form-urlencoded"),f.send(a))}}}function B(){var b={},c;c=document.getElementsByTagName("IMG");if(!c.length)return{};var a=c[0];if(!("naturalWidth"in a&&"naturalHeight"in a))return{};for(var d=0;a=c[d];++d){var e=a.getAttribute("data-pagespeed-url-hash");e&&(!(e in b)&&0<a.width&&0<a.height&&0<a.naturalWidth&&0<a.naturalHeight||e in b&&a.width>=b[e].o&&a.height>=b[e].m)&&(b[e]={rw:a.width,rh:a.height,ow:a.naturalWidth,oh:a.naturalHeight})}return b}var C="";u("pagespeed.CriticalImages.getBeaconData",function(){return C});u("pagespeed.CriticalImages.Run",function(b,c,a,d,e,f){var r=new y(b,c,a,e,f);x=r;d&&w(function(){window.setTimeout(function(){A(r)},0)})});})();pagespeed.CriticalImages.Run('/mod_pagespeed_beacon','http://3.87.105.237/authoring_guidelines/content/html_templates.html','8Xxa2XQLv9',true,false,'Y5sGigT2_SE');
+//]]></script><img width=20% src="images/Punnett.png" data-pagespeed-url-hash="3425493583" onload="pagespeed.CriticalImages.checkImageForCriticality(this);">
+    </div>
+    <br>
+    <ul>
+        <li>A correct Punnett Square shows that the resulting genotypes (allele combinations) of the offspring are TT, Tt, and tt in the ratio 1:2:1.</li>
+        <li>To set up the Punnett Square, the parents' alleles are separated and placed across the top of the Punnett Square (for one parent) and repeated to the                             left of the Punnett Square (for the other parent).</li>
+        <li>Each cell in the Punnett Square is a possible allele combination for an offspring.</li>
+    </ul>
+
+    <h4>Directions for authoring DRW solutions:</h4>
+    <p>When there is a single correct answer possible, the DRW solution should include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;image&quot;&gt;
+            &lt;div&gt;
+               &lt;img src=&quot;images/XXX.svg&quot;&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+            [text]
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <p>When the DRW question is open-ended and more than one correct response is possible, the DRW solution will include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>sample response</li>
+        <li>explanation</li>
+    </ul>
+
+    <pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;sample_response&quot; data-type=&quot;image&quot;&gt;
+            &lt;div&gt;
+               &lt;img src=&quot;images/XXX.svg&quot;&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+            [text]
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+    <div class="line"></div>
+
+    <p>The first section, the <code>answer</code> or <code>sample_response</code> section will include the path to a single image (svg) file. The attributes for this section block are <code>class="answer"</code> or <code>class="sample_response"</code> and <code>data-type="image"</code>.</p>
+
+    <pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;image&quot;&gt;
+    &lt;div&gt;
+        &lt;img src=&quot;images/XXX.svg&quot;&gt;
+    &lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+
+    <div class="line"></div>
+
+    <p>The second section, the <code>explanation</code> section, can be formatted as a bulleted list or step-by-step template to make the content more concise and easier to parse.</p>
+
+    <pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+    &lt;p&gt;
+        The explanation can focus on a description of the drawing or provide guidance to the student on what should
+        be included in their drawing (for open-ended questions).
+    &lt;/p&gt;
+    &lt;ul&gt;
+        &lt;li&gt;First point of guidance.&lt;/li&gt;
+        &lt;li&gt;Second point of guidance.&lt;/li&gt;
+        &lt;li&gt;Third point of guidance.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/section&gt;
+</code></pre>
+
+<div class="line"></div>
+
+    <h2 name="ldgr">Ledger (LDGR) </h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question for which the answer is a ledger, journal, or accounting statement. 
+    </div>
+
+    <p>Example:</p>
+    <p><i>ABC Company creates a journal entry for June 1, 2018 detailing the company’s issuing of common stock (credit) in exchange for <span>&#36;</span>100,000 in cash (debit). The cash account number is 1000, and the stock account number is 3000. Create a journal entry for the ABC Company.
+            </i></p>
+            </div>
+
+    <h4>Directions for authoring LDGR solutions:</h4>
+    <p>The LDGR solution should include two types of <code>&lt;section&gt;</code> blocks:</p>
+    <ul>
+        <li>answer</li>
+        <li>explanation</li>
+    </ul>
+
+    <p>The second section, the <code>explanation</code> section, is commonly formatted as a step-by-step that details the steps taken to develop the ledger or statement (but is not required to be a step-by-step).</p>
+    
+    <pre><code class="html">&lt;article&gt;
+            &lt;header&gt;
+                ...
+            &lt;/header&gt;
+            &lt;main&gt;
+                &lt;section class=&quot;answer&quot; data-type=&quot;image&quot;&gt;
+                    &lt;div&gt;
+                       &lt;img src=&quot;images/XXX.svg&quot;&gt;
+                    &lt;/div&gt;
+                &lt;/section&gt;
+                &lt;section class=&quot;step_by_step&quot; data-type=&quot;text&quot;&gt;
+                    [text]
+                &lt;/section&gt;
+            &lt;/main&gt;
+        &lt;/article&gt;</code></pre>
+        
+            <div class="line"></div>
+        
+            <p>The first section, the <code>answer</code> section, will include the image (svg) file of the accounting statement. It will be created using the ledger templates provided in Google sheets.</p>
+        
+            <pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;image&quot;&gt;
+            &lt;div&gt;
+                &lt;img src=&quot;images/XXX.svg&quot;&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+        </code></pre>
+        
+            <div class="line"></div>
+        
+            <p>The second section, the <code>explanation</code> section, is commonly formatted as a step-by-step that details the steps taken to develop the ledger or statement (but is not required to be a step-by-step).</p>
+        
+            <pre><code class="html">&lt;section class=&quot;step-by-step&quot; data-type=&quot;text&quot;&gt;
+            &lt;p&gt;
+                The step-by-step should provide detailed steps on how to create the accounting statement or ledger.
+            &lt;/p&gt;
+        &lt;/section&gt;
+        </code></pre>
+        
+    <div class="line"></div>
+
+    <h2 name="mat">Matching (MAT)</h2>
+
+    <div class="alert alert-primary" role="alert">
+        A question where there is a set of givens and a set of choices and the question instructs you to match the givens with the choices in some way (by labelling, writing them in a space, etc.)
+    </div>
+
+    <p>Example:</p>
+    <p><i>Match each organism with the best description.</i></p>
+</div>
+
+<div class="col-container">
+    <div class="col1">
+        <div>____ cat</div>
+        <div>____ trout</div>
+        <div>____ snake</div>
+        <div>____ frog</div>
+    </div>
+
+    <div class="col2">
+        <div>a. amphibian</div>
+        <div>b. mammal</div>
+        <div>c. reptile</div>
+        <div>d. fish</div>
+    </div>
+</div>
+
+<p>The correct answer is:</p>
+<p>
+    b<br>
+    d<br>
+    c<br>
+    a<br>
+</p>
+
+<h4>Directions for authoring MAT solutions:</h4>
+<p>There are always two types of <code>&lt;section&gt;</code> blocks present in a MAT solution:</p>
+<ul>
+    <li>answer</li>
+    <li>explanation</li>
+</ul>
+<pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;b&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;d&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;3&quot;&gt;c&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;4&quot;&gt;a&lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;
+               explanation for match to option b
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;
+                explanation for match to option d
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;3&quot;&gt;
+               explanation for match to option c
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;4&quot;&gt;
+               explanation for match to option a
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+<div class="line"></div>
+<p>
+    For a MAT question, there will be multiple answer <code>&lt;section&gt;</code> blocks, the total depending on how many matches (often with corresponding blanks) are being made in the question stem. An answer <code>&lt;section&gt;</code> is provided for each match and numbered sequentially. The attributes for each answer section block are always <code>class="answer"</code>, <code>data-type="text"</code>, and <code>data-answer="#"</code> numbered sequentially to correspond with the blanks.
+    <br><br>Example:
+</p>
+<pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;[answer for first match]&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;[answer for second match]&lt;/section&gt;</code></pre>
+
+<div class="line"></div>
+
+<p>
+    For the next <code>&lt;section&gt;</code> blocks, an explanation for each match is provided to the student. The attributes for the section are <code>class="explanation"</code> and <code>data-type="text"</code>. The <code>data-answer</code> attribute matches the sequence number assigned to that match in the answer sections.
+    <br><br>Example:
+</p>
+<pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;
+    A separate explanation is provided for each answer (e.g., for each match). The explanation and included content
+    should be relevant to the specific match and help a student better understand the concept being tested.
+&lt;/section&gt;
+&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;
+    This would be a separate explanation for the second match.
+&lt;/section&gt;</code></pre>
+
+<div class="line"></div>
+
+<h2 name="cl">Classifying (CL)</h2>
+
+<div class="alert alert-primary" role="alert">
+    A question where a set of options are classified into a given group (usually two or more).
+</div>
+
+<p>Example:</p>
+<p><i>For the following organelles, classify them as organelles that are found in animal cells, plant cells, or both animal and plant cells. </i></p>
+</div>
+
+<div class="col-container">
+    <div>
+        <div>a. cell wall</div>
+        <div>b. nucleus</div>
+        <div>c. central vacuole</div>
+        <div>d. ribosome</div>
+        <div>e. centriole</div>
+    </div>
+</div>
+
+<p>The correct answer is:</p>
+<p>
+    Animal cells: e<br>
+    Plant cells: a, c<br>
+    Both animal and plant cells: b, d
+</p>
+
+<h4>Directions for authoring CL solutions:</h4>
+<p>There are always three types of <code>&lt;section&gt;</code> blocks present in a CL solution:</p>
+<ul>
+    <li>group</li>
+    <li>answer</li>
+    <li>explanation</li>
+</ul>
+<pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        ...
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;group&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;animal cells&lt;/section&gt;
+        &lt;section class=&quot;group&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;plant cells&lt;/section&gt;
+        &lt;section class=&quot;group&quot; data-type=&quot;text&quot; data-answer=&quot;3&quot;&gt;both animal and plant cells&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;a&quot;&gt;2&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;b&quot;&gt;3&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;c&quot;&gt;2&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;d&quot;&gt;3&lt;/section&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;e&quot;&gt;1&lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;
+               explanation for all classifications into group &quot;animal cells&quot;
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;
+                explanation for all classifications into group &quot;plant cells&quot;
+        &lt;/section&gt;
+        &lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;3&quot;&gt;
+               explanation for all classifications into group &quot;both plant and animal cells&quot;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;</code></pre>
+
+<div class="line"></div>
+<p>
+    For a CL question, there will be multiple <code>&lt;section class=&quot;group&quot;&gt;</code> blocks, the total depending on how many groups
+    the question presents to categorize the options into. 
+    <br><br>Example:
+</p>
+<pre><code class="html">&lt;section class=&quot;group&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;[first group]&lt;/section&gt;
+&lt;section class=&quot;group&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;[second group]&lt;/section&gt;
+&lt;section class=&quot;group&quot; data-type=&quot;text&quot; data-answer=&quot;3&quot;&gt;[third group]&lt;/section&gt;</code></pre>
+
+<div class="line"></div>
+
+<p>
+    For the next <code>&lt;section class=&quot;answer&quot;&gt;</code> blocks, each option is classified into one of the possible groups.
+    <br><br>Example:
+</p>
+<pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;a&quot;&gt;2&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;b&quot;&gt;3&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;c&quot;&gt;2&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;d&quot;&gt;3&lt;/section&gt;
+&lt;section class=&quot;answer&quot; data-type=&quot;text&quot; data-answer=&quot;e&quot;&gt;1&lt;/section&gt;</code></pre>
+
+<div class="line"></div>
+
+<p>
+        For the next <code>&lt;section&gt;</code> blocks, an explanation for each group and all options classified into that group is provided to the student. The attributes for the section are <code>class="explanation"</code> and <code>data-type="text"</code>. The <code>data-answer</code> attribute matches the group assigned to that number in the "group" sections.
+        <br><br>Example:
+    </p>
+
+<pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;1&quot;&gt;
+    A separate explanation is provided for each group (e.g., why these options are classified into this group).
+&lt;/section&gt;
+&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;2&quot;&gt;
+    A separate explanation is provided for each group (e.g., why these options are classified into this group).
+&lt;/section&gt;
+&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot; data-answer=&quot;3&quot;&gt;
+    A separate explanation is provided for each group (e.g., why these options are classified into this group).
+&lt;/section&gt;</code></pre>
+
+<div class="line"></div>

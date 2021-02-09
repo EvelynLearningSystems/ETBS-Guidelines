@@ -1,0 +1,4023 @@
+<head/><h2>JSX Graph Examples</h2>
+<!-- <div class="line"></div> -->
+<p>The purpose of this document is to provide examples of JSXgraph scripts that represent the most commonly asked questions from authors.</p>
+<!-- <p>gamma</p> --> 
+<p><bold>IMPORTANT NOTE:</bold>  Graphics may look slightly different in the Authoring Tool than they do in the JSXGraph Solution Generator.</p>
+
+<p>Expressions that are entered into the JSXGraph Solution Generator need to be formatted for JavaScript and must thus use the math object.  A detailed description of the JavaScript math library can be found <a href="https://www.w3schools.com/jsref/jsref_obj_math.asp">here</a>.</p>
+
+<div class="line"></div>
+<h3>Table of Contents</h3>
+
+<p><nav>
+    <h5>General</h5>
+    <a data-link="Approved_colors" class="navlink">Approved colors</a><br>
+    <a data-link="Colors_of_graphical_elements" class="navlink">Colors of graphical elements</a><br>
+    <a data-link="Polygon,_circle,_and_ellipse_templates" class="navlink">Circle, and ellipse templates</a><br>
+    <a data-link="Ticks_and_axes" class="navlink">Ticks and axes</a><br>
+    <ul>
+        <li><a data-link="Ticks_and_axes:_custom_grid_(with_arrows_beyond_grid_lines" class="navlink">Custom grid (with arrows beyond grid lines…</a></li>
+    </ul>
+    <a data-link="Template_for_interval_notation_graphs" class="navlink">Template for interval notation graphs</a><br>
+    <a data-link="Using_for_loops_in_JavaScript" class="navlink">Using for loops in JavaScript</a><br>
+    <a data-link="Working_with_JSXGraph_on_your_own_computer" class="navlink">Working with JSXGraph on your own computer</a><br>
+    <h5>Precalculus</h5>
+    <a data-link="Graphing_a_smooth_curve_through_a_set_of_points" class="navlink">Graphing a smooth curve through a set of points</a><br>
+    <a data-link="Graphing_functions" class="navlink">Graphing functions</a><br>
+    <ul>
+        <li><a data-link="Algebraic,_exponential,_and_logarithmic_functions" class="navlink">Algebraic, exponential, and logarithmic functions</a></li>
+        <li><a data-link="Trigonometric_functions" class="navlink">Trigonometric functions</a></li>
+        <li><a data-link="Implicitly_defined_functions" class="navlink">Implicitly defined functions</a></li>
+        <li><a data-link="Inverse_functions" class="navlink">Inverse functions</a></li>
+        <li><a data-link="Inverse_trigonometric_functions" class="navlink">Inverse trigonometric functions</a></li>
+        <li><a data-link="Parametrically_defined_functions" class="navlink">Parametrically defined functions</a></li>
+        <li><a data-link="Polar_functions" class="navlink">Polar functions</a></li>
+        <li><a data-link="Piecewise-defined_functions" class="navlink">Piecewise-defined functions</a></li>
+    </ul>
+    <a data-link="Simple_inequalities" class="navlink">Simple inequalities</a><br>
+    <a data-link="Trigonometry_examples" class="navlink">Trigonometry examples</a><br>
+    <ul>
+        <li><a data-link="Drawing_a_right_triangle_with_labels" class="navlink">Drawing a right triangle with labels</a></li>
+        <li><a data-link="Unit_circle_plotting" class="navlink">Unit circle plotting</a></li>
+        <li><a data-link="Angles_larger_than_360_degrees" class="navlink">Angles larger than 360 degrees</a></li>
+    </ul>
+
+    <h5>Statistics</h5>
+    <a data-link="Scatter_plots" class="navlink">Scatter plots</a><br>
+
+    <h5>Calculus</h5>
+    <a data-link="Euler’s_method" class="navlink">Euler’s method</a><br>
+    <a data-link="Gamma_function" class="navlink">Gamma function</a><br>
+    <a data-link="Riemann_sums" class="navlink">Riemann sums</a><br>
+    <ul>
+        <li><a data-link="Midpoint_rule" class="navlink">Midpoint rule</a></li>
+        <li><a data-link="Trapezoidal_rule" class="navlink">Trapezoidal rule</a></li>
+        <li><a data-link="Riemann_Sums_Graph_that_Utilizes_One_Function" class="navlink">Riemann Sums Graph that Utilizes One Function</a></li>
+        <li><a data-link="Riemann_Sums_Graph_that_Utilizes_Two_Functions" class="navlink">Riemann Sums Graph that Utilizes Two Functions</a></li>
+    </ul>
+    <a data-link="Shading_between_functions_f(x)_and_g(x)" class="navlink">Shading between functions f(x) and g(x)</a><br>
+    <ul>
+        <li><a data-link="Common_errors_when_working_with_shading" class="navlink">Common errors when working with shading</a></li>
+        <li><a data-link="Multiple_shadings_between_f(x),_g(x),_h" class="navlink">Multiple shadings between f(x), g(x), h…</a></li>
+    </ul>
+    <a data-link="Shading_between_functions_f(y)_and_g(y)" class="navlink">Shading between functions f(y) and g(y)</a><br>
+    <ul>
+        <li><a data-link="Multiple_shadings_between_f(y),_g(y),_h" class="navlink">Multiple shadings between f(y), g(y), h…</a></li>
+    </ul>
+    <a data-link="Shading_between_functions_f(th)_and_g(th)__(includes_multiple_shadings)" class="navlink">Shading between functions f(th) and g(th)  (includes multiple shadings)</a><br>
+    <a data-link="Slope_fields" class="navlink">Slope fields</a><br>
+    <ul>
+        <li><a data-link="Gradient_fields_(arrows_are_proportional_to_the_length_of_the_gradient" class="navlink">Gradient fields (arrows are proportional to the length of the gradient…</a></li>
+        <li><a data-link="ODE:_graphical_solution" class="navlink">ODE: graphical solution</a></li>
+    </ul>
+    <!-- <a data-link="" class="navlink"></a><br> -->
+    <!-- <a data-link="" class="navlink"></a><br> -->
+</p></nav>
+<div class="line"></div>
+
+<h3>General</h3>
+<h4 name="Approved_colors">Approved colors</h4>
+
+<ul style="background-color:lightgrey; padding:20px;">
+    <li style="margin: 10px;">Line/curve/function colors:  <span style="color:black; background-color: #df6f24; padding: 5px; margin-right: 10px;"> #df6f24 </span> <span style="color:black; background-color: #9343a2; padding: 5px; margin-right: 10px;"> #9343a2 </span><span style="color:black; background-color: #28a445; padding: 5px;margin-right: 10px;"> #28a445 </span><span style="color:black; background-color: #3eabc9; padding: 5px;margin-right: 10px;"> #3eabc9 </span></li>
+    <li style="margin: 10px;">Points on graphs; also use if more than four lines/curves are needed:  <span style="color:white; background-color: #1a7096; padding: 5px; margin-right: 10px;"> #1a7096 </span> <span style="color:white; background-color: #b73c0d; padding: 5px; margin-right: 10px;"> #b73c0d </span><span style="color:white; background-color: #591c67; padding: 5px;margin-right: 10px;"> #591c67 </span></li>
+    <li style="margin: 10px;">Column, bar, or pie charts:  <span style="color:black; background-color: #64c9e6; padding: 5px; margin-right: 10px;"> #64c9e6 </span> <span style="color:black; background-color: #fee65b; padding: 5px; margin-right: 10px;"> #fee65b </span><span style="color:black; background-color: #4ec86a; padding: 5px;margin-right: 10px;"> #4ec86a </span><span style="color:black; background-color: #b164bf; padding: 5px;margin-right: 10px;"> #b164bf </span><span style="color:black; background-color: #fd9154; padding: 5px;margin-right: 10px;"> #fd9154 </span></li>
+    <li style="margin: 10px;">Light fill (Punnett squares, polygons):  <span style="color:black; background-color: #dbf0f5; padding: 5px; margin-right: 10px;"> #dbf0f5 </span> <span style="color:black; background-color: #d7efdd; padding: 5px; margin-right: 10px;"> #d7efdd </span><span style="color:black; background-color: #fef8dc; padding: 5px;margin-right: 10px;"> #fef8dc </span><span style="color:black; background-color: #fce7d9; padding: 5px;margin-right: 10px;"> #fce7d9 </span><span style="color:black; background-color: #e8daeb; padding: 5px;margin-right: 10px;"> #e8daeb </span></li>
+</ul>
+
+<div class="line"></div>
+
+<h4 name="Colors_of_graphical_elements">Colors of graphical elements</h4>
+
+<div id="jxgboxa" style="width:600px; height:600px" class="graph">
+    <script>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-5.5,5.5,5.5,-5.5]);
+    
+     // For anything colored black, use ‘#333333’.
+  
+     // Possible line colors (also colors for functions/curves).
+     // blue
+     board.create('arrow', [[-4,4.5], [-0.5,4.5]], {strokeColor: '#3eabc9'});
+     board.create('segment', [[0.5,4.5], [4,4.5]], {strokeColor: '#3eabc9'});
+     // green; note the line extends beyond the points
+    board.create('line', [[4.5,4.5 ], [4.5,-4.5]], {strokeColor: '#28a445'});
+     // orange; dashing can be included.
+     // note that the line does NOT extend beyond the first point
+     // purple; dashing can be included
+     // note that the line does NOT extend beyond the second point
+     board.create('line', [[-4.5,-4.5], [-4.5,4.5]], {strokeColor: '#9343a2', dash: 2, straightLast: false});
+  
+     // Possible colors for dots. 
+     //dark blue
+     board.create('point', [4.5,4.5], {strokeColor: '#1a7096', fillColor: '#1a7096', opacity: 1, name: 'P', size: 4});
+     //dark green
+     board.create('point', [4.5,-4.5], {strokeColor: '#0f6a21', fillColor: '#0f6a21', opacity: 1, name: '', size: 4});
+     //dark orange
+     board.create('point', [-4.5,-4.5], {strokeColor: '#b73c0d', fillColor: '#b73c0d', opacity: 1, name: '', size: 4});
+     //dark purple
+     board.create('point', [-4.5,4.5], {strokeColor: '#591c67', fillColor: '#591c67', opacity: 1, name: '', size: 4});
+  
+     // Possible fill colors.
+     // light blue
+     board.create('polygon', [[1,1], [4,1], [4,4], [1,4]], {fillColor:  '#dbf0f5', vertices: {visible: false}});
+     // light green
+     board.create('polygon', [[-1,1], [-4,1], [-4,4], [-1,4]], {fillColor:  '#d7efdd', vertices: {visible: false}});
+     // light orange
+     board.create('polygon', [[-1,-1], [-4,-1], [-4,-4], [-1,-4]], {fillColor:  '#fce7d9', vertices: {visible: false}});
+     // light purple
+     board.create('polygon', [[1,-1], [4,-1], [4,-4], [1,-4]], {fillColor:  '#e8daeb', vertices: {visible: false}});
+  </script>
+</div>
+
+<p>
+    Notes:
+                <ol>
+                   
+                    <li>Use only approved colors.</li>
+                    <li>Note that strokeColor, fillColor, and opacity fields MUST be used when plotting points.</li>
+                    <li>For dashed lines, use only dash: 1 or dash: 2.</li>
+                    <li>Note how the straightFirst and straightLast fields can be used to have a line start/end at one of the points.</li>
+                    <li>Note that the name field for points can be empty:  name: ‘’.  This prevents the automatic labeling A, B, C, D, etc.  Other names may be used, as in the point P in the upper right.</li>
+
+                </ol>
+</p>
+
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        board.setBoundingBox([-5.5,5.5,5.5,-5.5]);
+    
+        // For anything colored black, use ‘#333333’.
+    
+        // Possible line colors (also colors for functions/curves).
+        // blue
+        board.create('arrow', [[-4,4.5], [-0.5,4.5]], {strokeColor: '#3eabc9'});
+        board.create('segment', [[0.5,4.5], [4,4.5]], {strokeColor: '#3eabc9'});
+        // green; note the line extends beyond the points
+        board.create('line', [[4.5,4.5 ], [4.5,-4.5]], {strokeColor: '#28a445'});
+        // orange; dashing can be included.
+        // note that the line does NOT extend beyond the first point
+        // purple; dashing can be included
+        // note that the line does NOT extend beyond the second point
+        board.create('line', [[-4.5,-4.5], [-4.5,4.5]], {strokeColor: '#9343a2', dash: 2, straightLast: false});
+    
+        // Possible colors for dots. 
+        //dark blue
+        board.create('point', [4.5,4.5], {strokeColor: '#1a7096', fillColor: '#1a7096', opacity: 1, name: 'P', size: 4});
+        //dark green
+        board.create('point', [4.5,-4.5], {strokeColor: '#0f6a21', fillColor: '#0f6a21', opacity: 1, name: '', size: 4});
+        //dark orange
+        board.create('point', [-4.5,-4.5], {strokeColor: '#b73c0d', fillColor: '#b73c0d', opacity: 1, name: '', size: 4});
+        //dark purple
+        board.create('point', [-4.5,4.5], {strokeColor: '#591c67', fillColor: '#591c67', opacity: 1, name: '', size: 4});
+    
+        // Possible fill colors.
+        // light blue
+        board.create('polygon', [[1,1], [4,1], [4,4], [1,4]], {fillColor:  '#dbf0f5', vertices: {visible: false}});
+        // light green
+        board.create('polygon', [[-1,1], [-4,1], [-4,4], [-1,4]], {fillColor:  '#d7efdd', vertices: {visible: false}});
+        // light orange
+        board.create('polygon', [[-1,-1], [-4,-1], [-4,-4], [-1,-4]], {fillColor:  '#fce7d9', vertices: {visible: false}});
+        // light purple
+        board.create('polygon', [[1,-1], [4,-1], [4,-4], [1,-4]], {fillColor:  '#e8daeb', vertices: {visible: false}});
+</code></pre>
+
+
+<div class="line"></div>
+
+<h3 name="Polygon,_circle,_and_ellipse_templates">Circle, and ellipse templates</h3>
+
+<p><bold>A Note About Point Colors and Styling</bold>
+    <ul>
+        <li>Point color options
+            <ul>
+                <li>{strokeColor: '#b73c0d'} This option changes the edge color of the point</li>
+                <li>{fillColor: '#b73c0d'} This option changes the inner color of the point</li>
+                <li>To completely color a point utilize: {strokeColor: '#b73c0d', fillcolor: '#b73c0d', opacity:1}</li>
+                <li><bold>Filled points MUST include the attribute: opacity:1</bold></li>
+                <li>Acceptable colors for points are:
+                    <ul>
+                        <li>#1a7096 (dark blue)</li>
+                        <li>#0f6a21 (dark green)</li>
+                        <li>#b73c0d (dark orange)</li>
+                        <li>#591c67 (dark purple)</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>Polygon vertices points can be made invisible with {vertices: {visible:false}}</li>
+        <li>Labels/Names of points can be changed with {name: 'nameHere'}</li>
+    </ul>
+
+</p>
+
+<p><bold>A Note About Line and Shading Colors</bold>
+    <ul>
+        <li>Acceptable Colors for lines:
+            <ul>
+                <li>#3eabc9 (blue)</li>
+                <li>#28a445 (green)</li>
+                <li>#df6f24 (orange)</li>
+                <li>#9343a2 (purple)</li>
+            </ul>
+        </li>
+        <li>Acceptable Colors for fills:
+            <ul>
+                <li>#dbf0f5 (light blue)</li>
+                <li>#d7efdd (light green)</li>
+                <li>#fce7d9 (light orange)</li>
+                <li>#e8daeb (light purple)</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+<div class="line"></div>
+<h4>Circles</h4>
+<p><bold>Template for Creating a Basic Circle in JSXgraph</bold></p>
+<p>This template is designed to be used and tested with the Authoring Tool or the Graph Generator . Do not include the <em>&lt;script&gt;</em> and <em>&lt;/script&gt;</em> tags when copying into the Authoring Tool.</p>
+<p>Output from the Authoring Tool:</p>
+<div id="jxgboxb1" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxb1", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        board.setBoundingBox([ -5,5,5,-5] );
+        p1 = board.create('point', [ 2.0, 2.0 ],{ size:5, fillColor:'#1a7096', opacity:1 }),
+        p2 = board.create('point', [ 2.0, 0.0 ], { size:5, fillColor:'#1a7096', opacity:1 }),
+        c1=board.create('circle', [ p1, p2 ]);
+        </script>
+</div>
+<br>
+<pre><code>
+    &lt;script&gt;
+        var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        board.setBoundingBox([ -5,5,5,-5] );
+        p1 = board.create('point', [ 2.0, 2.0 ],{ size:5, fillColor:'#1a7096', opacity:1 }),
+        p2 = board.create('point', [ 2.0, 0.0 ], { size:5, fillColor:'#1a7096', opacity:1 }),
+        c1=board.create('circle', [ p1, p2 ]);
+    &lt;/script&gt;
+</code></pre>
+<h5>User changes:</h5>
+<p>
+    <bold>Bounding Box:</bold> Change of the bounding box to accommodate the correct sized x-axis and y-axis for your shape. <br>
+    <bold>Declared points:</bold> A minimum of 2 points must be declared to utilize the circle creation feature. More may be added as needed. <br>
+    <bold>Circle Creation:</bold> A minimum of 2 points is needed to form a circle. Here, p1 (2,2) and p2 (2,0) are utilized to draw the circle. <br>
+    <bold>Point Styling:</bold> Please refer to the point styling notes at the beginning of this doc.
+</p>
+<div class="line"></div>
+<p><bold>Template for Creating A Second Circle Using a Previously Created Circle in JSXgraph</bold></p>
+<p>This template is designed to be used and tested with the Authoring Tool or the Graph Generator. Do not include the <script> and </script> tags when copying into the Authoring Tool.</p>
+<p>Output from the Authoring Tool:</p>
+
+<div id="jxgboxb2" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxb2", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        board.setBoundingBox([ -1,5,5,-1 ]);
+        p1 = board.create('point', [ 2.0, 2.0 ], { size:5, fillColor:'#1a7096', opacity:1 }),
+        p2 = board.create('point', [ 2.0, 0.0 ], { size:5, fillColor:'#1a7096', opacity:1 }),
+        c1=board.create('circle', [ p1, p2 ]);
+        p3 = board.create('point', [ 3.0, 2.0 ], { size:5, fillColor:'#1a7096', opacity:1 }),
+        c2 = board.create('circle', [ p3, c1 ]);
+        </script>
+</div>
+<br>
+<pre><code>
+    &lt;script&gt;
+        var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        board.setBoundingBox([ -1,5,5,-1 ]);
+        p1 = board.create('point', [ 2.0, 2.0 ], { size:5, fillColor:'#1a7096', opacity:1 }),
+        p2 = board.create('point', [ 2.0, 0.0 ], { size:5, fillColor:'#1a7096', opacity:1 }),
+        c1=board.create('circle', [ p1, p2 ]);
+        p3 = board.create('point', [ 3.0, 2.0 ], { size:5, fillColor:'#1a7096', opacity:1 }),
+        c2 = board.create('circle', [ p3, c1 ]);
+    &lt;/script&gt;
+</code></pre>
+<h5>User changes:</h5>
+<p>
+    <bold>Bounding Box:</bold> Change of the bounding box to accommodate the correct sized x-axis and y-axis for your shape. <br>
+    <bold>Declared points:</bold> A minimum of 2 points must be declared to utilize the circle creation feature. More may be added as needed. In this instance, p1 (2,2) and p2 (2,0) make up the points for the first circle c1. To create a second circle using a first circle, you need at least one additional point. In this case, that point is p3 (3,2). <br>
+    <bold>Circle 1 Creation:</bold> A minimum of 2 points is needed to form a circle. Here, p1 (2,2) and p2 (2,0) are utilized to draw the circle. <br>
+    <bold>Circle 2 Creation:</bold> While the second circle still requires 2 points, one point may reference a previously created circle. In this case, circle 2 is created with the first circle c1 and an additional point p3 (3,2). <br>
+    <bold>Point Styling:</bold> Please refer to the point styling notes at the beginning of this doc.
+</p>
+
+<div class="line"></div>
+<p><bold>Template for Finding the Centroid of a Drawn Circle</bold></p>
+<p>This template is designed to be used and tested with the Authoring Tool or the Graph Generator . Do not include the <s> and </s> tags when copying into the Authoring Tool.</p>
+<p>Output from the Authoring Tool:</p>
+<div id="jxgboxb3" style="width:600px; height:600px" class="graph">
+<script>
+    var board = JXG.JSXGraph.initBoard("jxgboxb3", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+    });
+    board.setBoundingBox([ -5,7,7,-5 ]);
+    p1 = board.create('point', [ 0.0, 1.0 ], {name: 'p1', fillColor: '#591c67', opacity:1, strokeColor:
+    '#0f6a21'});
+    p2 = board.create('point', [ 3.0, 1.0 ], {name: 'p2', fillColor: '#591c67', opacity:1, strokeColor:
+    '#0f6a21'});
+    p3 = board.create('point', [ 4.0, 4.0 ], {name: 'p3', fillColor: '#591c67', opacity:1, strokeColor:
+    '#0f6a21'});
+    c2 = board.create('circle', [p1, p2, p3]);
+    cc1 = board.create('circumcenter', [ p1, p2, p3 ], {name: 'cc1', fillColor: '#b73c0d', opacity:1,
+    strokeColor: '#b73c0d'});
+    </script>
+</div>
+<br>
+<pre><code>
+    &lt;script&gt;
+        var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        board.setBoundingBox([ -5,7,7,-5 ]);
+        p1 = board.create('point', [ 0.0, 1.0 ], {name: 'p1', fillColor: '#591c67', opacity:1, strokeColor:
+        '#0f6a21'});
+        p2 = board.create('point', [ 3.0, 1.0 ], {name: 'p2', fillColor: '#591c67', opacity:1, strokeColor:
+        '#0f6a21'});
+        p3 = board.create('point', [ 4.0, 4.0 ], {name: 'p3', fillColor: '#591c67', opacity:1, strokeColor:
+        '#0f6a21'});
+        c2 = board.create('circle', [p1, p2, p3]);
+        cc1 = board.create('circumcenter', [ p1, p2, p3 ], {name: 'cc1', fillColor: '#b73c0d', opacity:1,
+        strokeColor: '#b73c0d'});
+    &lt;/script&gt;
+</code></pre>
+<h5>User changes:</h5>
+<p>
+    <bold>Bounding Box:</bold> Change of the bounding box to accommodate the correct sized x-axis and y-axis for your shape. <br>
+    <bold>Declared points:</bold> A minimum of 2 points must be declared to find the centroid. More may be added as needed. In this instance, p1 (0,1), p2 (3,1) and p3 (4,4) make up the points utilized to calculate the centroid.<br>
+    <bold>Creating the Centroid Point:</bold> The circumcenter option is utilized to calculate the centroid and display the centroid point. In this case, the points considered to calculate the centroid are p1, p2, p3. <br>
+    <bold>Circle Created By The Points (optional):</bold> If you do not need to show the circle that is created by using the p1, p2 and p3 points, this line may be removed from the script.
+</p>
+
+<div class="line"></div>
+<h4>Ellipse</h4>
+<p>An ellipse is given by two points (the foci) and a third point on the ellipse or the length of the major axis.</p>
+<p>
+Create an Ellipse by declaring three points: <br>
+A = board.create('point', [-1,4]);<br>
+B = board.create('point', [-1,-4]);<br>
+C = board.create('point', [1,1]);<br>
+el = board.create('ellipse',[A,B,C]);
+</p>
+<p><bold>Template for Creating an Ellipse in JSXgraph</bold></p>
+<p>This template is designed to be used and tested with the Authoring Tool or the Graph Generator . Do not include the &lt;script&gt; and &lt;/script&gt; tags when copying into the Authoring Tool.</p>
+<p>Output from the Authoring Tool:</p>
+<div id="jxgboxb4" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxb4", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        board.setBoundingBox([ -5,5,5,-5 ]);
+        F1 = board.create('point', [ 0,3 ], {name: 'F1'});
+        F2 = board.create('point', [ 0,-3 ], {name: 'F2'});
+        A = board.create('point', [ 2,2 ], {name: 'A'});
+        ellipse = board.create('ellipse',[ F1,F2,A ]);
+        </script>
+</div>
+<br>
+<pre><code>
+    &lt;script&gt;
+        var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        board.setBoundingBox([ -5,5,5,-5 ]);
+        F1 = board.create('point', [ 0,3 ], {name: 'F1'});
+        F2 = board.create('point', [ 0,-3 ], {name: 'F2'});
+        A = board.create('point', [ 2,2 ], {name: 'A'});
+        ellipse = board.create('ellipse',[ F1,F2,A ]);
+    &lt;/script&gt;
+</code></pre>
+
+<h5>User changes:</h5>
+<p>
+    <bold>Bounding Box:</bold> Change of the bounding box to accommodate the correct sized x-axis and y-axis for your shape. <br>
+    <bold>Declared points:</bold> 3 points must be declared to utilize the ellipse creation feature. <br>
+    <bold>Circle Creation:</bold> 3 points are used to instantiate the ellipse creation feature. Here, F1 (0,3) and F2 (0,-3) declare the foci and A (2,2) declares the axis length.
+</p>
+
+<div class="line"></div>
+
+<h4 name="Ticks_and_axes">Ticks and axes</h4>
+
+<h5>Customizing ticks and axes.</h5>
+<p>Items that typically need to be changed are highlighted.  Scales for both x- and y-axes can be given.</p>
+
+    <div id="jxgboxb" style="width:600px; height:600px" class="graph">
+        <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxb", {
+            axis: true,
+            showCopyright: false,
+            showNavigation: false,
+            registerEvents: false
+         });
+         board.setBoundingBox([-60,3,60,-3]);
+            //remove ticks from default x-axis 
+            board.defaultAxes.x.removeTicks(board.defaultAxes.x.defaultTicks);  
+      
+            // Create a new horizontal axis with a label.
+            // Possible values for position are: 'lft', 'rt', 'top', 'bot'.  The offset for the label is measured in pixels.
+            var xaxis = board.create('axis', [[0,0],[1,0]], {name:'time', withLabel: true, label: {position: 'rt', offset: [-15, 15]}} );
+      
+            // Remove new axis default ticks.
+            xaxis.removeTicks(xaxis.defaultTicks);
+        //remove ticks from default x-axis .
+               board.defaultAxes.x.removeTicks(board.defaultAxes.x.defaultTicks);  
+            // Customizing ticks:  [xaxis, 10] means that ticks are every 10 units along the x-axis.
+            // strokeWidth is the width of the grid lines.
+            // minorTicks is how many ticks between each of the major ticks.
+            // offset is for the tick labels.
+            board.create('ticks', [xaxis, 10], {strokeWidth: 0.2, majorHeight: -1, drawLabels: true, minorTicks: 1, label: {offset: [-10,-10]  } } );
+      
+            //remove ticks from default y-axis .
+            board.defaultAxes.y.removeTicks(board.defaultAxes.y.defaultTicks);  
+      
+            // Create a new vertical axis with a label.
+            // Possible values for position are: 'lft', 'rt', 'top', 'bot'.  The offset is measured in pixels.
+            var yaxis = board.create('axis', [[0,0],[0,1]], {name:'distance', withLabel: true, label: {position: 'rt', offset: [-55, 0]}} );
+      
+            // Remove new axis default ticks.
+            yaxis.removeTicks(yaxis.defaultTicks);
+      
+            // Customizing ticks:  [yaxis, 0.4] means that ticks are every 0.4 units along the y-axis.
+            // strokeWidth is the width of the grid lines.
+            // minorTicks is how many ticks between each of the major ticks.
+            // offset is for the tick labels.
+            board.create('ticks', [yaxis, 0.4], {strokeWidth: 0.2, majorHeight: -1, drawLabels: true, minorTicks: 3, label: {offset: [5, 0]  } } );
+      
+            // Function to be graphed
+            board.create('curve', [function f(x) {return x;}, function f(x) {return (x+10)**2/900-2;}, -55,55] );
+    
+        </script>
+    </div>
+    <br>
+<pre><code>
+var board = JXG.JSXGraph.initBoard("jxgboxa", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+    });
+    board.setBoundingBox([-60,3,60,-3]);
+    //remove ticks from default x-axis 
+    board.defaultAxes.x.removeTicks(board.defaultAxes.x.defaultTicks);  
+
+    // Create a new horizontal axis with a label.
+    // Possible values for position are: 'lft', 'rt', 'top', 'bot'.  The offset for the label is measured in pixels.
+    var xaxis = board.create('axis', [[0,0],[1,0]], {name:'time', withLabel: true, label: {position:'rt', offset:[-15, 15]}});
+
+    // Remove new axis default ticks.
+    xaxis.removeTicks(xaxis.defaultTicks);
+    //remove ticks from default x-axis .
+        board.defaultAxes.x.removeTicks(board.defaultAxes.x.defaultTicks);  
+    // Customizing ticks:  [xaxis, 10] means that ticks are every 10 units along the x-axis.
+    // strokeWidth is the width of the grid lines.
+    // minorTicks is how many ticks between each of the major ticks.
+    // offset is for the tick labels.
+    board.create('ticks', [xaxis, 10],{strokeWidth:0.2, majorHeight:-1, drawLabels:true, minorTicks:1, label:{offset:[-10,-10]}});
+
+    //remove ticks from default y-axis .
+    board.defaultAxes.y.removeTicks(board.defaultAxes.y.defaultTicks);  
+
+    // Create a new vertical axis with a label.
+    // Possible values for position are: 'lft', 'rt', 'top', 'bot'.  The offset is measured in pixels.
+    var yaxis = board.create('axis', [[0,0],[0,1]],{name:'distance', withLabel:true, label:{position:'rt', offset:[-55, 0]}});
+
+    // Remove new axis default ticks.
+    yaxis.removeTicks(yaxis.defaultTicks);
+
+    // Customizing ticks:  [yaxis, 0.4] means that ticks are every 0.4 units along the y-axis.
+    // strokeWidth is the width of the grid lines.
+    // minorTicks is how many ticks between each of the major ticks.
+    // offset is for the tick labels.
+    board.create('ticks', [yaxis, 0.4],{strokeWidth:0.2, majorHeight:-1, drawLabels:true, minorTicks:3, label:{offset:[5, 0]}});
+
+    // Function to be graphed
+    board.create('curve', [function f(x) {return x;}, function f(x) {return (x+10)**2/900-2;}, -55,55] );
+
+</code></pre>
+
+
+
+<div class="line"></div>
+
+<h4 name="Ticks_and_axes:_custom_grid_(with_arrows_beyond_grid_lines">Ticks and axes: custom grid (with arrows beyond grid lines</h4>
+<p>Custom grid with axes extending beyond the grid lines.  Typical changes to make are highlighted.  Make sure the bounding box extends beyond the grid lines so that the arrows on the axes extend beyond the grid.</p>
+<div id="jxgboxc" style="width:600px; height:600px" class="graph">
+    <script>
+    var board = JXG.JSXGraph.initBoard("jxgboxc", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+    });
+    board.setBoundingBox([-5,5,5,-5]);
+        var board = JXG.JSXGraph.initBoard("jxgboxc", {
+            axis: true,
+            defaultAxes: {x: { ticks: { visible: true, majorHeight: 0 } },
+                        y: { ticks: { visible: true, majorHeight: 0 } }},
+            showCopyright: false,
+            showNavigation: false,
+            registerEvents: false
+        });
+        
+        // vertical and horizontal grid lines:  left/right/increment
+        for (vert = -4.5; vert < 5; vert += 0.5) {
+            board.create('segment', [[vert,-4.5],[vert,4.5]], {strokeWidth: 0.2, strokeColor: '#333333'})
+            };
+        for (horiz = -4.5; horiz < 5; horiz += 0.5) {
+            board.create('segment', [[-4.5,horiz],[4.5,horiz]], {strokeWidth: 0.2, strokeColor: '#333333'})
+            };
+        // Function to be graphed
+        // x-values calculated so the graph is within the grid
+        board.create('curve', [function f(x) {return x;}, function f(x) {return x*x;}, -2.121, 2.121] );
+    </script>
+</div>
+<br>
+<pre><code>
+var board = JXG.JSXGraph.initBoard("jxgboxa", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+    });
+    board.setBoundingBox([-5,5,5,-5]);
+        var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        defaultAxes: {x: { ticks: { visible: true, majorHeight: 0 } },
+                        y: { ticks: { visible: true, majorHeight: 0 } }},
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+    });
+    
+    // vertical and horizontal grid lines:  left/right/increment
+    for (vert = -4.5; vert < 5; vert += 0.5) {
+        board.create('segment', [[vert,-4.5],[vert,4.5]], {strokeWidth: 0.2, strokeColor: '#333333'})
+        };
+    for (horiz = -4.5; horiz < 5; horiz += 0.5) {
+        board.create('segment', [[-4.5,horiz],[4.5,horiz]], {strokeWidth: 0.2, strokeColor: '#333333'})
+        };
+    // Function to be graphed
+    // x-values calculated so the graph is within the grid
+    board.create('curve', [function f(x) {return x;}, function f(x) {return x*x;}, -2.121, 2.121] );
+
+</code></pre>
+
+<div class="line"></div>
+
+
+<h4 name="Template_for_interval_notation_graphs">Template for interval notation graphs</h4>
+<p>These scripts are designed to be used with the Course Hero Authoring Tool. When inputting these scripts into the Authoring Tool, do not include the &lt;script&gt; and &lt;/script&gt; tags. These scripts will not work with the current version of the Graph Generator.</p>
+
+<div id="jxgboxd12" style="width:800px; height:100px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxd12", {
+            axis: true,
+            showCopyright: false,
+            showNavigation: false,
+            registerEvents: false
+        });
+        board.setBoundingBox([-5,5,5,-5]);
+        var board = JXG.JSXGraph.initBoard('jxgboxd12', {
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        var axisx = board.create('axis', [[0,0], [1,0]],
+        {
+        firstArrow: true,
+        lastArrow: true,
+        ticks: {
+        drawZero: true,
+        ticksDistance: 1,
+        majorHeight: 30,
+        tickEndings: [1,1],
+        minorTicks: 0
+        }
+        });
+        board.setBoundingBox([-5, 0.5, 5, -0.1]);
+        board.create("arrow", [[-3,0], [3,0]], {straightFirst:false, straightLast: false,strokecolor:'#3eabc9',strokewidth:2});
+        board.create('point', [-3, 0], {size:5, fillColor: 'none',strokecolor:'#1a7096'})
+
+    </script>
+</div>
+
+<br>
+<pre><code>
+&lt;script&gt;
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-5,5,5,-5]);
+     var board = JXG.JSXGraph.initBoard('jxgboxa', {
+     showCopyright: false,
+     showNavigation: false,
+     registerEvents: false
+     });
+     var axisx = board.create('axis', [[0,0], [1,0]],
+     {
+     firstArrow: true,
+     lastArrow: true,
+     ticks: {
+     drawZero: true,
+     ticksDistance: 1,
+     majorHeight: 30,
+     tickEndings: [1,1],
+     minorTicks: 0
+     }
+     });
+     board.setBoundingBox([-5, 0.5, 5, -0.1]);
+     board.create("arrow", [[-3,0], [3,0]], {straightFirst:false, straightLast: false,
+        strokecolor:'#3eabc9',strokewidth:2});
+     board.create('point', [-3, 0], {size:5, fillColor: 'none',strokecolor:'#1a7096'})
+  
+&lt;/script&gt;
+</code></pre>
+
+<h5>User changes:</h5>
+<p>
+<bold>Bounding Box:</bold> Change of the bounding box to accommodate the correct sized x-axis. Only the highlighted numbers should be changed (-5, 5).<br>
+<bold>Line/Arrow Type:</bold> If an arrow is needed, leave this as "arrow". If a line is needed, replace this with the keyword "line".<br>
+A double pointed arrow can be drawn utilizing a line type but with the attributes firstArrow: true and/or lastArrow: true.<br>
+Example: <code>board.create("line", [[5,0], [-5,0]], {straightFirst:false, straightLast: false, firstArrow: true, lastArrow:true});</code><br>
+<bold>Length of line/arrow:</bold> indicate the length of the line/arrow by changing the x coordinates. Additional lines/arrows may be added by copying the entire script line and changing the x coordinates. <br>
+<code>board.create("arrow", [[-3,0], [3,0]], {straightFirst:false, straightLast: false});</code> <br>
+<bold>point(s) needed:</bold> If one point is needed, indicate where the point should be located on the x-axis. Additional points may be added by copying the entire line and changing the x coordinate.<br>
+<code>board.create('point', [-3, 0], {size:10, fillColor: 'none'});</code><br>
+<bold>Open point (not included in range) or Closed point (included in range) :</bold> <br>
+<ul>
+    <li>For an open point (not included in the range), leave this portion as is.</li>
+    <li>For a closed point (included in the range), change the fillColor: 'none' to indicate a fill color for the point. The Authoring Tool defaults to #1a7096.
+        <ul>
+            <li>Filled points MUST include the attribute opacity:1</li>
+            <li>Example: fillColor:'#1a7096', opacity:1</li>
+        </ul>
+    </li>
+
+</ul>
+
+</p>
+
+<p><bold>Additional Examples:</bold></p>
+
+<div id="jxgboxd13" style="width:800px; height:100px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxd13", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+   var board = JXG.JSXGraph.initBoard('jxgboxd13', {
+   showCopyright: false,
+   showNavigation: false,
+   registerEvents: false
+   });
+   var axisx = board.create('axis', [[0,0], [1,0]],
+   {
+   firstArrow: true,
+   lastArrow: true,
+   ticks: {
+   drawZero: true,
+   ticksDistance: 1,
+   majorHeight: 30,
+   tickEndings: [1,1],
+   minorTicks: 0
+   }
+   });
+   board.setBoundingBox([-5, 0.5, 5, -0.1]);
+   board.create("line", [[-3,0], [3,0]], {straightFirst:false, straightLast: false,strokecolor:'#3eabc9'});
+   board.create('point', [3, 0], {size:5, fillColor: '#1a7096',strokecolor:'#1a7096',opacity:1});
+   board.create('point', [-3, 0], {size:5,fillColor: 'none',strokecolor:'#1a7096'});
+
+        </script>
+</div>
+<br>
+<pre><code>
+&lt;script&gt;
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-5,5,5,-5]);
+     var board = JXG.JSXGraph.initBoard('jxgboxa', {
+     showCopyright: false,
+     showNavigation: false,
+     registerEvents: false
+     });
+     var axisx = board.create('axis', [[0,0], [1,0]],
+     {
+     firstArrow: true,
+     lastArrow: true,
+     ticks: {
+     drawZero: true,
+     ticksDistance: 1,
+     majorHeight: 30,
+     tickEndings: [1,1],
+     minorTicks: 0
+     }
+     });
+     board.setBoundingBox([-5, 0.5, 5, -0.1]);
+     board.create("line", [[-3,0], [3,0]], {straightFirst:false, straightLast: false,strokecolor:'#3eabc9'});
+     board.create('point', [3, 0], {size:5, fillColor: '#1a7096',strokecolor:'#1a7096',opacity:1});
+     board.create('point', [-3, 0], {size:5,fillColor: 'none',strokecolor:'#1a7096'});
+&lt;/script&gt;
+</code></pre>
+<div id="jxgboxd14" style="width:800px; height:100px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxd14", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+   var board = JXG.JSXGraph.initBoard('jxgboxd14', {
+   showCopyright: false,
+   showNavigation: false,
+   registerEvents: false
+   });
+   var axisx = board.create('axis', [[0,0], [1,0]],
+   {
+   firstArrow: true,
+   lastArrow: true,
+   ticks: {
+   drawZero: true,
+   ticksDistance: 1,
+   majorHeight: 30,
+   tickEndings: [1,1],
+   minorTicks: 0
+   }
+   });
+   board.setBoundingBox([-5, 0.5, 5, -0.1]);
+   board.create("arrow", [[-1,0], [-3,0]], {straightFirst:false, straightLast: false,strokecolor:'#3eabc9'});
+   board.create("arrow", [[1,0], [3,0]], {straightFirst:false, straightLast: false,strokecolor:'#3eabc9'});
+   board.create('point', [-1, 0], {size:5,fillColor: 'none',strokecolor:'#1a7096'});
+   board.create('point', [1, 0], {size:5, fillColor: '#1a7096',strokecolor:'#1a7096',opacity:1});
+
+        </script>
+</div>
+<br>
+<pre><code>
+&lt;script&gt;
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-5,5,5,-5]);
+     var board = JXG.JSXGraph.initBoard('jxgboxa', {
+     showCopyright: false,
+     showNavigation: false,
+     registerEvents: false
+     });
+     var axisx = board.create('axis', [[0,0], [1,0]],
+     {
+     firstArrow: true,
+     lastArrow: true,
+     ticks: {
+     drawZero: true,
+     ticksDistance: 1,
+     majorHeight: 30,
+     tickEndings: [1,1],
+     minorTicks: 0
+     }
+     });
+     board.setBoundingBox([-5, 0.5, 5, -0.1]);
+     board.create("arrow", [[-1,0], [-3,0]], {straightFirst:false, straightLast: false,strokecolor:'#3eabc9'});
+     board.create("arrow", [[1,0], [3,0]], {straightFirst:false, straightLast: false,strokecolor:'#3eabc9'});
+     board.create('point', [-1, 0], {size:5,fillColor: 'none',strokecolor:'#1a7096'});
+     board.create('point', [1, 0], {size:5, fillColor: '#1a7096',strokecolor:'#1a7096',opacity:1});
+&lt;/script&gt;
+</code></pre>
+
+<div id="jxgboxd15" style="width:800px; height:100px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxd15", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+   var board = JXG.JSXGraph.initBoard('jxgboxd15', {
+   showCopyright: false,
+   showNavigation: false,
+   registerEvents: false
+   });
+   var axisx = board.create('axis', [[0,0], [1,0]],
+   {
+   firstArrow: true,
+   lastArrow: true,
+   ticks: {
+   drawZero: true,
+   ticksDistance: 1,
+   majorHeight: 30,
+   tickEndings: [1,1],
+   minorTicks: 0
+   }
+   });
+   board.setBoundingBox([-5, 0.5, 5, -0.1]);
+   board.create("line", [[5,0], [-5,0]], {straightFirst:false, straightLast: false, firstArrow:true, lastArrow:true,strokecolor:'#3eabc9'});
+
+        </script>
+</div>
+<br>
+<pre><code>
+&lt;script&gt;
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+    });
+    board.setBoundingBox([-5,5,5,-5]);
+    var board = JXG.JSXGraph.initBoard('jxgboxa', {
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+    });
+    var axisx = board.create('axis', [[0,0], [1,0]],
+    {
+    firstArrow: true,
+    lastArrow: true,
+    ticks: {
+    drawZero: true,
+    ticksDistance: 1,
+    majorHeight: 30,
+    tickEndings: [1,1],
+    minorTicks: 0
+    }
+    });
+    board.setBoundingBox([-5, 0.5, 5, -0.1]);
+    board.create("line", [[5,0], [-5,0]], {straightFirst:false, straightLast: false, firstArrow:true, 
+        lastArrow:true,strokecolor:'#3eabc9'});
+
+&lt;/script&gt;
+</code></pre>
+
+
+<div class="line"></div>
+
+<h4 name="Using_for_loops_in_JavaScript">Using for loops in JavaScript</h4>
+<table>
+    <tbody>
+        <tr>
+            <td>Example of $f(x)=x^2$ from earlier in the document. <br><br>
+
+                Expression: $x^2$ <br><br>
+                
+                Expression using math object in JavaScript: Math.pow(x,2) <br><br>
+                
+                Plotting points every 0.5 units in the interval [-5,5] by using a for loop: <br>
+
+
+<pre><code>
+var board = JXG.JSXGraph.initBoard("jxgboxa", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+    });
+    board.setBoundingBox([-6,30,6,-2]);
+
+    // points every 0.5 units along the x-axis
+    for (i = 0; i < 10.5; i = i + 0.5) {
+        board.create("point", [-5+i, (-5+i)*(-5+i)], 
+        {strokeColor: '#b73c0d', 
+        fillColor: '#b73c0d', 
+        opacity: 1, size: 2, name: ''});
+    }
+  
+
+</code></pre>
+    
+</pre>
+            </td>
+            <td>
+                Original function $f(x)=x^2$. <br>
+                <div id="jxgboxd" style="width:300px; height:300px" class="graph">
+                    <script>
+                        var board = JXG.JSXGraph.initBoard("jxgboxd", {
+                           axis: true,
+                           showCopyright: false,
+                           showNavigation: false,
+                           registerEvents: false
+                        });
+                        board.setBoundingBox([-5,5,5,-5]);
+                        board.create("functiongraph",  [function(x){ return x*x}]);
+                     </script>
+                </div>
+                <br>
+                Graph using for loop:
+                <div id="jxgboxe" style="width:300px; height:300px" class="graph">
+                    <script>
+                        var board = JXG.JSXGraph.initBoard("jxgboxe", {
+                            axis: true,
+                            showCopyright: false,
+                            showNavigation: false,
+                            registerEvents: false
+                        });
+                        board.setBoundingBox([-6,30,6,-2]);
+
+                        // points every 0.5 units along the x-axis
+                        for (i = 0; i < 10.5; i = i + 0.5) {
+                                board.create("point", [-5+i, (-5+i)*(-5+i)], {strokeColor: '#b73c0d', fillColor: '#b73c0d', opacity: 1, size: 2, name: ''});
+                            }
+
+                    </script>
+                </div>
+                
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="line"></div>
+
+<h4 name="Working_with_JSXGraph_on_your_own_computer">Working with JSXGraph on your own computer</h4>
+
+<p>It is sometimes easier to work with JSXGraph locally, and then copy and paste your script in the JSXGraph Solution Generator.  You can copy and paste the code below into a file with an .html extension, and then it should render in your browser.  In other words, copy and paste the code into a text document and save it as a file with a .html extensions.</p>
+<p>You will need two files, jsxgraphcore.js and jsxgraph.css, in order to run JSXGraph on your computer.  Go to the webpage linked here, and scroll down to the “CDN” section to download:  <a href="https://github.com/jsxgraph/website/blob/master/download.md">https://github.com/jsxgraph/website/blob/master/download.md</a>.  These should be in the same directory as your .html file.</p>
+<p>Note:  changing the width and height (highlighted) will change how large the image looks in your browser; you can then copy and paste into the JSXGraph Solution Generator.</p>
+<pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html&gt;
+    &lt;head&gt;
+    &lt;link rel="stylesheet" type="text/css" href="jsxgraph.css" /&gt;
+    &lt;script type="text/javascript" src="jsxgraphcore.js"&gt;&lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;br /&gt;
+    
+    &lt;div id="jxgboxf" class="jxgbox" style="width:500px; height:500px;"&gt;&lt;/div&gt;
+
+    &lt;script&gt;
+    var board = JXG.JSXGraph.initBoard("jxgboxf", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+    });
+    board.setBoundingBox([-60,60,20,-60],true);
+    board.create('point', [0,0], {name: 'Car B at 9:00'});
+    board.create('point', [0,-50], {name: 'Car A at 9:00'});
+    board.create('point', [-40,0], {name: 'Car B at 11:00'});
+    board.create('point', [0,50], {name: 'Car A at 11:00'});
+    &lt;/script&gt;
+
+    &lt;/body&gt;
+    &lt;/html&gt;
+    </code></pre>
+
+<div class="line"></div>
+
+<h3>Precalculus</h3>
+<h4 name="Graphing_a_smooth_curve_through_a_set_of_points">Graphing a smooth curve through a set of points</h4>
+<p>Change the Bounding Box and the points on the curve.</p>
+
+<div id="jxgboxf" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxf", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+board.setBoundingBox([-2, 10, 10, -2]);
+
+//define an array of coordinates of points (Note: Order matters!)
+var coords = [[0, 2], [0.5, 5], [1, 7], [1.5, 8], [2, 8.5],  [2.5, 8], [3, 7.4], [3.5, 7], [4, 6], [4.5, 4], [5, 3], [5.5, 2], [6, 3]];
+var p = [];
+
+//assign each point to the array 
+for (i = 0; i <= 12; i++) {
+    p[i] = board.create("point", coords[i], {name: '', size: 1, strokeColor: '#b73c0d', fillColor: '#b73c0d', opacity: 1});
+    }
+
+//Create the curve
+board.create('curve', JXG.Math.Numerics.Neville(p), {strokeWidth: '2'} ); 
+
+    </script>
+</div>
+
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+    board.setBoundingBox([-2, 10, 10, -2]);
+
+    //define an array of coordinates of points (Note: Order matters!)
+    var coords = [[0, 2], [0.5, 5], [1, 7], [1.5, 8], [2, 8.5],  [2.5, 8], [3, 7.4], [3.5, 7], [4, 6], [4.5, 4], [5, 3], 
+    [5.5, 2], [6, 3]];
+    var p = [];
+
+    //assign each point to the array 
+    for (i = 0; i <= 12; i++) {
+        p[i] = board.create("point", coords[i], {name: '', size: 1, strokeColor: '#b73c0d', 
+        fillColor: '#b73c0d', opacity: 1});
+        }
+
+    //Create the curve
+    board.create('curve', JXG.Math.Numerics.Neville(p), {strokeWidth: '2'} ); 
+
+</code></pre>
+
+<div class="line"></div>
+
+<h3 name="Graphing_functions">Graphing functions</h3>
+
+<h4 name="Algebraic,_exponential,_and_logarithmic_functions">Algebraic, exponential, and logarithmic functions</h4>
+<p>This image uses Math.<bold>abs</bold>, Math.<bold>pow</bold>, Math.<bold>sqrt</bold>, Math.<bold>exp</bold>, and Math.<bold>log</bold> (natural logarithm).  </p>
+<p>JSXGraph does not graph $x^{3/5}$ on the entire real line, but the function $\cfrac{x}{\lvert x \rvert}\cdot \lvert x \rvert ^{3/5}$ will be rendered on the real line.</p>
+<p>In the example below, $y=\text{log}_3(x)$ is drawn using the change of base formula, $y=\cfrac{\text{log}(3)}{\text{log}(x)}$.</p>
+
+<div id="jxgboxg" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxg", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+   board.create('functiongraph',[function(x) {return Math.pow(x,3/5);}, -5, 5], {strokeWidth: 2});
+   // To get a 3/5 power graphed on all reals.
+   board.create('functiongraph',[function(x) {return 1 + x / Math.abs(x) * Math.pow(Math.abs(x), 3/5);}, -5, 5], {strokeWidth: 2, strokeColor: '#3eabc9'});
+   board.create('functiongraph',[function(x) {return Math.sqrt(x) + 2;}, 0, 5], {strokeWidth: 2, strokeColor: '#df6f24'});
+   board.create('functiongraph',[function(x) {return Math.log(x-2);}, 0, 5], {strokeWidth: 2, strokeColor: '#28a445'});
+   // Logarithm to base 3.
+   board.create('functiongraph',[function(x) {return Math.log(x) / Math.log(3);}, 0, 5], {strokeWidth: 2, strokeColor: '#9343a2'});
+    </script>
+</div>
+<br>
+<p>Notes:
+    <ul>
+        <li>Note that “Math” MUST be capitalized to render correctly in the Authoring Tool.</li>
+        <li>Capitalize Math.PI (note that “P” and “I” are both capitalized).</li>
+        <li><span style="background-color:red; color: white;">CAUTION:</span>  You must use x**3 to denote an exponent in JSX Graphs.  Using x^3 <bold>will cause errors!</bold></li>
+    </ul>
+      
+</p>
+
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+        board.setBoundingBox([-5,5,5,-5]);
+        board.create('functiongraph',[function(x) {return Math.pow(x,3/5);}, -5, 5], {strokeWidth: 2});
+        // To get a 3/5 power graphed on all reals.
+        board.create('functiongraph',[function(x) {return 1 + x / Math.abs(x) * Math.pow(Math.abs(x), 3/5);}, -5, 5], 
+        {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+        board.create('functiongraph',[function(x) {return Math.sqrt(x) + 2;}, 0, 5], {strokeWidth: 2, strokeColor: '#df6f24'});
+        board.create('functiongraph',[function(x) {return Math.log(x-2);}, 0, 5], {strokeWidth: 2, strokeColor: '#28a445'});
+        // Logarithm to base 3.
+        board.create('functiongraph',[function(x) {return Math.log(x) / Math.log(3);}, 0, 5], 
+        {strokeWidth: 2, strokeColor: '#9343a2'});
+
+    </code></pre>
+<div class="line"></div>
+
+<h4 name="Trigonometric_functions">Trigonometric functions</h4>
+
+<ul>
+    <li>This image uses Math.PI, Math.sin, Math.cos, Math.tan, Math.asin, and Math.acos.  Make sure that “Math” is capitalized. </li> 
+    <li>Note that since there is no Math.sec defined, you would need to graph 1/Math.cos(x), and similarly for csc(x) and cot(x)</li>    </li>
+</ul>
+
+
+<div id="jxgboxh" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxh", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+board.setBoundingBox([-2,4,5,-2]);
+board.create('functiongraph',[function(x) {return Math.cos(x);}, 0, 3*Math.PI/2], {strokeWidth: 2});
+
+board.create('functiongraph',[function(x) {return -Math.sin(x);}, 0, 3*Math.PI/2], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+board.create('functiongraph',[function(x) {return Math.acos(x);}, -1,1], {strokeWidth: 2, strokeColor: '#df6f24'});
+   
+board.create('functiongraph',[function(x) {return Math.asin(x - 1) + Math.PI/2;}, 0,2], {strokeWidth: 2, strokeColor: '#9343a2'});
+   
+board.create('functiongraph',[function(x) {return Math.tan(x);}, Math.PI/2, 3*Math.PI/2], {strokeWidth: 2, strokeColor: '#28a445'});
+   
+board.create('functiongraph',[function(x) {return Math.atan(x) + 2;}, -1, 3*Math.PI/2], {strokeWidth: 2, strokeColor: '#3eabc9'});
+    </script>
+
+</div>
+
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  
+    board.setBoundingBox([-2,4,5,-2]);
+    board.create('functiongraph',[function(x) {return Math.cos(x);}, 0, 3*Math.PI/2], {strokeWidth: 2});
+    
+    board.create('functiongraph',[function(x) {return -Math.sin(x);}, 0, 3*Math.PI/2], 
+    {strokeWidth: 2, strokeColor: '#3eabc9'});
+    
+    board.create('functiongraph',[function(x) {return Math.acos(x);}, -1,1], {strokeWidth: 2, strokeColor: '#df6f24'});
+        
+    board.create('functiongraph',[function(x) {return Math.asin(x - 1) + Math.PI/2;}, 0,2], 
+    {strokeWidth: 2, strokeColor: '#9343a2'});
+        
+    board.create('functiongraph',[function(x) {return Math.tan(x);}, Math.PI/2, 3*Math.PI/2], 
+    {strokeWidth: 2, strokeColor: '#28a445'});
+        
+    board.create('functiongraph',[function(x) {return Math.atan(x) + 2;}, -1, 3*Math.PI/2], 
+    {strokeWidth: 2, strokeColor: '#3eabc9'});
+</code></pre>
+
+<div class="line"></div>
+
+<h4 name="Implicitly_defined_functions">Implicitly defined functions</h4>
+<p>To use this code, copy and paste into the JSXGrapher, use jsfiddle.net, or use locally on your computer.  Typical changes will be:
+<ul>
+    <li style="margin-bottom: 5px;"><span style="color:black; background-color: #4ec86a; padding: 5px;">Implicitly defined function</span> (example: for $x^2+y^2=1$, use $x^2+y^2-1$);</li>
+    <li style="margin-bottom: 5px;"><span style="color:black; background-color: #64c9e6; padding: 5px;">Bounding box parameters</span>;</li>
+    <li style="margin-bottom: 5px;"><span style="color:black; background-color: #fee65b; padding: 5px;">Step counters</span> (increasing will make the curve look smoother but will take longer to graph);</li>
+    <li style="margin-bottom: 5px;"><span style="color:black; background-color: #b164bf; padding: 5px;">Stroke width/color</span>;</li>
+</ul>
+</p>
+<div id="jxgboxi" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxi", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   //board.setBoundingBox([-5,5,5,-5]);
+   var board = JXG.JSXGraph.initBoard('jxgboxi', { 
+       boundingbox: [-5, 15, 15, -5], 
+       axis:true,
+       showCopyright: false,
+       showNavigation: false,
+       registerEvents: false,
+   });
+   var myFun = function myFun (x, y) {
+     return (Math.log(x)+Math.sin(y)-Math.cos(y)-1);
+   };
+   implicit(myFun, {
+     xMin: -5,
+     xMax: 15,
+     yMin: -5,
+     yMax: 15,
+     xInitialSteps: 80,
+     yInitialSteps: 80, 
+     segmentSteps:1,
+     fill: {
+       fillColor: "none",
+       strokeColor: "none"
+     }
+   });
+   // over arching function
+   function implicit (equation, parameters) {
+       var myStrokeWidth = 1;
+       var myStrokeColor = "#28a445";
+       var implicitFun, segmentSteps, maxRecursion, angleThreshold;
+       var interiorX, interiorY, borderX, borderY;
+     
+       if (parameters === undefined) {
+           parameters = {};
+       }
+       // default settings
+       var param = {
+           xMin: board.getBoundingBox()[0],
+           xMax: board.getBoundingBox()[2],
+           yMin: board.getBoundingBox()[3],
+           yMax: board.getBoundingBox()[1],
+           xInitialSteps: 1,
+           yInitialSteps: 1,
+           xValues: [], // user can specify guaranteed values for the quadtree
+           yValues: [],
+           segmentSteps: 1, // number of segments for isosegment
+           maxRecursion: 1, // newton's method
+           angleThreshold: 30, // degree measure to detect sharp corner
+           border: {
+               dash: 0,
+               strokeWidth: myStrokeWidth,
+               fixed: true,
+               strokeColor: myStrokeColor,
+               highlight: false
+           },
+           fill: {
+               layer: 1,
+               fixed: true,
+               highlight: false,
+               strokeWidth: 1,
+               strokeColor: "yellow",
+               strokeOpacity: 1.0,
+               fillColor: "yellow",
+               fillOpacity: 1.0
+           }
+       };
+       
+       //jQuery.extend(true, param, parameters);
+       //for ( var prop in parameters ) {
+       //    if ( Object.prototype.hasOwnProperty.call( parameters, prop ) ) {
+       //        param[prop] = parameters[prop]; // does not allow deep merge
+       //    }
+       //}
+       param = JXG.deepCopy(param, parameters);
+       // slightly expand bounds
+       // this greatly reduces chances of encountering multiple 0s on vertices
+       // 1009, 1013, 1019, and 1021 are primes
+       param.xMin -= (param.xMax - param.xMin) / 1009;
+       param.xMax += (param.xMax - param.xMin) / 1013;
+       param.yMin -= (param.yMax - param.yMin) / 1019;
+       param.yMax += (param.yMax - param.yMin) / 1021;
+       segmentSteps = param.segmentSteps;
+       maxRecursion = param.maxRecursion;
+       angleThreshold = param.angleThreshold * Math.PI/180; // radians
+       implicitFun = function (x, y) {
+           var out = equation(x, y);
+           if (Array.isArray(out)) {
+               return Math.min.apply(null, out);
+           } else {
+               return out;
+           }
+       };
+       interiorX = [];
+       interiorY = [];
+       borderX = [];
+       borderY = [];
+       // skip specified x and y values if they are outside of the requested rectangle
+       param.xValues = param.xValues.filter(function (val) {
+           return param.xMin < val && val < param.xMax;
+       });
+       param.yValues = param.yValues.filter(function (val) {
+           return param.yMin < val && val < param.yMax;
+       });
+       // construct the necessary x and y values for the quadtree
+       var i, j, v;
+       for (i = 0; i <= param.xInitialSteps; i++) {
+           v = param.xMin + i/param.xInitialSteps * (param.xMax - param.xMin);
+           param.xValues.push(v);
+       }
+       for (j = 0; j <= param.yInitialSteps; j++) {
+           v = param.yMin + j/param.yInitialSteps * (param.yMax - param.yMin);
+           param.yValues.push(v);
+       }
+       param.xValues = param.xValues.sort(function (a, b) {return a-b;});
+       param.yValues = param.yValues.sort(function (a, b) {return a-b;});
+       // loop through the quadtree
+       var west, east, south, north;
+       var NW, NE, SE, SW;
+       for (i = 0; i < param.xValues.length - 1; i++) {
+           west = param.xValues[i];
+           east = param.xValues[i+1];
+           for (j = 0; j < param.yValues.length - 1; j++) {
+               south = param.yValues[j];
+               north = param.yValues[j+1];
+               NW = implicitFun(west, north);
+               NE = implicitFun(east, north);
+               SE = implicitFun(east, south);
+               SW = implicitFun(west, south);
+               // triangles are much easier to work with than rectangles
+               triangle([[west, north, NW], [east, north, NE], [west, south, SW]]);
+               triangle([[east, north, NE], [east, south, SE], [west, south, SW]]);
+       }}
+       var border = board.create("curve", [borderX, borderY], param.border);
+       var shaded = board.create("curve", [interiorX, interiorY], param.fill);
+       board.update(); // takes care of canvas layer bug
+       return [border, shaded];
+   // helper functions
+   // placed in the overarching function to avoid globals
+   function gradient (x, y) {
+       var fx = JXG.Math.Numerics.D(function (t) {return implicitFun(t, y);})(x);
+       var fy = JXG.Math.Numerics.D(function (t) {return implicitFun(x, t);})(y);
+       return [fx, fy];
+   }
+   // variation of marching squares called marching triangles
+   function triangle (data) {
+       // [[x1, y1, value1], [x2, y2, value2], [x3, y3, value3]]
+       // sort by value from smallest to largest
+       data.sort(function (a, b) {
+           return a[2] - b[2];
+       });
+       var x1 = data[0][0];
+       var y1 = data[0][1];
+       var v1 = data[0][2];
+       var x2 = data[1][0];
+       var y2 = data[1][1];
+       var v2 = data[1][2];
+       var x3 = data[2][0];
+       var y3 = data[2][1];
+       var v3 = data[2][2];
+       if (!isFinite(v1) || !isFinite(v2) || !isFinite(v3)) {
+           console.warn("Not intended to handle NaN or Infinity results.");
+           return;
+       }
+       // 0 treated as positive for conditionals
+       // +++
+       if (v1 >= 0) {
+           interiorX.push(x1, x2, x3, NaN);
+           interiorY.push(y1, y2, y3, NaN);
+           return;
+       }
+       // ---
+       if (v3 < 0) {
+           return;
+       }
+       var xArray = [];
+       var yArray = [];
+       var mid1;
+       var mid2;
+       var results;
+   	
+       // --+
+       if (v2 < 0 && v3 >= 0) {
+           mid1 = weightedAverage([[x1, y1, v1], [x3, y3, v3]], maxRecursion);
+           mid2 = weightedAverage([[x2, y2, v2], [x3, y3, v3]], maxRecursion);
+           results = makeIsoSegment(mid1, mid2);
+           xArray = results[0];
+           yArray = results[1];
+           interiorX = interiorX.concat([x3], xArray, [x3, NaN]);
+           interiorY = interiorY.concat([y3], yArray, [y3, NaN]);
+           borderX = borderX.concat(xArray, [NaN]);
+           borderY = borderY.concat(yArray, [NaN]);
+       }
+       // -++
+       if (v1 < 0 && v2 >= 0) {
+           mid1 = weightedAverage([[x1, y1, v1], [x2, y2, v2]], maxRecursion);
+           mid2 = weightedAverage([[x1, y1, v1], [x3, y3, v3]], maxRecursion);
+           results = makeIsoSegment(mid1, mid2);
+           xArray = results[0];
+           yArray = results[1];
+           interiorX = interiorX.concat([x2], xArray, [x3, x2, NaN]);
+           interiorY = interiorY.concat([y2], yArray, [y3, y2, NaN]);
+           borderX = borderX.concat(xArray, [NaN]);
+           borderY = borderY.concat(yArray, [NaN]);
+       }
+   }
+   // takes two endpoints and makes segment on the isocurve
+   function makeIsoSegment (pointA, pointB) {
+       var steps = segmentSteps;
+       var xArray = new Array(steps + 1);
+       var yArray = new Array(steps + 1);
+       var out;
+       var myx;
+       var myy;
+       for (var i = 0; i <= steps; i++) {
+           myx = pointB[0]*i/steps + pointA[0]*(1 - i/steps);
+           myy = pointB[1]*i/steps + pointA[1]*(1 - i/steps);
+           out = newtonsMethod2D([myx, myy], maxRecursion);
+           xArray[i] = out[0];
+           yArray[i] = out[1];
+       }
+       // sharpen
+       var grad1 = gradient(xArray[0], yArray[0]);
+       var grad2;
+       var angle;
+       var grad1Mag, grad2Mag;
+       var c1, c2, det;
+       var xNew, yNew;
+       var threshold = angleThreshold;
+       for (i = 1; i < xArray.length; i++) {
+           grad2 = gradient(xArray[i], yArray[i]);
+           grad1Mag = Math.sqrt(grad1[0]*grad1[0] + grad1[1]*grad1[1]);
+           grad2Mag = Math.sqrt(grad2[0]*grad2[0] + grad2[1]*grad2[1]);
+           angle = Math.acos( (grad1[0]*grad2[0] + grad1[1]*grad2[1]) / (grad1Mag*grad2Mag) );
+           if (threshold < angle && angle < Math.PI - threshold) {
+               // cramer's rule
+               c1 = grad1[0]*xArray[i-1] + grad1[1]*yArray[i-1];
+               c2 = grad2[0]*xArray[i] + grad2[1]*yArray[i];
+               det = grad1[0] * grad2[1] - grad2[0] * grad1[1];
+               xNew = (c1 * grad2[1] - c2 * grad1[1]) / det;
+               yNew = (grad1[0] * c2 - grad2[0] * c1) / det;
+               xArray.splice(i, 0, xNew);
+               yArray.splice(i, 0, yNew);
+               i++; // because we added a point
+           }
+           grad1 = grad2;
+       }
+       return [xArray, yArray];
+   }
+   function newtonsMethod2D (point, recursion) {
+       var out = [point[0], point[1]];
+       var grad = gradient(point[0], point[1]);
+       var value = implicitFun(point[0], point[1]);
+       var localRecursion = recursion;
+       var L2 = grad[0]*grad[0] + grad[1]*grad[1];
+       if (localRecursion <= 0 || value*L2 === 0) {
+           return out;
+       }
+       out[0] -= value * grad[0] / L2;
+       out[1] -= value * grad[1] / L2;
+       return newtonsMethod2D(out, --localRecursion);
+   }
+   function weightedAverage (data, recursion) {
+       // [[x1, y1, value1], [x2, y2, value2]]
+       var x1 = data[0][0];
+       var y1 = data[0][1];
+       var v1 = data[0][2];
+       var x2 = data[1][0];
+       var y2 = data[1][1];
+       var v2 = data[1][2];
+       var localRecursion = recursion;
+       if (v1 === 0) {
+           return [x1, y1];
+       }
+       if (v2 === 0 || v1*v2 > 0) {
+           return [x2, y2];
+       }
+       var scale = Math.abs(v1) / Math.abs(v2 - v1);
+       var out = [x1*(1-scale) + x2*scale, y1*(1-scale) + y2*scale];
+       var outWeight = implicitFun(out[0], out[1]);
+       // recursion for edges
+       if (localRecursion <= 0 || Math.abs(outWeight) <= 1e-15) {
+           return out;
+       } else if (outWeight * v1 < 0) {
+           return weightedAverage([[x1, y1, v1], [out[0], out[1], outWeight]], --localRecursion);
+       } else if (outWeight * v2 < 0) {
+           return weightedAverage([[x2, y2, v2], [out[0], out[1], outWeight]], --localRecursion);
+       }
+       return out;
+   }
+   }
+
+    </script>
+</div>
+Code credit:  <a href="https://jsfiddle.net/tparise/tbuuxhjp/">https://jsfiddle.net/tparise/tbuuxhjp/</a> (Tony Parise)
+
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     //board.setBoundingBox([-5,5,5,-5]);
+     var board = JXG.JSXGraph.initBoard('jxgboxa', { 
+         boundingbox: [-5, 15, 15, -5], 
+         axis:true,
+         showCopyright: false,
+         showNavigation: false,
+         registerEvents: false,
+     });
+     var myFun = function myFun (x, y) {
+       return (Math.log(x)+Math.sin(y)-Math.cos(y)-1);
+     };
+     implicit(myFun, {
+       xMin: -5,
+       xMax: 15,
+       yMin: -5,
+       yMax: 15,
+       xInitialSteps: 80,
+       yInitialSteps: 80, 
+       segmentSteps:1,
+       fill: {
+         fillColor: "none",
+         strokeColor: "none"
+       }
+     });
+     // over arching function
+     function implicit (equation, parameters) {
+         var myStrokeWidth = 1;
+         var myStrokeColor = "#28a445";
+         var implicitFun, segmentSteps, maxRecursion, angleThreshold;
+         var interiorX, interiorY, borderX, borderY;
+       
+         if (parameters === undefined) {
+             parameters = {};
+         }
+         // default settings
+         var param = {
+             xMin: board.getBoundingBox()[0],
+             xMax: board.getBoundingBox()[2],
+             yMin: board.getBoundingBox()[3],
+             yMax: board.getBoundingBox()[1],
+             xInitialSteps: 1,
+             yInitialSteps: 1,
+             xValues: [], // user can specify guaranteed values for the quadtree
+             yValues: [],
+             segmentSteps: 1, // number of segments for isosegment
+             maxRecursion: 1, // newton's method
+             angleThreshold: 30, // degree measure to detect sharp corner
+             border: {
+                 dash: 0,
+                 strokeWidth: myStrokeWidth,
+                 fixed: true,
+                 strokeColor: myStrokeColor,
+                 highlight: false
+             },
+             fill: {
+                 layer: 1,
+                 fixed: true,
+                 highlight: false,
+                 strokeWidth: 1,
+                 strokeColor: "yellow",
+                 strokeOpacity: 1.0,
+                 fillColor: "yellow",
+                 fillOpacity: 1.0
+             }
+         };
+         
+         //jQuery.extend(true, param, parameters);
+         //for ( var prop in parameters ) {
+         //    if ( Object.prototype.hasOwnProperty.call( parameters, prop ) ) {
+         //        param[prop] = parameters[prop]; // does not allow deep merge
+         //    }
+         //}
+         param = JXG.deepCopy(param, parameters);
+         // slightly expand bounds
+         // this greatly reduces chances of encountering multiple 0s on vertices
+         // 1009, 1013, 1019, and 1021 are primes
+         param.xMin -= (param.xMax - param.xMin) / 1009;
+         param.xMax += (param.xMax - param.xMin) / 1013;
+         param.yMin -= (param.yMax - param.yMin) / 1019;
+         param.yMax += (param.yMax - param.yMin) / 1021;
+         segmentSteps = param.segmentSteps;
+         maxRecursion = param.maxRecursion;
+         angleThreshold = param.angleThreshold * Math.PI/180; // radians
+         implicitFun = function (x, y) {
+             var out = equation(x, y);
+             if (Array.isArray(out)) {
+                 return Math.min.apply(null, out);
+             } else {
+                 return out;
+             }
+         };
+         interiorX = [];
+         interiorY = [];
+         borderX = [];
+         borderY = [];
+         // skip specified x and y values if they are outside of the requested rectangle
+         param.xValues = param.xValues.filter(function (val) {
+             return param.xMin < val && val < param.xMax;
+         });
+         param.yValues = param.yValues.filter(function (val) {
+             return param.yMin < val && val < param.yMax;
+         });
+         // construct the necessary x and y values for the quadtree
+         var i, j, v;
+         for (i = 0; i <= param.xInitialSteps; i++) {
+             v = param.xMin + i/param.xInitialSteps * (param.xMax - param.xMin);
+             param.xValues.push(v);
+         }
+         for (j = 0; j <= param.yInitialSteps; j++) {
+             v = param.yMin + j/param.yInitialSteps * (param.yMax - param.yMin);
+             param.yValues.push(v);
+         }
+         param.xValues = param.xValues.sort(function (a, b) {return a-b;});
+         param.yValues = param.yValues.sort(function (a, b) {return a-b;});
+         // loop through the quadtree
+         var west, east, south, north;
+         var NW, NE, SE, SW;
+         for (i = 0; i < param.xValues.length - 1; i++) {
+             west = param.xValues[i];
+             east = param.xValues[i+1];
+             for (j = 0; j < param.yValues.length - 1; j++) {
+                 south = param.yValues[j];
+                 north = param.yValues[j+1];
+                 NW = implicitFun(west, north);
+                 NE = implicitFun(east, north);
+                 SE = implicitFun(east, south);
+                 SW = implicitFun(west, south);
+                 // triangles are much easier to work with than rectangles
+                 triangle([[west, north, NW], [east, north, NE], [west, south, SW]]);
+                 triangle([[east, north, NE], [east, south, SE], [west, south, SW]]);
+         }}
+         var border = board.create("curve", [borderX, borderY], param.border);
+         var shaded = board.create("curve", [interiorX, interiorY], param.fill);
+         board.update(); // takes care of canvas layer bug
+         return [border, shaded];
+     // helper functions
+     // placed in the overarching function to avoid globals
+     function gradient (x, y) {
+         var fx = JXG.Math.Numerics.D(function (t) {return implicitFun(t, y);})(x);
+         var fy = JXG.Math.Numerics.D(function (t) {return implicitFun(x, t);})(y);
+         return [fx, fy];
+     }
+     // variation of marching squares called marching triangles
+     function triangle (data) {
+         // [[x1, y1, value1], [x2, y2, value2], [x3, y3, value3]]
+         // sort by value from smallest to largest
+         data.sort(function (a, b) {
+             return a[2] - b[2];
+         });
+         var x1 = data[0][0];
+         var y1 = data[0][1];
+         var v1 = data[0][2];
+         var x2 = data[1][0];
+         var y2 = data[1][1];
+         var v2 = data[1][2];
+         var x3 = data[2][0];
+         var y3 = data[2][1];
+         var v3 = data[2][2];
+         if (!isFinite(v1) || !isFinite(v2) || !isFinite(v3)) {
+             console.warn("Not intended to handle NaN or Infinity results.");
+             return;
+         }
+         // 0 treated as positive for conditionals
+         // +++
+         if (v1 >= 0) {
+             interiorX.push(x1, x2, x3, NaN);
+             interiorY.push(y1, y2, y3, NaN);
+             return;
+         }
+         // ---
+         if (v3 < 0) {
+             return;
+         }
+         var xArray = [];
+         var yArray = [];
+         var mid1;
+         var mid2;
+         var results;
+         
+         // --+
+         if (v2 < 0 && v3 >= 0) {
+             mid1 = weightedAverage([[x1, y1, v1], [x3, y3, v3]], maxRecursion);
+             mid2 = weightedAverage([[x2, y2, v2], [x3, y3, v3]], maxRecursion);
+             results = makeIsoSegment(mid1, mid2);
+             xArray = results[0];
+             yArray = results[1];
+             interiorX = interiorX.concat([x3], xArray, [x3, NaN]);
+             interiorY = interiorY.concat([y3], yArray, [y3, NaN]);
+             borderX = borderX.concat(xArray, [NaN]);
+             borderY = borderY.concat(yArray, [NaN]);
+         }
+         // -++
+         if (v1 < 0 && v2 >= 0) {
+             mid1 = weightedAverage([[x1, y1, v1], [x2, y2, v2]], maxRecursion);
+             mid2 = weightedAverage([[x1, y1, v1], [x3, y3, v3]], maxRecursion);
+             results = makeIsoSegment(mid1, mid2);
+             xArray = results[0];
+             yArray = results[1];
+             interiorX = interiorX.concat([x2], xArray, [x3, x2, NaN]);
+             interiorY = interiorY.concat([y2], yArray, [y3, y2, NaN]);
+             borderX = borderX.concat(xArray, [NaN]);
+             borderY = borderY.concat(yArray, [NaN]);
+         }
+     }
+     // takes two endpoints and makes segment on the isocurve
+     function makeIsoSegment (pointA, pointB) {
+         var steps = segmentSteps;
+         var xArray = new Array(steps + 1);
+         var yArray = new Array(steps + 1);
+         var out;
+         var myx;
+         var myy;
+         for (var i = 0; i <= steps; i++) {
+             myx = pointB[0]*i/steps + pointA[0]*(1 - i/steps);
+             myy = pointB[1]*i/steps + pointA[1]*(1 - i/steps);
+             out = newtonsMethod2D([myx, myy], maxRecursion);
+             xArray[i] = out[0];
+             yArray[i] = out[1];
+         }
+         // sharpen
+         var grad1 = gradient(xArray[0], yArray[0]);
+         var grad2;
+         var angle;
+         var grad1Mag, grad2Mag;
+         var c1, c2, det;
+         var xNew, yNew;
+         var threshold = angleThreshold;
+         for (i = 1; i < xArray.length; i++) {
+             grad2 = gradient(xArray[i], yArray[i]);
+             grad1Mag = Math.sqrt(grad1[0]*grad1[0] + grad1[1]*grad1[1]);
+             grad2Mag = Math.sqrt(grad2[0]*grad2[0] + grad2[1]*grad2[1]);
+             angle = Math.acos( (grad1[0]*grad2[0] + grad1[1]*grad2[1]) / (grad1Mag*grad2Mag) );
+             if (threshold < angle && angle < Math.PI - threshold) {
+                 // cramer's rule
+                 c1 = grad1[0]*xArray[i-1] + grad1[1]*yArray[i-1];
+                 c2 = grad2[0]*xArray[i] + grad2[1]*yArray[i];
+                 det = grad1[0] * grad2[1] - grad2[0] * grad1[1];
+                 xNew = (c1 * grad2[1] - c2 * grad1[1]) / det;
+                 yNew = (grad1[0] * c2 - grad2[0] * c1) / det;
+                 xArray.splice(i, 0, xNew);
+                 yArray.splice(i, 0, yNew);
+                 i++; // because we added a point
+             }
+             grad1 = grad2;
+         }
+         return [xArray, yArray];
+     }
+     function newtonsMethod2D (point, recursion) {
+         var out = [point[0], point[1]];
+         var grad = gradient(point[0], point[1]);
+         var value = implicitFun(point[0], point[1]);
+         var localRecursion = recursion;
+         var L2 = grad[0]*grad[0] + grad[1]*grad[1];
+         if (localRecursion <= 0 || value*L2 === 0) {
+             return out;
+         }
+         out[0] -= value * grad[0] / L2;
+         out[1] -= value * grad[1] / L2;
+         return newtonsMethod2D(out, --localRecursion);
+     }
+     function weightedAverage (data, recursion) {
+         // [[x1, y1, value1], [x2, y2, value2]]
+         var x1 = data[0][0];
+         var y1 = data[0][1];
+         var v1 = data[0][2];
+         var x2 = data[1][0];
+         var y2 = data[1][1];
+         var v2 = data[1][2];
+         var localRecursion = recursion;
+         if (v1 === 0) {
+             return [x1, y1];
+         }
+         if (v2 === 0 || v1*v2 > 0) {
+             return [x2, y2];
+         }
+         var scale = Math.abs(v1) / Math.abs(v2 - v1);
+         var out = [x1*(1-scale) + x2*scale, y1*(1-scale) + y2*scale];
+         var outWeight = implicitFun(out[0], out[1]);
+         // recursion for edges
+         if (localRecursion <= 0 || Math.abs(outWeight) <= 1e-15) {
+             return out;
+         } else if (outWeight * v1 < 0) {
+             return weightedAverage([[x1, y1, v1], [out[0], out[1], outWeight]], --localRecursion);
+         } else if (outWeight * v2 < 0) {
+             return weightedAverage([[x2, y2, v2], [out[0], out[1], outWeight]], --localRecursion);
+         }
+         return out;
+     }
+     }
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Inverse_functions">Inverse functions</h4>
+<p>The graph of any inverse function may be created using a parameterization.  If $(t,f(t))$ parameterizes the function $y=f(x)$, then $(f(t),t)$ is a parameterization of the inverse function.  Change the highlighted functions below.</p>
+<p>This is useful to graph difficult inverses.  It is quite difficult algebraically to find the inverse of $y=x^3+x+1$.  But it is easy to graph using parameterizations.  The graph of $y=x^3+x+1$ is shown in orange, and its inverse function, $x=y^3+y+1$, is shown in blue.</p>
+<div id="jxgboxj" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxj", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-4,4,4,-4]);
+
+   board.create('functiongraph',[function(x) {return x**3+x+1;}, -4,4], {strokeWidth: 2, strokeColor: '#df6f24'});
+
+   // using parameterizations to graph the inverse function
+   board.create('curve', [function(t) {return t**3+t+1}, function(t) {return t}, -4, 4], {strokeWidth: 2, strokeColor: '#3eabc9'});
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-4,4,4,-4]);
+  
+     board.create('functiongraph',[function(x) {return x**3+x+1;}, -4,4], {strokeWidth: 2, strokeColor: '#df6f24'});
+  
+     // using parameterizations to graph the inverse function
+     board.create('curve', [function(t){return t**3+t+1}, function(t){return t}, -4, 4], {strokeWidth:2, strokeColor:'#3eabc9'});
+</code></pre>
+
+<div class="line"></div>
+
+<h4 name="Inverse_trigonometric_functions">Inverse trigonometric functions</h4>
+
+<p>For some inverse functions, it is possible to use properties of those functions to make graphing them easier.  Here are the graphs of $arcsec(x)$, $arccsc(x)$, and $arccot(x)$.</p>
+<p>$y=sec(x)$ is graphed the domain $[0, \pi]$ in orange; $y=arcsec(x)$ is graphed in blue.</p>
+
+<div id="jxgboxk" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxk", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+board.setBoundingBox([-5,5,5,-5]);
+
+// sec(x) and arcsec(x)
+board.create('functiongraph',[function(x) {return 1/Math.cos(x);}, 0, Math.PI], {strokeWidth: 2, strokeColor: '#df6f24'});
+board.create('functiongraph',[function(x) {return Math.acos(1/x);}, -2*Math.PI, 2*Math.PI], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+
+// csc(x) and arccsc(x)
+// board.create('functiongraph',[function(x) {return 1/Math.sin(x);}, -Math.PI/2, Math.PI/2], {strokeWidth: 2, strokeColor: '#df6f24'});
+// board.create('functiongraph',[function(x) {return Math.asin(1/x);}, -2*Math.PI, 2*Math.PI], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+// cot(x) and arccot(x)
+// board.create('functiongraph',[function(x) {return 1/Math.tan(x);},  0, Math.PI], {strokeWidth: 2, strokeColor: '#df6f24'});
+// board.create('functiongraph',[function(x) {return Math.atan(1/x);}, 0, 2*Math.PI], {strokeWidth: 2, strokeColor: '#3eabc9'});
+// board.create('functiongraph',[function(x) {return Math.PI+Math.atan(1/x);}, -2*Math.PI, 0], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+    </script>
+</div>
+<br><br>
+<p>$y=csc(x)$ is graphed the domain $[-\pi/2,\pi/2]$ in orange; $y=arccsc(x)$ is graphed in blue.</p>
+
+<div id="jxgboxka" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxka", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+board.setBoundingBox([-5,5,5,-5]);
+
+// sec(x) and arcsec(x)
+// board.create('functiongraph',[function(x) {return 1/Math.cos(x);}, 0, Math.PI], {strokeWidth: 2, strokeColor: '#df6f24'});
+// board.create('functiongraph',[function(x) {return Math.acos(1/x);}, -2*Math.PI, 2*Math.PI], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+
+// csc(x) and arccsc(x)
+board.create('functiongraph',[function(x) {return 1/Math.sin(x);}, -Math.PI/2, Math.PI/2], {strokeWidth: 2, strokeColor: '#df6f24'});
+board.create('functiongraph',[function(x) {return Math.asin(1/x);}, -2*Math.PI, 2*Math.PI], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+// cot(x) and arccot(x)
+// board.create('functiongraph',[function(x) {return 1/Math.tan(x);},  0, Math.PI], {strokeWidth: 2, strokeColor: '#df6f24'});
+// board.create('functiongraph',[function(x) {return Math.atan(1/x);}, 0, 2*Math.PI], {strokeWidth: 2, strokeColor: '#3eabc9'});
+// board.create('functiongraph',[function(x) {return Math.PI+Math.atan(1/x);}, -2*Math.PI, 0], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+    </script>
+</div>
+<br><br>
+<p>$y=cot(x)$ is graphed on the domain $[0,\pi]$ in orange; $y=arccot(x)$ is graphed in blue.</p>
+
+<div id="jxgboxkb" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxkb", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+board.setBoundingBox([-5,5,5,-5]);
+
+// sec(x) and arcsec(x)
+// board.create('functiongraph',[function(x) {return 1/Math.cos(x);}, 0, Math.PI], {strokeWidth: 2, strokeColor: '#df6f24'});
+// board.create('functiongraph',[function(x) {return Math.acos(1/x);}, -2*Math.PI, 2*Math.PI], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+
+// csc(x) and arccsc(x)
+// board.create('functiongraph',[function(x) {return 1/Math.sin(x);}, -Math.PI/2, Math.PI/2], {strokeWidth: 2, strokeColor: '#df6f24'});
+// board.create('functiongraph',[function(x) {return Math.asin(1/x);}, -2*Math.PI, 2*Math.PI], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+// cot(x) and arccot(x)
+board.create('functiongraph',[function(x) {return 1/Math.tan(x);},  0, Math.PI], {strokeWidth: 2, strokeColor: '#df6f24'});
+board.create('functiongraph',[function(x) {return Math.atan(1/x);}, 0, 2*Math.PI], {strokeWidth: 2, strokeColor: '#3eabc9'});
+board.create('functiongraph',[function(x) {return Math.PI+Math.atan(1/x);}, -2*Math.PI, 0], {strokeWidth: 2, strokeColor: '#3eabc9'});
+
+    </script>
+</div>
+<br>
+
+<p>
+    Notes:
+    <ol>
+        <li>Here is a brief explanation of why this works: <br> $\begin{aligned}\theta&=arcsec(x)\\sec\;\theta &=x\\\frac{1}{cos\;\theta}&=x\\cos\;\theta&=\frac{1}{x}\\\theta&=arccos\left(\frac{1}{x}\right)\end{aligned}$</li>
+        <li>Similarly, $arccsc(x)=arcsin(1/x)$.</li>
+        <li>Note that $arccot(x)$ is sometimes defined by using a domain of $[-\pi/2,\pi/2]$ for $cot(x)$, and sometimes defined using a domain of $[0,\pi]$. The example shown uses $[0,\pi]$, and therefore needs to be graphed in two separate pieces. If the domain used were $[-\pi/2,\pi/2]$, you could just use Math.atan(1/x). </li>
+    </ol>
+</p>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  
+    board.setBoundingBox([-5,5,5,-5]);
+    
+    // sec(x) and arcsec(x)
+    board.create('functiongraph',[function(x) {return 1/Math.cos(x);}, 0, Math.PI], 
+    {strokeWidth: 2, strokeColor: '#df6f24'});
+    board.create('functiongraph',[function(x) {return Math.acos(1/x);}, -2*Math.PI, 2*Math.PI], 
+    {strokeWidth: 2, strokeColor: '#3eabc9'});
+    
+    
+    // csc(x) and arccsc(x)
+    board.create('functiongraph',[function(x) {return 1/Math.sin(x);}, -Math.PI/2, Math.PI/2], 
+    {strokeWidth: 2, strokeColor: '#df6f24'});
+    board.create('functiongraph',[function(x) {return Math.asin(1/x);}, -2*Math.PI, 2*Math.PI], 
+    {strokeWidth: 2, strokeColor: '#3eabc9'});
+    
+    // cot(x) and arccot(x)
+    board.create('functiongraph',[function(x) {return 1/Math.tan(x);},  0, Math.PI], 
+    {strokeWidth: 2, strokeColor: '#df6f24'});
+    board.create('functiongraph',[function(x) {return Math.atan(1/x);}, 0, 2*Math.PI], 
+    {strokeWidth: 2, strokeColor: '#3eabc9'});
+    board.create('functiongraph',[function(x) {return Math.PI+Math.atan(1/x);}, -2*Math.PI, 0], 
+    {strokeWidth: 2, strokeColor: '#3eabc9'});
+    
+</code></pre>
+
+<div class="line"></div>
+
+<h4 name="Parametrically_defined_functions">Parametrically defined functions</h4>
+<p>Change the highlighted elements as needed.</p>
+<div id="jxgboxl" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxl", {
+      axis: true,
+      showCopyright: false,
+      showNavigation : false,
+      registerEvents: false
+   });
+
+board.setBoundingBox([-1.2,1.2,1.2,-1.2]);
+
+// arguments are x(t), y(t), beginning t, and ending t.
+board.create('curve', [function(t) {return Math.cos(t)}, function(t) {return Math.sin(3*t)}, 0, 2*Math.PI]);
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation : false,
+        registerEvents: false
+     });
+  
+  board.setBoundingBox([-1.2,1.2,1.2,-1.2]);
+  
+  // arguments are x(t), y(t), beginning t, and ending t.
+  board.create('curve', [function(t) {return Math.cos(t)}, function(t) {return Math.sin(3*t)}, 0, 2*Math.PI]);
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Polar_functions">Polar functions</h4>
+<p>Polar functions $r=f(\theta)$ may be plotted using the parameterization </p>
+<p>$x=r\,cos(\theta),\;\;y=r\,sin(\theta).$ Change the highlighted parameters.</p>
+<div id="jxgboxm" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxm", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+board.setBoundingBox([-1,1.75,2.5,-1.75]);
+
+// polar function
+function f(th) {
+    return 1 + Math.cos(th);
+}
+board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, 0, 2*Math.PI], 
+{strokeColor: '#3eabc9 ', strokeWidth: 2});  
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  
+  board.setBoundingBox([-1,1.75,2.5,-1.75]);
+  
+  // polar function
+  function f(th) {
+      return 1 + Math.cos(th);
+  }
+  board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, 0, 2*Math.PI], 
+  {strokeColor: '#3eabc9 ', strokeWidth: 2});  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Piecewise-defined_functions">Piecewise-defined functions</h4>
+
+<div id="jxgboxn" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxn", {
+      axis: true,
+      keepaspectratio: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-3,5,5,-1]);
+
+   // Defines a function on an interval.
+   board.create('functiongraph',[function(x){ return x**2;}, -2, 0]);
+   // Change color of function.
+   board.create('functiongraph', [function(x){ return x+1;}, 0, 3], {strokeColor: '#28a445'});
+   // Change thickness of lines.
+   board.create('functiongraph',[function(x){ return 5-x;}, 3, 4], {strokeWidth: 3});
+
+   // Change color of points.
+   board.create('point', [-2,4], {strokeColor: '#b73c0d', fillColor: '#b73c0d', opacity: 1});
+   board.create('point', [0,0], {name: 'Point Q', strokeColor: '#591c67', fillColor: '#591c67', opacity: 1});
+   // Open circle.
+   board.create('point', [0,1], {name: '', strokeColor: '#591c67', fillColor: 'none', opacity: 1});
+   // Can change the size of points.
+   board.create('point', [3,4], {name: '', size: 7, strokeColor: '#0f6a21', fillColor: '#0f6a21', opacity: 1});
+
+   // Placing text for labels.
+   board.create('text', [2, 2.8, 'f(x)']);
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        keepaspectratio: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-3,5,5,-1]);
+  
+     // Defines a function on an interval.
+     board.create('functiongraph',[function(x){ return x**2;}, -2, 0]);
+     // Change color of function.
+     board.create('functiongraph', [function(x){ return x+1;}, 0, 3], {strokeColor: '#28a445'});
+     // Change thickness of lines.
+     board.create('functiongraph',[function(x){ return 5-x;}, 3, 4], {strokeWidth: 3});
+  
+     // Change color of points.
+     board.create('point', [-2,4], {strokeColor: '#b73c0d', fillColor: '#b73c0d', opacity: 1});
+     board.create('point', [0,0], {name: 'Point Q', strokeColor: '#591c67', fillColor: '#591c67', opacity: 1});
+     // Open circle.
+     board.create('point', [0,1], {name: '', strokeColor: '#591c67', fillColor: 'none', opacity: 1});
+     // Can change the size of points.
+     board.create('point', [3,4], {name: '', size: 7, strokeColor: '#0f6a21', fillColor: '#0f6a21', opacity: 1});
+  
+     // Placing text for labels.
+     board.create('text', [2, 2.8, 'f(x)']);
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Simple_inequalities">Simple inequalities</h4>
+<p>Highlighted values typically need to be changed.  Use the dash directive for $<$ or $></or>$, and use the inverse directive for $<$ or $\leq$.</p>
+<p>NOTE:  Be sure the points are listed with the smaller x-value first.</p>
+<div id="jxgboxo" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxo", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+
+
+   // NOTE:  Switching the order of the points changes the shading.
+   // List the point with the smaller x-value first.
+
+   // greater than or equal to  
+   line1 = board.create('line', [[1,0], [3,3]], {strokeColor: '#df6f24'});
+   board.create('inequality', [line1]); 
+  
+   // less than (use inverse)
+   line2 = board.create('line', [[-3,1],[2,-2]] , {dash: 2});
+   board.create('inequality', [line2], {inverse: true});
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-5,5,5,-5]);
+  
+     // NOTE:  Switching the order of the points changes the shading.
+     // List the point with the smaller x-value first.
+  
+     // greater than or equal to  
+     line1 = board.create('line', [[1,0], [3,3]], {strokeColor: '#df6f24'});
+     board.create('inequality', [line1]); 
+    
+     // less than (use inverse)
+     line2 = board.create('line', [[-3,1],[2,-2]] , {dash: 2});
+     board.create('inequality', [line2], {inverse: true});
+</code></pre>
+<div class="line"></div>
+
+<h3 name="Trigonometry_examples">Trigonometry examples</h3>
+
+<!-- <div id="jxgboxp" style="width:600px; height:600px" class="graph">
+    <script>
+
+    </script>
+</div>
+
+<div class="line"></div> -->
+
+<h4 name="Drawing_a_right_triangle_with_labels">Drawing a right triangle with labels</h4>
+
+<div id="jxgboxq" style="width:600px; height:400px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxq", {
+      axis: false,  // don't show the axes
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   
+// set the display box
+board.setBoundingBox([-0.5,7.5,7.5,-0.5]);
+
+// draw the three sides of the right triangle
+   board.create("segment", [[0,0], [7,0]]);
+   board.create("segment", [[0,0], [7,5]]);
+   board.create("segment", [[7,0], [7,5]]);
+
+// draw a square in the right angle
+   board.create("segment", [[6.5,0], [6.5,0.5]]);
+   board.create("segment", [[6.5,0.5], [7,0.5]]);
+
+// draw a circle arc in an acute angle
+   board.create("functiongraph",  [function(x){ return Math.sqrt(1-x*x) }, 0.82, 1]);
+
+// label vertices, sides, and angles
+   board.create("text", [1.1, 0.4, 'a']);
+   board.create("text", [-0.4, 0, 'A']);
+   board.create("text", [7.2, 0, 'B']);
+   board.create("text", [7.2, 5, 'C']);
+   board.create("text", [2.7, 2.7, '1.72']);
+   board.create("text", [7.2, 2.5, '1']);
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: false,  // don't show the axes
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     
+  // set the display box
+  board.setBoundingBox([-0.5,7.5,7.5,-0.5]);
+  
+  // draw the three sides of the right triangle
+     board.create("segment", [[0,0], [7,0]]);
+     board.create("segment", [[0,0], [7,5]]);
+     board.create("segment", [[7,0], [7,5]]);
+  
+  // draw a square in the right angle
+     board.create("segment", [[6.5,0], [6.5,0.5]]);
+     board.create("segment", [[6.5,0.5], [7,0.5]]);
+  
+  // draw a circle arc in an acute angle
+     board.create("functiongraph",  [function(x){ return Math.sqrt(1-x*x) }, 0.82, 1]);
+  
+  // label vertices, sides, and angles
+     board.create("text", [1.1, 0.4, 'a']);
+     board.create("text", [-0.4, 0, 'A']);
+     board.create("text", [7.2, 0, 'B']);
+     board.create("text", [7.2, 5, 'C']);
+     board.create("text", [2.7, 2.7, '1.72']);
+     board.create("text", [7.2, 2.5, '1']);
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Unit_circle_plotting">Unit circle plotting</h4>
+<p>
+    Example for plotting a point and drawing a triangle on the unit circle. Change p and q to get different angles
+ <br>
+<bold>t=(p/q)*math.PI</bold>
+<br>
+The points and the triangle change accordingly and are defined in terms of these two variables. 
+<br>
+Expression using math object(s) in JavaScript: 
+</p>
+
+<div id="jxgboxr" style="width:600px; height:600px" class="graph">
+    <script>
+         var board = JXG.JSXGraph.initBoard("jxgboxr", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-1.5,1.5,1.5,-1.5]);
+
+   // p and q give a rational constant in order to define an angle t = (p/q)*math.PI below.
+   var p = 5; 
+   var q = 6;
+
+   // define the angle "t" for sin(t) and cos(t)
+   var t = (p/q)*Math.PI;
+
+   // graph the upper and lower half of the unit circle.
+   board.create("functiongraph",  [function(x){ return Math.sqrt(1-x*x)}]);
+   board.create("functiongraph",  [function(x){ return -Math.sqrt(1-x*x)}]);
+
+   //define the point 'X' on the unit circle at angle "t" from above using sin(t) and cos(t).
+   var p1 = board.create('point', [Math.cos(t), Math.sin(t)],  {name: '', size:3});
+
+   //define the three vertices of the corresponding triangle.
+   var pts = [[0,0], [p1.X(), p1.Y()], [p1.X(), 0]];
+
+   //define the triangle
+   var pol1 = board.create('polygon', pts, {hasInnerPoints: true});
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-1.5,1.5,1.5,-1.5]);
+  
+     // p and q give a rational constant in order to define an angle t = (p/q)*math.PI below.
+     var p = 5; 
+     var q = 6;
+  
+     // define the angle "t" for sin(t) and cos(t)
+     var t = (p/q)*Math.PI;
+  
+     // graph the upper and lower half of the unit circle.
+     board.create("functiongraph",  [function(x){ return Math.sqrt(1-x*x)}]);
+     board.create("functiongraph",  [function(x){ return -Math.sqrt(1-x*x)}]);
+  
+     //define the point 'X' on the unit circle at angle "t" from above using sin(t) and cos(t).
+     var p1 = board.create('point', [Math.cos(t), Math.sin(t)],  {name: '', size:3});
+  
+     //define the three vertices of the corresponding triangle.
+     var pts = [[0,0], [p1.X(), p1.Y()], [p1.X(), 0]];
+  
+     //define the triangle
+     var pol1 = board.create('polygon', pts, {hasInnerPoints: true});
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Angles_larger_than_360_degrees">Angles larger than 360 degrees</h4>
+
+<table>
+    <tbody>
+        <tr>
+            <td>
+                1. $r=\theta$
+                <div id="jxgboxs" style="width:400px; height:400px" class="graph">
+                    <script>
+                        var board = JXG.JSXGraph.initBoard("jxgboxs", {
+                            axis: true,
+                            showCopyright: false,
+                            showNavigation: false,
+                            registerEvents: false
+                        });
+                        board.setBoundingBox([-5,5,5,-5]);
+                        function f(th) {
+                            return th;};
+                        board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, 0, 9*Math.PI/2], {strokeColor: '#3eabc9 ', strokeWidth: 2});
+                        board.create('curve', [function(th) {return -f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, 0, 9*Math.PI/2], {strokeColor: '#3eabc9 ', strokeWidth: 2});
+                    </script>
+                </div>
+            </td>
+            <td>
+                2. $r=\pi/2-\theta$
+                <div id="jxgboxs1" style="width:400px; height:400px" class="graph">
+                    <script>
+                        var board = JXG.JSXGraph.initBoard("jxgboxs1", {
+                            axis: true,
+                            showCopyright: false,
+                            showNavigation: false,
+                            registerEvents: false
+                        });
+                        board.setBoundingBox([-5,5,5,-5]);
+                        function f(th) {
+                            return Math.PI/2-th;};
+                        board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, -4*Math.PI, 0], {strokeColor: '#3eabc9 ', strokeWidth: 2}); 
+                    </script>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <br>
+                3. $r=0.2+(\pi/2-\theta)/12$
+                <div id="jxgboxs2" style="width:400px; height:400px" class="graph">
+                    <script>
+                        var board = JXG.JSXGraph.initBoard("jxgboxs2", {
+                            axis: true,
+                            showCopyright: false,
+                            showNavigation: false,
+                            registerEvents: false
+                        });
+                        board.setBoundingBox([-5,5,5,-5]);
+                        function f(th) {
+                            return 0.2+(Math.PI-th)/12;};
+                        board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, -4*Math.PI, 0], {strokeColor: '#3eabc9 ', strokeWidth: 2}); 
+                    </script>
+                </div>
+            </td>
+            <td>
+                <br>
+                4. $r=0.2+(\pi/2+\theta)/12$
+                <div id="jxgboxs3" style="width:400px; height:400px" class="graph">
+                    <script>
+                         var board = JXG.JSXGraph.initBoard("jxgboxs3", {
+                            axis: true,
+                            showCopyright: false,
+                            showNavigation: false,
+                            registerEvents: false
+                        });
+                        board.setBoundingBox([-5,5,5,-5]);
+                        function f(th) {
+                            return 0.2+(th+Math.PI/2)/12;};
+                        board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, 0, 9*Math.PI/2], {strokeColor: '#3eabc9 ', strokeWidth: 2});
+                    </script>
+                </div>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<p>
+    Notes:
+    <ol>
+        <li>For negative angles, start with $r=\theta$ on $[-4\pi,4\pi]$.</li>
+        <li>Reflect through the origin and rotate $\pi/2$ the part of the graph on $[-4\pi,0]$.</li>
+        <li>Scale and slightly shift along the axes.</li>
+        <li>An example with a positive angle, using the interval $[0,9\pi/2]$.</li>
+        <li>The angles used are highlighted below.</li>
+        <li>The “0.2” and “12” in the equations may be changed depending on the example and the size of the graph.</li>
+    </ol>   
+</p>
+
+<pre><code>
+//For graph #1
+var board = JXG.JSXGraph.initBoard("jxgboxa", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+});
+board.setBoundingBox([-5,5,5,-5]);
+function f(th) {
+    return th;};
+board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, 0, 9*Math.PI/2], 
+{strokeColor: '#3eabc9 ', strokeWidth: 2});
+board.create('curve', [function(th) {return -f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, 0, 9*Math.PI/2], 
+{strokeColor: '#3eabc9 ', strokeWidth: 2});
+
+//For graph #2
+var board = JXG.JSXGraph.initBoard("jxgboxa", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+});
+board.setBoundingBox([-5,5,5,-5]);
+function f(th) {
+    return Math.PI/2-th;};
+board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, -4*Math.PI, 0], 
+{strokeColor: '#3eabc9 ', strokeWidth: 2}); 
+
+//For graph #3:
+var board = JXG.JSXGraph.initBoard("jxgboxa", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+});
+board.setBoundingBox([-5,5,5,-5]);
+function f(th) {
+    return 0.2+(Math.PI-th)/12;};
+board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, -4*Math.PI, 0], 
+{strokeColor: '#3eabc9 ', strokeWidth: 2});  
+
+//For graph #4:
+var board = JXG.JSXGraph.initBoard("jxgboxa", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+});
+board.setBoundingBox([-5,5,5,-5]);
+function f(th) {
+    return 0.2+(th+Math.PI/2)/12;};
+board.create('curve', [function(th) {return f(th)*Math.cos(th);}, function(th) {return f(th)*Math.sin(th);}, 0, 9*Math.PI/2], 
+{strokeColor: '#3eabc9 ', strokeWidth: 2});
+</code></pre>
+
+<div class="line"></div>
+
+<h3>Statistics</h3>
+<h4 name="Scatter_plots">Scatter plots</h4>
+<p>You can use a loop so you only have to specify the formatting of points in the plot once.  Change the highlighted elements.</p>
+<div id="jxgboxt" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxt", {
+            axis: true,
+            showCopyright: false,
+            showNavigation: false,
+            registerEvents: false
+        });
+
+        var mypoints = [[0,0], [1,0], [4,4], [4,-3], [-4,-4], [-2,4], [-3,1], [3,2], [2,-2]];
+        var i;
+
+        for (i = 0; i < mypoints.length; i++) {
+        board.create('point', mypoints[i], {name: '', size: 3, strokeColor: '#591c67', fillColor: '#591c67', opacity: 1});
+        } 
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxt", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+    });
+
+    var mypoints = [[0,0], [1,0], [4,4], [4,-3], [-4,-4], [-2,4], [-3,1], [3,2], [2,-2]];
+    var i;
+
+    for (i = 0; i < mypoints.length; i++) {
+    board.create('point', mypoints[i], {name: '', size: 3, strokeColor: '#591c67', fillColor: '#591c67', opacity: 1});
+    }
+</code></pre>
+<div class="line"></div>
+
+<h3>Calculus</h3>
+<h4 name="Euler’s_method">Euler’s method</h4>
+<p>This script implements Euler’s method.  Elements that typically need to be changed are highlighted.  Note that the precision for $x$ and $y$ values, offset for point labels, and position of the final answer, are all <em>highly</em> dependent on the differential equation.</p>
+<div id="jxgboxu" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxu", {
+            axis: true,
+            showCopyright: false,
+            showNavigation: false,
+            registerEvents: false
+        });
+        
+    board.setBoundingBox([-1,3,2,-0.5]);
+    //Differential equation
+    function f(x, y) {
+        return (y);
+    }
+    // Precision for displaying X and Y values.
+    function precisionX(number) {
+        return (parseFloat(number).toPrecision(2));
+    }
+    function precisionY(number) {
+        return (parseFloat(number).toPrecision(6));
+    }
+    // Creating the Euler function
+    function Euler(x0, y0, Xfinal, stepSize) {
+        var h = stepSize;
+        var X = x0;
+        var Y = y0;
+        board.create('point', [X,Y], {size: 1, name: '('+X+','+Y+')' , label: {offset: [10,0]}, fillColor: '#b73c0d', strokeColor: '#b73c0d', opacity: 1} );
+        for(var i = 0; i < (Xfinal-x0)/h; i++) {
+            board.create('segment', [ [X, Y], [X+h,Y+f(X,Y)*h] ] );
+            X += h;
+            Y += f(X,Y)*h;
+            board.create('point', [X,Y], {name: '('+precisionX(X)+','+precisionY(Y)+')' , size: 1, label: {offset: [10,0]}, fillColor: '#b73c0d', strokeColor: '#b73c0d', opacity: 1} );
+        }
+        return Y;
+    }
+    var Answer = Euler(0,1,1,0.2);  // replace with Euler(initial x, initial y, final y, stepsize)
+    
+    // Creating the labeled points and displaying the solution:
+    board.create('text', [0.4,0.5,'Y(1.0)=' + precisionY(Answer)], {fontSize: '16'} );
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+        });
+
+    board.setBoundingBox([-1,3,2,-0.5]);
+    //Differential equation
+    function f(x, y) {
+    return (y);
+    }
+    // Precision for displaying X and Y values.
+    function precisionX(number) {
+        return (parseFloat(number).toPrecision(2));
+    }
+    function precisionY(number) {
+        return (parseFloat(number).toPrecision(6));
+    }
+    // Creating the Euler function
+    function Euler(x0, y0, Xfinal, stepSize) {
+    var h = stepSize;
+    var X = x0;
+    var Y = y0;
+    board.create('point', [X,Y], {size: 1, name: '('+X+','+Y+')' , label: {offset: [10,0]}, fillColor: '#b73c0d', 
+    strokeColor: '#b73c0d', opacity: 1} );
+    for(var i = 0; i < (Xfinal-x0)/h; i++) {
+        board.create('segment', [ [X, Y], [X+h,Y+f(X,Y)*h] ] );
+        X += h;
+        Y += f(X,Y)*h;
+        board.create('point', [X,Y], {name: '('+precisionX(X)+','+precisionY(Y)+')' , size: 1, label: {offset: [10,0]}, 
+        fillColor: '#b73c0d', strokeColor: '#b73c0d', opacity: 1} );
+    }
+    return Y;
+    }
+    var Answer = Euler(0,1,1,0.2);  // replace with Euler(initial x, initial y, final y, stepsize)
+
+    // Creating the labeled points and displaying the solution:
+    board.create('text', [0.4,0.5,'Y(1.0)=' + precisionY(Answer)], {fontSize: '16'} );
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Gamma_function">Gamma function</h4>
+<p>This uses the integral definition to get a graph of the Gamma function.  Ranges (highlighted in blue) can be adapted for a particular problem.</p>
+<div id="jxgboxv" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxv", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-0.5,10,4.5,-0.5]);
+   function g(x,t) {return Math.pow(t,x-1)*Math.exp(-t)};
+   board.create("functiongraph", [function(x){return JXG.Math.Numerics.I([0,1000],function(t) {return g(x,t)})}, 0,4], {strokeColor: '#3eabc9', strokeWidth: 2});
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-0.5,10,4.5,-0.5]);
+     function g(x,t) {return Math.pow(t,x-1)*Math.exp(-t)};
+     board.create("functiongraph", [function(x){return JXG.Math.Numerics.I([0,1000],function(t) {return g(x,t)})}, 0,4], 
+     {strokeColor: '#3eabc9', strokeWidth: 2});
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Riemann_sums">Riemann sums</h4>
+<p>Typically, those items highlighted need to be changed.  The format of the points can be adjusted as necessary.</p>
+<div id="jxgboxw" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxw", {
+      axis: true,
+      keepaspectratio: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+board.setBoundingBox([-2,8,12,-2]);
+
+// lower bound for Riemann sum   
+   var a = 1; 
+// upper bound for Riemann sum
+   var b = 10; 
+// number of rectangles
+   var n = 6; 
+// value of delta (width of rectangles)
+   var d = (b-a)/n; 
+
+// define the function to do a Riemann sum
+    var f = function(x) { return (8/Math.pow(x+2,0.5)); };
+
+// create the Riemann sum
+            var r = board.create('riemannsum',
+                      [f, n , 'upper', a, b],
+                      {fillOpacity:0.4}
+                      );
+
+// create the graph of the function
+        var l = 0; // lower bound for function graph
+        var u = 12; // upper limit for function graph
+        var g = board.create('functiongraph',[f, l, u]);
+
+// for loop to plot left/right endpoints on the function graph 
+      for (i = 0; i <= n; i++) {
+         board.create("point", [a+d*i, f(a+d*i)], {strokeColor: '#b73c0d', fillColor: '#b73c0d', opacity: 1});
+       }
+
+// give an output of the value of the Riemann sum at coordinates (p,q)
+// comment this out or delete it if you do not want it
+   var p = 1;
+   var q = -1
+   var t = board.create('text',[p,q, function(){ return 'Sum=' + r.Value().toFixed(4); }]);
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        keepaspectratio: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  
+    board.setBoundingBox([-2,8,12,-2]);
+    
+    // lower bound for Riemann sum   
+        var a = 1; 
+    // upper bound for Riemann sum
+        var b = 10; 
+    // number of rectangles
+        var n = 6; 
+    // value of delta (width of rectangles)
+        var d = (b-a)/n; 
+    
+    // define the function to do a Riemann sum
+        var f = function(x) { return (8/Math.pow(x+2,0.5)); };
+    
+    // create the Riemann sum
+                var r = board.create('riemannsum',
+                            [f, n , 'upper', a, b],
+                            {fillOpacity:0.4}
+                            );
+    
+    // create the graph of the function
+            var l = 0; // lower bound for function graph
+            var u = 12; // upper limit for function graph
+            var g = board.create('functiongraph',[f, l, u]);
+    
+    // for loop to plot left/right endpoints on the function graph 
+            for (i = 0; i <= n; i++) {
+            board.create("point", [a+d*i, f(a+d*i)], {strokeColor: '#b73c0d', fillColor: '#b73c0d', opacity: 1});
+            }
+    
+    // give an output of the value of the Riemann sum at coordinates (p,q)
+    // comment this out or delete it if you do not want it
+        var p = 1;
+        var q = -1
+        var t = board.create('text',[p,q, function(){ return 'Sum=' + r.Value().toFixed(4); }]);
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Midpoint_rule">Midpoint rule</h4>
+<p>Approximates a function using the midpoint rule.  Parameters that usually need to be changed are highlighted.</p>
+<div id="jxgboxx" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxx", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+   board.setBoundingBox([-5,5,5,-5]);
+
+   // using the midpoint rule
+
+   // the function
+   function f(x) {
+       return 4 - x - x*x/4;
+   }
+  
+   //beginning and ending values of x
+   var startX = -3; 
+   var endX = 4;
+   // number of rectangles for the midpoint rule
+   var n = 12;
+   var h = (endX - startX)/n;
+
+   // draws the function
+   board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -5, 5], 
+       {strokeColor: '#df6f24', strokeWidth: 2});
+
+   // the loop which draws the rectangles
+   for(var i = 0; i < n; i++) {
+       vertLL = [startX + i*h, 0];
+       vertLR = [startX + (i + 1)*h, 0];
+       vertUL = [startX + i*h, f(startX + (i+0.5)*h)];
+       vertUR = [startX + (i + 1)*h, f(startX + (i+0.5)*h)];
+       board.create('polygon', [vertLL, vertUL, vertUR, vertLR], {borders: {strokeColor: '#df6f24'}, fillColor: '#fce7d9', vertices: {visible: false}});
+   }
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  
+     board.setBoundingBox([-5,5,5,-5]);
+  
+     // using the midpoint rule
+  
+     // the function
+     function f(x) {
+         return 4 - x - x*x/4;
+     }
+    
+     //beginning and ending values of x
+     var startX = -3; 
+     var endX = 4;
+     // number of rectangles for the midpoint rule
+     var n = 12;
+     var h = (endX - startX)/n;
+  
+     // draws the function
+     board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -5, 5], 
+         {strokeColor: '#df6f24', strokeWidth: 2});
+  
+     // the loop which draws the rectangles
+     for(var i = 0; i < n; i++) {
+         vertLL = [startX + i*h, 0];
+         vertLR = [startX + (i + 1)*h, 0];
+         vertUL = [startX + i*h, f(startX + (i+0.5)*h)];
+         vertUR = [startX + (i + 1)*h, f(startX + (i+0.5)*h)];
+         board.create('polygon', [vertLL, vertUL, vertUR, vertLR], {borders: {strokeColor: '#df6f24'}, fillColor: '#fce7d9', 
+         vertices: {visible: false}});
+     }
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Trapezoidal_rule">Trapezoidal rule</h4>
+<p>Approximates a function using the trapezoidal rule.  Parameters that usually need to be changed are highlighted.</p>
+<div id="jxgboxy" style="width:600px; height:600px" class="graph">
+    <script>
+    var board = JXG.JSXGraph.initBoard("jxgboxy", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+   board.setBoundingBox([-5,5,5,-5]);
+
+   // using the trapezoidal rule
+
+   // the function
+   function f(x) {
+       return 2*x - x**3/15;
+   }
+  
+   // beginning and ending values of x
+   var startX = -4; 
+   var endX = 4;
+   // number of trapezoids for the trapezoidal rule
+   var n = 8;
+   var h = (endX - startX)/n;
+
+   // draws the function
+   board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -5, 5], 
+       {strokeColor: '#28a445', strokeWidth: 2});
+
+   // the loop which draws the trapezoids
+   for(var i = 0; i < n; i++) {
+       vertLL = [startX + i*h, 0];
+       vertLR = [startX + (i + 1)*h, 0];
+       vertUL = [startX + i*h, f(startX + i*h)];
+       vertUR = [startX + (i + 1)*h, f(startX + (i+1)*h)];
+       board.create('polygon', [vertLL, vertUL, vertUR, vertLR], {borders: {strokeColor: '#28a445'}, fillColor: '#d7efdd', vertices: {visible: false}});
+   }
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  
+     board.setBoundingBox([-5,5,5,-5]);
+  
+     // using the trapezoidal rule
+  
+     // the function
+     function f(x) {
+         return 2*x - x**3/15;
+     }
+    
+     // beginning and ending values of x
+     var startX = -4; 
+     var endX = 4;
+     // number of trapezoids for the trapezoidal rule
+     var n = 8;
+     var h = (endX - startX)/n;
+  
+     // draws the function
+     board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -5, 5], 
+         {strokeColor: '#28a445', strokeWidth: 2});
+  
+     // the loop which draws the trapezoids
+     for(var i = 0; i < n; i++) {
+         vertLL = [startX + i*h, 0];
+         vertLR = [startX + (i + 1)*h, 0];
+         vertUL = [startX + i*h, f(startX + i*h)];
+         vertUR = [startX + (i + 1)*h, f(startX + (i+1)*h)];
+         board.create('polygon', [vertLL, vertUL, vertUR, vertLR], {borders: {strokeColor: '#28a445'}, 
+         fillColor: '#d7efdd', vertices: {visible: false}});
+     }
+  
+</code></pre>
+
+<div class="line"></div>
+
+<h4 name="Riemann_Sums_Graph_that_Utilizes_One_Function">Riemann Sums Graph that Utilizes One Function</h4>
+
+<div id="jxgboxy11" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxy11", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+   board.setBoundingBox([-5,5,5,-5]);
+
+   var f = function(x) { return 0.5*x*x-2*x ; };
+    var r = board.create('riemannsum',
+    [f, 10 , ' upper ', -2, 5 ],
+    { strokeColor: '#3eabc9', fillColor: '#3eabc9', fillOpacity:0.4 }
+    );
+    var g = board.create('functiongraph',[f, -2, 5 ]);
+    </script>
+</div>
+<br>
+<p>Code that is Pasted into the Custom Elements Field :</p>
+<pre><code>
+    var f = function(x) { return 0.5*x*x-2*x ; };
+    var r = board.create('riemannsum',
+    [f, 10 , ' upper ', -2, 5 ],
+    { strokeColor: '#3eabc9', fillColor: '#3eabc9', fillOpacity:0.4 }
+    );
+    var g = board.create('functiongraph',[f, -2, 5 ]);
+</code></pre>
+
+<h5>User Changes:</h5>
+<p>
+<bold>Bounding Box:</bold> Utilize the bounding box field to enter this information. <br>
+<bold>Function Utilized:</bold> Enter the function that is needed for the creation of your Riemann Sums graph. <br>
+<bold>Bars Utilized:</bold> Enter the number of bars or rectangles that are needed for the graph. <br>
+<bold>Placement of Bars:</bold> This is a string that indicates how the bars should be drawn in relation to the curve. Options for this string are: 'left', 'right', 'middle', 'lower', 'upper', 'random', 'simpson', or 'trapezodial'. The default value is 'left' if this option is left blank. <br>
+<bold>Bar Interval Parameters:</bold> These numbers indicate the left and right interval borders for the bars (rectangles), with the first number being the left interval border and the second number being the right interval border. Default values for this are -10, 10 if this option is left blank. <br>
+<bold>Bar Shading Options:</bold> This field is utilized to set a color for the bar borders, bar fill and to indicate the opacity of fill color chosen. strokeColor: indicates the bar border color. fillColor: indicates the bar fill color. fillOpacity: indicates the opacity of the fill color chosen. Please ensure that you only utilize Course Hero approved colors, as indicated in your art training . <br>
+<bold>Function Interval Parameters:</bold> These numbers indicate the left and right interval borders for the function, with the first number being the left interval border and the second number being the right interval border.
+</p>
+
+<div class="line"></div>
+
+<h4 name="Riemann_Sums_Graph_that_Utilizes_Two_Functions">Riemann Sums Graph that Utilizes Two Functions</h4>
+
+<div id="jxgboxy12" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxy12", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+   board.setBoundingBox([-5,5,5,-5]);
+
+   var g = function(x) { return 0.5*x*x-2*x ; };
+    var f = function(x) { return -x*(x-4) ; };
+    var r = board.create('riemannsum',
+    [[g,f], 10 , ' lower ', 0, 4 ],
+    { strokeColor: '#3eabc9', fillColor: '#3eabc9', fillOpacity:0.4 }
+    );
+    var f = board.create('functiongraph',[f, -2, 5 ]);
+    var g = board.create('functiongraph',[g, -2, 5 ]);
+    </script>
+</div>
+<br>
+
+<p>Code that is Pasted into the Custom Elements Field :</p>
+<pre><code>
+    var g = function(x) { return 0.5*x*x-2*x ; };
+    var f = function(x) { return -x*(x-4) ; };
+    var r = board.create('riemannsum',
+    [[g,f], 10 , ' lower ', 0, 4 ],
+    { strokeColor: '#3eabc9', fillColor: '#3eabc9', fillOpacity:0.4 }
+    );
+    var f = board.create('functiongraph',[f, -2, 5 ]);
+    var g = board.create('functiongraph',[g, -2, 5 ]);
+</code></pre>
+<p>Utilize information above in "User Change" section to customize this graph.</p>
+<div class="line"></div>
+
+<h4 name="Shading_between_functions_f(x)_and_g(x)">Shading between functions f(x) and g(x)</h4>
+<p>Typical changes needed to be made by the author are highlighted in blue. If multiple instances of shading are needed, see the example immediately following.</p>
+<div id="jxgboxz" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxz", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+board.setBoundingBox([-5,5,5,-5]);
+// shading between two functions of x: and 
+
+var A=[];
+
+//first function
+function f(x) {
+    return 0.5*x*x;
+}
+//second function
+function g(x) {
+    return Math.log(x)+2;
+}
+//beginning and ending values of x
+var startX = 0.137; 
+var endX = 2.398;
+var n=200;   // if area looks jagged, try increasing n
+var h = (endX-startX)/n;
+
+board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -10, 10], 
+{strokeColor: '#3eabc9', strokeWidth: 2});   //the curve is drawn on [-10,10] but can be increased as needed
+board.create('curve', [function h(x) { return x;}, function h(x) {return g(x);}, -10, 10], 
+{strokeColor: '#9343a2 ', strokeWidth: 2});
+
+for(var i = 0; i <= n; i++) {
+     A.push(board.create('point',[startX+i*h, f(startX+i*h)],{size: 0, name: ' '}));
+}
+for(var j = n; j <= 2*n; j++) {
+     A.push(board.create('point',[endX-(j-n)*h, g(endX-(j-n)*h)],{size: 0, name:' '}));
+}
+board.create('curve', JXG.Math.Numerics.bezier(A), {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4'} );
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  board.setBoundingBox([-5,5,5,-5]);
+  // shading between two functions of x: and 
+  
+  var A=[];
+  
+  //first function
+  function f(x) {
+      return 0.5*x*x;
+  }
+  //second function
+  function g(x) {
+      return Math.log(x)+2;
+  }
+  //beginning and ending values of x
+  var startX = 0.137; 
+  var endX = 2.398;
+  var n=200;   // if area looks jagged, try increasing n
+  var h = (endX-startX)/n;
+  
+  board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -10, 10], 
+  {strokeColor: '#3eabc9', strokeWidth: 2});   //the curve is drawn on [-10,10] but can be increased as needed
+  board.create('curve', [function h(x) { return x;}, function h(x) {return g(x);}, -10, 10], 
+  {strokeColor: '#9343a2 ', strokeWidth: 2});
+  
+  for(var i = 0; i <= n; i++) {
+       A.push(board.create('point',[startX+i*h, f(startX+i*h)],{size: 0, name: ' '}));
+  }
+  for(var j = n; j <= 2*n; j++) {
+       A.push(board.create('point',[endX-(j-n)*h, g(endX-(j-n)*h)],{size: 0, name:' '}));
+  }
+  board.create('curve', JXG.Math.Numerics.bezier(A), {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4'} );
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Common_errors_when_working_with_shading">Common errors when working with shading</h4>
+<p>When working with the shading feature, be very careful with specifying domains.  In the example below, you want to shade the region in Quadrants I and II outside the circle.  Relevant code is highlighted in blue.</p>
+<ul>
+    <li>In the example on the left, notice the call to the shade function.  The domain used is [-5,5], but the function f(x) is only defined on the domain [-2,2].  Notice that JSXGraph did not shade anything, not even the region above the domain [-2,2].  You cannot predict the results of the shade function if incorrect domains are used.    </li>
+    <li>In the example on the right, the correct region is shaded.  Because the domain of f(x) is only [-2,2], you have to use three separate shading functions:  once for the domain [-5,-2], once for the domain [-2,2], and once for the domain [2,5].  Notice that it is necessary to define another function representing y = 0.    </li>
+</ul>
+<table>
+    <tbody>
+        <tr>
+            <td>
+                <div id="jxgboxaa" style="width:500px; height:500px" class="graph">
+                    <script>
+                        var board = JXG.JSXGraph.initBoard("jxgboxaa", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+   function shade(func1, func2, startX, endX, color1, color2, width, n) {
+      var A=[];
+      var delta = (endX-startX)/n;
+      board.create('curve', [function h(x) { return x;}, function h(x) {return func1(x);}, startX, endX], {strokeColor: color1, strokeWidth: width});
+      board.create('curve', [function h(x) { return x;}, function h(x) {return func2(x);}, startX, endX], {strokeColor: color2, strokeWidth: width});
+      for(var i = 0; i <= n; i++) {
+             A.push(board.create('point',[startX+i*delta, func1(startX+i*delta)],{size: 0, name: ' '}));
+        }
+      for(var j = n; j <= 2*n; j++) {
+             A.push(board.create('point',[endX-(j-n)*delta, func2(endX-(j-n)*delta)],{size: 0, name:' '}));
+        }
+      board.create('polygon', A, {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4', vertices: {visible: false}, borders: {visible: false}} );
+   }
+//first function
+function f(x) {return Math.sqrt(4-x**2);}
+//second function
+function g(x) {return -Math.sqrt(4-x**2);}
+//third function
+function h(x) {return 6;}
+// USAGE:  function1, function2, startX, endX, color for function1, color for function2, width of curve, n (increase if the region has a jagged look)
+shade(f, h, -5, 5, '#9343A2','#9343A2', 2, 50);
+// The shading ONLY graphs the parts of the curves where shading occurs.  Add the function graphs if necessary.
+board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -5, 5], {strokeColor: '#3EABC9', strokeWidth: 2});
+board.create('curve', [function h(x) { return x;}, function h(x) {return g(x);}, -5, 5], {strokeColor: '#3EABC9', strokeWidth: 2});
+
+                    </script>
+                </div>
+            </td>
+            <td>
+                <div id="jxgboxaa1" style="width:500px; height:500px" class="graph">
+                    <script>
+                        var board = JXG.JSXGraph.initBoard("jxgboxaa1", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+   function shade(func1, func2, startX, endX, color1, color2, width, n) {
+      var A=[];
+      var delta = (endX-startX)/n;
+      board.create('curve', [function h(x) { return x;}, function h(x) {return func1(x);}, startX, endX], {strokeColor: color1, strokeWidth: width});
+      board.create('curve', [function h(x) { return x;}, function h(x) {return func2(x);}, startX, endX], {strokeColor: color2, strokeWidth: width});
+      for(var i = 0; i <= n; i++) {
+             A.push(board.create('point',[startX+i*delta, func1(startX+i*delta)],{size: 0, name: ' '}));
+        }
+      for(var j = n; j <= 2*n; j++) {
+             A.push(board.create('point',[endX-(j-n)*delta, func2(endX-(j-n)*delta)],{size: 0, name:' '}));
+        }
+      board.create('polygon', A, {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4', vertices: {visible: false}, borders: {visible: false}} );
+   }
+//first function
+function f(x) {return Math.sqrt(4-x**2);}
+//second function
+function g(x) {return -Math.sqrt(4-x**2);}
+//third function
+function h(x) {return 6;}
+function zero(x) {return 0;}
+// USAGE:  function1, function2, startX, endX, color for function1, color for function2, width of curve, n (increase if the region has a jagged look)
+shade(zero, h, -5, -2, '#9343A2','#9343A2', 2, 50);
+shade(f, h, -2, 2, '#9343A2','#9343A2', 2, 50);
+shade(zero, h, 2, 5, '#9343A2','#9343A2', 2, 50);
+// The shading ONLY graphs the parts of the curves where shading occurs.  Add the function graphs if necessary.
+board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -5, 5], {strokeColor: '#3EABC9', strokeWidth: 2});
+board.create('curve', [function h(x) { return x;}, function h(x) {return g(x);}, -5, 5], {strokeColor: '#3EABC9', strokeWidth: 2});
+
+                    </script>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <pre><code>
+var board = JXG.JSXGraph.initBoard("jxgboxa", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+    });
+
+    board.setBoundingBox([-5,5,5,-5]);
+    function shade(func1, func2, startX, endX, color1, 
+    color2, width, n) {
+    var A=[];
+    var delta = (endX-startX)/n;
+    board.create('curve', [function h(x) { return x;}, 
+    function h(x) {return func1(x);}, startX, endX], 
+    {strokeColor: color1, strokeWidth: width});
+    board.create('curve', [function h(x) { return x;}, 
+    function h(x) {return func2(x);}, startX, endX], 
+    {strokeColor: color2, strokeWidth: width});
+
+    for(var i = 0; i <= n; i++) {
+            A.push(board.create('point',[startX+i*delta, 
+            func1(startX+i*delta)],{size: 0, name: ' '}));
+        }
+    for(var j = n; j <= 2*n; j++) {
+            A.push(board.create('point',[endX-(j-n)*delta, 
+            func2(endX-(j-n)*delta)],{size: 0, name:' '}));
+        }
+    board.create('polygon', A, {strokeColor: 'none', 
+    fillColor: 'red', fillOpacity: '0.4', vertices: 
+    {visible: false}, borders: {visible: false}} );
+    }
+
+//first function
+function f(x) {return Math.sqrt(4-x**2);}
+//second function
+function g(x) {return -Math.sqrt(4-x**2);}
+//third function
+function h(x) {return 6;}
+// USAGE:  function1, function2, startX, endX, color for 
+// function1, color for function2, width of curve, 
+// n (increase if the region has a jagged look)
+shade(f, h, -5, 5, '#9343A2','#9343A2', 2, 50);
+// The shading ONLY graphs the parts of the curves 
+// where shading occurs.  Add the function graphs if necessary.
+board.create('curve', [function h(x) { return x;}, 
+function h(x) {return f(x);}, -5, 5], 
+{strokeColor: '#3EABC9', strokeWidth: 2});
+board.create('curve', [function h(x) { return x;}, 
+function h(x) {return g(x);}, -5, 5], 
+{strokeColor: '#3EABC9', strokeWidth: 2});
+                  
+                </code></pre>
+            </td>
+            <td>
+                <pre><code>
+var board = JXG.JSXGraph.initBoard("jxgboxa", {
+    axis: true,
+    showCopyright: false,
+    showNavigation: false,
+    registerEvents: false
+    });
+    board.setBoundingBox([-5,5,5,-5]);
+    function shade(func1, func2, startX, endX, 
+    color1, color2, width, n) {
+    var A=[];
+    var delta = (endX-startX)/n;
+    board.create('curve', [function h(x) { return x;}, 
+    function h(x) {return func1(x);}, startX, endX], 
+    {strokeColor: color1, strokeWidth: width});
+    board.create('curve', [function h(x) { return x;}, 
+    function h(x) {return func2(x);}, startX, endX], 
+    {strokeColor: color2, strokeWidth: width});
+    for(var i = 0; i <= n; i++) {
+            A.push(board.create('point',[startX+i*delta, 
+            func1(startX+i*delta)],{size: 0, name: ' '}));
+        }
+    for(var j = n; j <= 2*n; j++) {
+            A.push(board.create('point',[endX-(j-n)*delta, 
+            func2(endX-(j-n)*delta)],{size: 0, name:' '}));
+        }
+    board.create('polygon', A, {strokeColor: 'none', 
+    fillColor: 'red', fillOpacity: '0.4', vertices: 
+    {visible: false}, borders: {visible: false}} );
+    }
+//first function
+function f(x) {return Math.sqrt(4-x**2);}
+//second function
+function g(x) {return -Math.sqrt(4-x**2);}
+//third function
+function h(x) {return 6;}
+function zero(x) {return 0;}
+// USAGE:  function1, function2, startX, endX, color for 
+// function1, color for function2, width of curve, 
+// n (increase if the region has a jagged look)
+shade(zero, h, -5, -2, '#9343A2','#9343A2', 2, 50);
+shade(f, h, -2, 2, '#9343A2','#9343A2', 2, 50);
+shade(zero, h, 2, 5, '#9343A2','#9343A2', 2, 50);
+// The shading ONLY graphs the parts of the curves 
+// where shading occurs.  Add the function graphs if necessary.
+board.create('curve', [function h(x) { return x;}, 
+function h(x) {return f(x);}, -5, 5], 
+{strokeColor: '#3EABC9', strokeWidth: 2});
+board.create('curve', [function h(x) { return x;}, 
+function h(x) {return g(x);}, -5, 5], 
+{strokeColor: '#3EABC9', strokeWidth: 2});
+                  
+                </code></pre>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="line"></div>
+
+<h4 name="Multiple_shadings_between_f(x),_g(x),_h">Multiple shadings between f(x), g(x), h(x)....</h4>
+<p>Highlighted parameters will typically need to be changed.  Multiple shadings may be included.  Code adapted from Alex Krasner.</p>
+<div id="jxgboxab" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxab", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+   function shade(func1, func2, startX, endX, color1, color2, width, n) {
+      var A=[];
+      var delta = (endX-startX)/n;
+      board.create('curve', [function h(x) { return x;}, function h(x) {return func1(x);}, startX, endX], {strokeColor: color1, strokeWidth: width});
+      board.create('curve', [function h(x) { return x;}, function h(x) {return func2(x);}, startX, endX], {strokeColor: color2, strokeWidth: width});
+      for(var i = 0; i <= n; i++) {
+             A.push(board.create('point',[startX+i*delta, func1(startX+i*delta)],{size: 0, name: ' '}));
+        }
+      for(var j = n; j <= 2*n; j++) {
+             A.push(board.create('point',[endX-(j-n)*delta, func2(endX-(j-n)*delta)],{size: 0, name:' '}));
+        }
+      board.create('polygon', A, {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4', vertices: {visible: false}, borders: {visible: false}} );
+   }
+
+//first function
+function f(x) {return x*x;}
+
+//second function
+function g(x) {return 2-x;}
+
+//third function
+function h(x) {return -6;}
+
+// USAGE:  function1, function2, startX, endX, color for function1, color for function2, width of curve, n (increase if the region has a jagged look)
+shade(f, h, -4, 0, '#9343a2','#9343a2', 2, 50);
+shade(f, g, 0, 1, '#9343a2','#3eabc9', 2, 50);
+shade(g, h, 2, 5,  '#3eabc9', '#9343a2', 2, 50);
+
+// The shading ONLY graphs the parts of the curves where shading occurs.  Add the function graphs if necessary.
+
+board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -5, 5], {strokeColor: '#9343a2', strokeWidth: 2});
+board.create('curve', [function h(x) { return x;}, function h(x) {return g(x);}, -5, 5], {strokeColor: '#3eabc9', strokeWidth: 2});
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-5,5,5,-5]);
+     function shade(func1, func2, startX, endX, color1, color2, width, n) {
+        var A=[];
+        var delta = (endX-startX)/n;
+        board.create('curve', [function h(x) { return x;}, function h(x) {return func1(x);}, startX, endX], 
+        {strokeColor: color1, strokeWidth: width});
+        board.create('curve', [function h(x) { return x;}, function h(x) {return func2(x);}, startX, endX], 
+        {strokeColor: color2, strokeWidth: width});
+        for(var i = 0; i <= n; i++) {
+               A.push(board.create('point',[startX+i*delta, func1(startX+i*delta)],{size: 0, name: ' '}));
+          }
+        for(var j = n; j <= 2*n; j++) {
+               A.push(board.create('point',[endX-(j-n)*delta, func2(endX-(j-n)*delta)],{size: 0, name:' '}));
+          }
+        board.create('polygon', A, {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4', vertices: 
+        {visible: false}, borders: {visible: false}} );
+     }
+  
+  //first function
+  function f(x) {return x*x;}
+  
+  //second function
+  function g(x) {return 2-x;}
+  
+  //third function
+  function h(x) {return -6;}
+  
+  // USAGE:  function1, function2, startX, endX, color for function1, color for function2, width of curve, 
+  // n (increase if the region has a jagged look)
+  shade(f, h, -4, 0, '#9343a2','#9343a2', 2, 50);
+  shade(f, g, 0, 1, '#9343a2','#3eabc9', 2, 50);
+  shade(g, h, 2, 5,  '#3eabc9', '#9343a2', 2, 50);
+  
+  // The shading ONLY graphs the parts of the curves where shading occurs.  
+  // Add the function graphs if necessary.
+  
+  board.create('curve', [function h(x) { return x;}, function h(x) {return f(x);}, -5, 5], 
+  {strokeColor: '#9343a2', strokeWidth: 2});
+  board.create('curve', [function h(x) { return x;}, function h(x) {return g(x);}, -5, 5], 
+  {strokeColor: '#3eabc9', strokeWidth: 2});
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Shading_between_functions_f(y)_and_g(y)">Shading between functions f(y) and g(y)</h4>
+<p>Typical changes needed to be made by the author are highlighted in blue.</p>
+<div id="jxgboxac" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxac", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+board.setBoundingBox([-5,5,5,-5]);
+// shading between two functions of y:  and 
+
+var A=[];
+
+//first function
+function f(y) {
+    return y*y-4;
+}
+//second function
+function g(y) {
+    return 4-y*y;
+}
+//beginning and ending values of y
+var startY = -2;
+var endY = 2;
+
+var n=200; // if area looks jagged, try increasing n
+var h = (endY-startY)/n;
+
+board.create('curve', [function h(y) { return f(y);}, function h(y) {return y;}, -10, 10], {strokeColor: '#3eabc9 ', strokeWidth: 2});  // the curve is drawn on [-10,10] but can be increased as needed
+board.create('curve', [function h(y) { return g(y);}, function h(y) {return y;}, -10, 10], {strokeColor: '#9343a2 ', strokeWidth: 2});
+for(var i = 0; i <= n; i++) {
+     A.push(board.create('point',[f(startY+i*h), startY+i*h],{size: 0, name: ' '}));
+}
+for(var j = n; j <= 2*n; j++) {
+     A.push(board.create('point',[g(endY-(j-n)*h), endY-(j-n)*h],{size: 0, name:' '}));
+}
+board.create('curve', JXG.Math.Numerics.bezier(A), {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4'} );
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  board.setBoundingBox([-5,5,5,-5]);
+  // shading between two functions of y:  and 
+  
+  var A=[];
+  
+  //first function
+  function f(y) {
+      return y*y-4;
+  }
+  //second function
+  function g(y) {
+      return 4-y*y;
+  }
+  //beginning and ending values of y
+  var startY = -2;
+  var endY = 2;
+  
+  var n=200; // if area looks jagged, try increasing n
+  var h = (endY-startY)/n;
+  
+  board.create('curve', [function h(y) { return f(y);}, function h(y) {return y;}, -10, 10], 
+  {strokeColor: '#3eabc9 ', strokeWidth: 2});  
+  // the curve is drawn on [-10,10] but can be increased as needed
+  board.create('curve', [function h(y) { return g(y);}, function h(y) {return y;}, -10, 10], 
+  {strokeColor: '#9343a2 ', strokeWidth: 2});
+  for(var i = 0; i <= n; i++) {
+       A.push(board.create('point',[f(startY+i*h), startY+i*h],{size: 0, name: ' '}));
+  }
+  for(var j = n; j <= 2*n; j++) {
+       A.push(board.create('point',[g(endY-(j-n)*h), endY-(j-n)*h],{size: 0, name:' '}));
+  }
+  board.create('curve', JXG.Math.Numerics.bezier(A), {strokeColor: 'none', fillColor: 'red', 
+  fillOpacity: '0.4'} );
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Multiple_shadings_between_f(y),_g(y),_h">Multiple shadings between f(y), g(y), h(y)...</h4>
+<p>Highlighted parameters will typically need to be changed.  Multiple shadings may be included.  Code adapted from Alex Krasner.</p>
+<div id="jxgboxad" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxad", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+   function shade(func1, func2, startY, endY, color1, color2, width, n) {
+      var A=[];
+      var delta = (endY-startY)/n;
+      board.create('curve', [function h(y) { return func1(y);}, function h(y) {return y;}, startY, endY], {strokeColor: color1, strokeWidth: width});
+      board.create('curve', [function h(y) { return func2(y);}, function h(y) {return y;}, startY, endY], {strokeColor: color2, strokeWidth: width});
+      for(var i = 0; i <= n; i++) {
+             A.push(board.create('point',[func1(startY+i*delta), startY+i*delta],{size: 0, name: ' '}));
+        }
+      for(var j = n; j <= 2*n; j++) {
+             A.push(board.create('point',[func2(endY-(j-n)*delta), endY-(j-n)*delta],{size: 0, name:' '}));
+        }
+      board.create('polygon', A, {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4', vertices: {visible: false}, borders: {visible: false}} );
+   }
+
+//first function
+function f(y) {return y*y;}
+
+//second function
+function g(y) {return 2-y;}
+
+//third function
+function h(y) {return -6;}
+
+// USAGE:  function1, function2, startY, endY, color for function1, color for function2, width of curve, n (increase if the region has a jagged look)
+shade(f, h, -4, 0, '#9343a2','#9343a2', 2, 50);
+shade(f, g, 0, 1, '#9343a2','#3eabc9', 2, 50);
+shade(g, h, 2, 5,  '#3eabc9', '#9343a2', 2, 50);
+
+// The shading ONLY graphs the parts of the curves where shading occurs.  Add the function graphs if necessary.
+
+board.create('curve', [function h(y) { return f(y);}, function h(y) {return y;}, -5, 5], {strokeColor: '#9343a2', strokeWidth: 2});
+board.create('curve', [function h(y) { return g(y);}, function h(y) {return y;}, -5, 5], {strokeColor: '#3eabc9', strokeWidth: 2});
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-5,5,5,-5]);
+     function shade(func1, func2, startY, endY, color1, color2, width, n) {
+        var A=[];
+        var delta = (endY-startY)/n;
+        board.create('curve', [function h(y) { return func1(y);}, function h(y) {return y;}, startY, endY], 
+        {strokeColor: color1, strokeWidth: width});
+        board.create('curve', [function h(y) { return func2(y);}, function h(y) {return y;}, startY, endY], 
+        {strokeColor: color2, strokeWidth: width});
+        for(var i = 0; i <= n; i++) {
+               A.push(board.create('point',[func1(startY+i*delta), startY+i*delta],{size: 0, name: ' '}));
+          }
+        for(var j = n; j <= 2*n; j++) {
+               A.push(board.create('point',[func2(endY-(j-n)*delta), endY-(j-n)*delta],{size: 0, name:' '}));
+          }
+        board.create('polygon', A, {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4', 
+        vertices: {visible: false}, borders: {visible: false}} );
+     }
+  
+  //first function
+  function f(y) {return y*y;}
+  
+  //second function
+  function g(y) {return 2-y;}
+  
+  //third function
+  function h(y) {return -6;}
+  
+  // USAGE:  function1, function2, startY, endY, color for function1, color for function2, width of curve, 
+  // n (increase if the region has a jagged look)
+  shade(f, h, -4, 0, '#9343a2','#9343a2', 2, 50);
+  shade(f, g, 0, 1, '#9343a2','#3eabc9', 2, 50);
+  shade(g, h, 2, 5,  '#3eabc9', '#9343a2', 2, 50);
+  
+  // The shading ONLY graphs the parts of the curves where shading occurs.  
+  // Add the function graphs if necessary.
+  
+  board.create('curve', [function h(y) { return f(y);}, function h(y) {return y;}, -5, 5], 
+  {strokeColor: '#9343a2', strokeWidth: 2});
+  board.create('curve', [function h(y) { return g(y);}, function h(y) {return y;}, -5, 5], 
+  {strokeColor: '#3eabc9', strokeWidth: 2});
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Shading_between_functions_f(th)_and_g(th)__(includes_multiple_shadings)">Shading between functions f(th) and g(th) (includes multiple shadings)</h4>
+<p>Highlighted parameters will typically need to be changed.  Multiple shadings may be included.  Code adapted from Alex Krasner.</p>
+<div id="jxgboxae" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxae", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-2.5,2.5,2.5,-2.5]);
+
+   function shade(f1, f2, startTh, endTh, color1, color2, width, n) {
+      var A=[];
+      var delta = (endTh - startTh)/n;
+      board.create('curve', [function(th) {return f1(th)*Math.cos(th);}, function(th) {return f1(th)*Math.sin(th);}, startTh, endTh], {strokeColor: color1, strokeWidth: width});
+      board.create('curve', [function(th) {return f2(th)*Math.cos(th);}, function(th) {return f2(th)*Math.sin(th);}, startTh, endTh], {strokeColor: color2, strokeWidth: width});
+      for(var i = 0; i <= n; i++) {
+          theta = startTh + i*delta;
+          A.push(board.create('point', [f1(theta)*Math.cos(theta), f1(theta)*Math.sin(theta)], {size: 0, name: ''}));
+          }
+      for(var j = 0; j <= n; j++) {
+          theta = endTh - j*delta;
+          A.push(board.create('point', [f2(theta)*Math.cos(theta), f2(theta)*Math.sin(theta)], {size: 0, name: ''}));
+          }
+      board.create('polygon', A, {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4', vertices: {visible: false}, borders: {visible: false}});
+      }
+
+   function r1(th) {return 0;};
+   function r2(th) {return Math.cos(th);};
+   function r3(th) {return 1+Math.cos(th);};
+   function r4(th) {return 2;};
+
+   // Parameters:
+   // shade(inner function, outer function, start theta, end theta, 
+   //           color for inner function, color for outer function, strokeWidth for curve, 
+   //           number of points sampled on each curve (increase/decrease as necessary))
+
+   shade (r1, r2, -Math.PI/2, Math.PI/2, '#9343a2', '#3eabc9', 2, 100);
+   shade (r3, r4, 0, 2*Math.PI, '#9343a2', '#3eabc9', 2, 100);
+
+   // Shadings may only produce part of the curves, so graph entire curves as necessary.
+   board.create('curve', [function(th) {return r2(th)*Math.cos(th);}, function(th) {return r2(th)*Math.sin(th);}, -Math.PI/20, Math.PI/2], {strokeColor: '#3eabc9', strokeWidth: 2});
+   board.create('curve', [function(th) {return r3(th)*Math.cos(th);}, function(th) {return r3(th)*Math.sin(th);}, 0, 2*Math.PI], {strokeColor: '#9343a2', strokeWidth: 2});
+   board.create('curve', [function(th) {return r4(th)*Math.cos(th);}, function(th) {return r4(th)*Math.sin(th);}, 0, 2*Math.PI], {strokeColor: '#3eabc9', strokeWidth: 2});
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-2.5,2.5,2.5,-2.5]);
+  
+     function shade(f1, f2, startTh, endTh, color1, color2, width, n) {
+        var A=[];
+        var delta = (endTh - startTh)/n;
+        board.create('curve', [function(th) {return f1(th)*Math.cos(th);}, function(th) 
+        {return f1(th)*Math.sin(th);}, startTh, endTh], {strokeColor: color1, strokeWidth: width});
+        board.create('curve', [function(th) {return f2(th)*Math.cos(th);}, function(th) 
+        {return f2(th)*Math.sin(th);}, startTh, endTh], {strokeColor: color2, strokeWidth: width});
+        for(var i = 0; i <= n; i++) {
+            theta = startTh + i*delta;
+            A.push(board.create('point', [f1(theta)*Math.cos(theta), f1(theta)*Math.sin(theta)], 
+            {size: 0, name: ''}));
+            }
+        for(var j = 0; j <= n; j++) {
+            theta = endTh - j*delta;
+            A.push(board.create('point', [f2(theta)*Math.cos(theta), f2(theta)*Math.sin(theta)], 
+            {size: 0, name: ''}));
+            }
+        board.create('polygon', A, {strokeColor: 'none', fillColor: 'red', fillOpacity: '0.4', 
+        vertices: {visible: false}, borders: {visible: false}});
+        }
+  
+     function r1(th) {return 0;};
+     function r2(th) {return Math.cos(th);};
+     function r3(th) {return 1+Math.cos(th);};
+     function r4(th) {return 2;};
+  
+     // Parameters:
+     // shade(inner function, outer function, start theta, end theta, 
+     //           color for inner function, color for outer function, strokeWidth for curve, 
+     //           number of points sampled on each curve (increase/decrease as necessary))
+  
+     shade (r1, r2, -Math.PI/2, Math.PI/2, '#9343a2', '#3eabc9', 2, 100);
+     shade (r3, r4, 0, 2*Math.PI, '#9343a2', '#3eabc9', 2, 100);
+  
+     // Shadings may only produce part of the curves, so graph entire curves as necessary.
+     board.create('curve', [function(th) {return r2(th)*Math.cos(th);}, function(th) {return r2(th)*Math.sin(th);},
+      -Math.PI/20, Math.PI/2], {strokeColor: '#3eabc9', strokeWidth: 2});
+     board.create('curve', [function(th) {return r3(th)*Math.cos(th);}, function(th) {return r3(th)*Math.sin(th);},
+      0, 2*Math.PI], {strokeColor: '#9343a2', strokeWidth: 2});
+     board.create('curve', [function(th) {return r4(th)*Math.cos(th);}, function(th) {return r4(th)*Math.sin(th);},
+      0, 2*Math.PI], {strokeColor: '#3eabc9', strokeWidth: 2});
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Slope_fields">Slope fields</h4>
+<p>Highlighted elements typically need to be changed.</p>
+<div id="jxgboxaf" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxaf", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+board.setBoundingBox([-3.2, 3.2, 3.2, -3.2]);
+
+//Making a direction field using 'curve' :
+
+//Differential equation
+function f(x,y) {
+   return (y*y*y-4*y);
+}
+
+//Boundaries of slope field to be generated
+var xstart =-3;  
+var xend = 3;
+var ystart = -3; 
+var yend = 3;
+
+// Number of ticks per line
+var n = 25; 
+
+// Tick length
+var l = 0.05
+
+//creating each segment:
+// (change only the color if needed)
+for( var i=0; i < n+1; i++) {
+     for( var j=0; j < n+1; j++) {
+         var a = xstart+((xend-xstart)/n)*i;
+         var b = ystart+((yend-ystart)/n)*j;
+	var h = l/( Math.sqrt( 1+f(a,b)*f(a,b) ) );  
+           board.create('curve', [ function(x) {return x}, function(x) {return f(a,b)*(x-a)+b;}, a-h, a+h], {strokeColor:'#3eabc9'} );
+     }
+}
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  
+  board.setBoundingBox([-3.2, 3.2, 3.2, -3.2]);
+  
+  //Making a direction field using 'curve' :
+  
+  //Differential equation
+  function f(x,y) {
+     return (y*y*y-4*y);
+  }
+  
+  //Boundaries of slope field to be generated
+  var xstart =-3;  
+  var xend = 3;
+  var ystart = -3; 
+  var yend = 3;
+  
+  // Number of ticks per line
+  var n = 25; 
+  
+  // Tick length
+  var l = 0.05
+  
+  //creating each segment:
+  // (change only the color if needed)
+  for( var i=0; i < n+1; i++) {
+       for( var j=0; j < n+1; j++) {
+           var a = xstart+((xend-xstart)/n)*i;
+           var b = ystart+((yend-ystart)/n)*j;
+      var h = l/( Math.sqrt( 1+f(a,b)*f(a,b) ) );  
+             board.create('curve', [ function(x) {return x}, function(x) {return f(a,b)*(x-a)+b;},
+              a-h, a+h], {strokeColor:'#3eabc9'} );
+       }
+  }
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="Gradient_fields_(arrows_are_proportional_to_the_length_of_the_gradient">Gradient fields (arrows are proportional to the length of the gradient</h4>
+
+<div id="jxgboxag" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxag", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+   board.setBoundingBox([-5,5,5,-5]);
+    var board = JXG.JSXGraph.initBoard("jxgboxag", {
+         axis: true,
+         showCopyright: false,
+         showNavigation: false,
+         registerEvents: false
+      });
+   board.setBoundingBox([-4.2, 4.2, 4.2, -4.2]);
+   // Partial derivative with respect to x
+   function fx(x,y) {
+      return (2*x*y);
+   }
+   // partial derivative with respect to y
+   function fy(x,y) {
+      return (x*x-3*y*y);
+   }
+   // Boundaries of gradient field to be generated
+   var xstart =-4;  
+   var xend = 4;
+   var ystart = -4; 
+   var yend = 4;
+   // Number of ticks per horizontal and vertical line
+   var n = 8; 
+   // Scales all arrows by the same size
+   var s = 0.02;
+   // creating the arrows
+   for( var i=0; i < n+1; i++) {
+        for( var j=0; j < n+1; j++) {
+            var a = xstart+((xend-xstart)/n)*i;
+            var b = ystart+((yend-ystart)/n)*j;
+            var fxab = fx(a,b);
+            var fyab = fy(a,b);
+            board.create('arrow', [[a-s/2*fxab,b-s/2*fyab],[a+s/2*fxab,b+s/2*fyab]], {strokeColor:'#3eabc9'} );
+        }
+   }
+
+    </script>
+</div>
+<p>Notes:
+    <ul>
+        <li>We are looking for the gradient field $\nabla f$.</li>
+        <li>Typical changes:
+            <ul>
+                <li>Bounding box.</li>
+                <li>Partial derivative $\cfrac{\partial f}{\partial x}$.</li>
+                <li>Partial derivative $\cfrac{\partial f}{\partial y}$.</li>
+                <li>Boundaries for calculating the gradient field.</li>
+                <li>Scale factor:  this scales each arrow by the same factor, since the gradient may have a large magnitude at several values, and arrows would interfere with each other on the graph.</li>
+            </ul>
+        </li>
+    </ul>
+</p>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+     board.setBoundingBox([-5,5,5,-5]);
+      var board = JXG.JSXGraph.initBoard("jxgboxa", {
+           axis: true,
+           showCopyright: false,
+           showNavigation: false,
+           registerEvents: false
+        });
+     board.setBoundingBox([-4.2, 4.2, 4.2, -4.2]);
+     // Partial derivative with respect to x
+     function fx(x,y) {
+        return (2*x*y);
+     }
+     // partial derivative with respect to y
+     function fy(x,y) {
+        return (x*x-3*y*y);
+     }
+     // Boundaries of gradient field to be generated
+     var xstart =-4;  
+     var xend = 4;
+     var ystart = -4; 
+     var yend = 4;
+     // Number of ticks per horizontal and vertical line
+     var n = 8; 
+     // Scales all arrows by the same size
+     var s = 0.02;
+     // creating the arrows
+     for( var i=0; i < n+1; i++) {
+          for( var j=0; j < n+1; j++) {
+              var a = xstart+((xend-xstart)/n)*i;
+              var b = ystart+((yend-ystart)/n)*j;
+              var fxab = fx(a,b);
+              var fyab = fy(a,b);
+              board.create('arrow', [[a-s/2*fxab,b-s/2*fyab],[a+s/2*fxab,b+s/2*fyab]], {strokeColor:'#3eabc9'} );
+          }
+     }
+  
+</code></pre>
+<div class="line"></div>
+
+<h4 name="ODE:_graphical_solution">ODE: graphical solution</h4>
+
+<div id="jxgboxah" style="width:600px; height:600px" class="graph">
+    <script>
+        var board = JXG.JSXGraph.initBoard("jxgboxah", {
+      axis: true,
+      showCopyright: false,
+      showNavigation: false,
+      registerEvents: false
+   });
+
+board.setBoundingBox([-3.2, 3.2, 3.2, -3.2]);
+
+//Making a direction field (see previous example for details):
+function f(x,y) {
+   return (y*y*y-4*y);
+}
+var xstart =-3;  
+var xend = 3;
+var ystart = -3; 
+var yend = 3;
+var n = 25; 
+var l = 0.05
+for( var i=0; i < n+1; i++) {
+     for( var j=0; j < n+1; j++) {
+         var a = xstart+((xend-xstart)/n)*i;
+         var b = ystart+((yend-ystart)/n)*j;
+	var h = l/( Math.sqrt( 1+f(a,b)*f(a,b) ) );  
+           board.create('curve', [ function(x) {return x}, function(x) {return f(a,b)*(x-a)+b;}, a-h, a+h], {strokeColor:'#3eabc9'} );
+     }
+}
+//Numeric solution to the ode
+//(you should only need to change the function to be solved, and the initial conditions/color)
+
+function g(x,y) { //differential being solved
+                        return [y*y*y-4*y];
+                    }
+//Creating numerical solution
+   function odea(initX, initY) {
+   return JXG.Math.Numerics.rungeKutta('heun', [initY], [initX, xend], 200, g);  
+}
+   function odeb(initX, initY) {
+   return JXG.Math.Numerics.rungeKutta('heun', [initY], [initX, xstart], 200, g);  
+}                                  
+function odeGrapher(X,Y, color) {              
+var dataXpos = [];
+var dataYpos = [];
+var dataXneg = [];
+var dataYneg = [];
+                    var datapos = odea(X, Y);
+                    var hpos = (xend-X)/200;         
+                    for(var i=0; i < 200; i++) {
+                        dataXpos[i] = X+i*hpos;
+                        dataYpos[i] = datapos[i][0];
+                    }
+	var g1 = board.create('curve', [dataXpos, dataYpos], {strokeWidth:'2', strokeColor: color});
+
+		var dataneg = odeb(X, Y);
+                    var hneg = (X-xstart)/200;
+                    for(var i=0; i < 200; i++) {
+                        dataXneg[i] = X-i*hneg;
+                        dataYneg[i] = dataneg[i][0];
+                    }
+	var g2 = board.create('curve', [dataXneg, dataYneg], {strokeWidth:'2', strokeColor: color});
+}
+
+//Use the odeGrapher, plugging in initial conditions and a color for the curve. You can plot as many solutions on a single graph as you wish.
+odeGrapher(0,1, '#28a445');
+
+//Plot the initial point
+board.create('point', [0,1], {size: 1, name:'y(0)=1', strokeColor: '#28a445', label: {strokeColor:'#28a445', offset: [4,5]}});
+
+    </script>
+</div>
+<br>
+<pre><code>
+    var board = JXG.JSXGraph.initBoard("jxgboxa", {
+        axis: true,
+        showCopyright: false,
+        showNavigation: false,
+        registerEvents: false
+     });
+  
+  board.setBoundingBox([-3.2, 3.2, 3.2, -3.2]);
+  
+  //Making a direction field (see previous example for details):
+  function f(x,y) {
+     return (y*y*y-4*y);
+  }
+  var xstart =-3;  
+  var xend = 3;
+  var ystart = -3; 
+  var yend = 3;
+  var n = 25; 
+  var l = 0.05
+  for( var i=0; i < n+1; i++) {
+       for( var j=0; j < n+1; j++) {
+           var a = xstart+((xend-xstart)/n)*i;
+           var b = ystart+((yend-ystart)/n)*j;
+      var h = l/( Math.sqrt( 1+f(a,b)*f(a,b) ) );  
+             board.create('curve', [ function(x) {return x}, function(x) {return f(a,b)*(x-a)+b;}, a-h, a+h], 
+             {strokeColor:'#3eabc9'} );
+       }
+  }
+  //Numeric solution to the ode
+  //(you should only need to change the function to be solved, and the initial conditions/color)
+  
+  function g(x,y) { //differential being solved
+                          return [y*y*y-4*y];
+                      }
+  //Creating numerical solution
+     function odea(initX, initY) {
+     return JXG.Math.Numerics.rungeKutta('heun', [initY], [initX, xend], 200, g);  
+  }
+     function odeb(initX, initY) {
+     return JXG.Math.Numerics.rungeKutta('heun', [initY], [initX, xstart], 200, g);  
+  }                                  
+  function odeGrapher(X,Y, color) {              
+  var dataXpos = [];
+  var dataYpos = [];
+  var dataXneg = [];
+  var dataYneg = [];
+                      var datapos = odea(X, Y);
+                      var hpos = (xend-X)/200;         
+                      for(var i=0; i < 200; i++) {
+                          dataXpos[i] = X+i*hpos;
+                          dataYpos[i] = datapos[i][0];
+                      }
+      var g1 = board.create('curve', [dataXpos, dataYpos], {strokeWidth:'2', strokeColor: color});
+  
+          var dataneg = odeb(X, Y);
+                      var hneg = (X-xstart)/200;
+                      for(var i=0; i < 200; i++) {
+                          dataXneg[i] = X-i*hneg;
+                          dataYneg[i] = dataneg[i][0];
+                      }
+      var g2 = board.create('curve', [dataXneg, dataYneg], {strokeWidth:'2', strokeColor: color});
+  }
+  
+  //Use the odeGrapher, plugging in initial conditions and a color for the curve. 
+  // You can plot as many solutions on a single graph as you wish.
+  odeGrapher(0,1, '#28a445');
+  
+  //Plot the initial point
+  board.create('point', [0,1], {size: 1, name:'y(0)=1', strokeColor: '#28a445', 
+  label: {strokeColor:'#28a445', offset: [4,5]}});
+  
+</code></pre>
+<div class="line"></div>
+<br>
+
+
+
+
+

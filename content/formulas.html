@@ -1,0 +1,270 @@
+
+<head/><h2>Formulas</h2><br>
+	<p>Solutions that include math equations, calculations, or chemical formulas should format the equations or formulas as KaTeX (similar to LaTeX). Equations and formulas should never be included as graphics. If you're brand new to MathType and KaTeX, please refer to the section below on "Getting Started with KaTeX."</p>
+	<blockquote><i>NOTE: For single variables in running text, use your own judgment when using KaTeX.</i></blockquote>
+	<h3>Getting Started with KaTeX</h3>
+		
+	<p>The following guidelines summarize best practices related to KaTeX in solutions. This <a href="https://katex.org/docs/supported.html">site</a> provides a complete list of functions supported by KaTeX. To preview instructions, go to <a href="https://katex.org">this site</a>.</p>
+	
+	<p>There are three common use cases for including KaTeX:</p>
+	
+	<div class="row">
+	  <div class="col-4"></div>
+	  <div class="col-8"></div>
+	</div>
+	
+	<div class="row">
+	  <div class="col"><b>Inline Formulas: </b><br>formulas placed within running text; these should be simple calculations, or short strings.</div>
+	  <div class="col"><b>Examples: </b><br>This is an example of a sentence with this inline formula <span>$\frac{1}{x}$</span> included in it.</div>
+  	</div>
+	
+	<div class="line"></div>
+	
+	<div class="row">
+	  <div class="col"><b>Single-Line Block Formulas: </b><br>one line formula that is not part of running text and set on its own line; use blocks of formulas when the KaTeX string is too long and complex to be inline with running text.
+	  </div>
+	  <div class="col"><b>Examples:</b><br> <span>$$\frac{{\Delta}N}{{\Delta}t}=rN\frac{(K-N)}{K}$$</span>
+	 </div>
+  	</div>
+	
+	<div class="line"></div>
+	
+	<div class="row">
+	  <div class="col"><b>Multiline Block Formulas: </b><br>formulas with calculations that are formatted in more than one line; typically created using KaTeX environment tags, such as {aligned}, {gathered}, {bmatrix}, etc..
+	  </div>
+	  <div class="col"><b>Aligned Tag Example:</b><br>
+	    <span>$$\begin{aligned}\text{Number of Days of Sales in Receivable}&=\frac{\text{Average Accounts Receivable}}{\text{Average Daily Sales}}\\\\&=\frac{{\$275{,}000}}{{\$2{,}740}}\\\\&=100\;\text{days}\end{aligned}$$</span><br>
+	    <b>Text Notations Example:</b><br><span>$$\begin{aligned}y-1&=4(x-3)\hspace{10pt}&&\\ y-1&=4x-12\hspace{10pt}&&\text{Distribute 4.} \\y&=4x-11\hspace{10pt}&&\text{Add 1 to both sides.} \end{aligned}$$</span><br>
+	    <b>Side-by-Side Formulas Example:</b><br><span>$$A=\begin{bmatrix} 1 &  -5 & 2 & 5 \\  2 & 2 & -3 & 4 \\  0 & 7 & 0 & 0 \end{bmatrix} \hspace{20pt}\;\;\;  B=\begin{bmatrix} 2 &  -1 & 0 & 1 \\  4 & 3 & 7 & 4 \\  1 & 4 & -2 & -3\end{bmatrix}$$</span>
+        </div>
+	</div>
+	
+	<div class="line"></div>
+	
+	
+	<h3>General KaTeX Styling Rules</h3>
+	<ul>
+		<li>Use sentence casing for words or phrases that are in KaTeX. (See discipline-specific exceptions.)</li>
+		<li>Use \text{} tags for phrases or words that are part of formulas.</li>
+		<li>To line up lines of equations along a term, symbol, etc., use {aligned} tags.</li>
+		<li>Center align equations within the KaTex environment using {gathered} tags.</li>
+		<li>For text notations in formulas, see the Text Notations example in the "Multiline Blocks" section.</li>
+		<li>To place formulas side by side, see the Side-by-Side Formula example in the "Multiline Blocks" section.</li>
+		<li>Use {\color{hex#}{text}} tag to color parts of all parts of a formula. Only use colors approved by Evelyn Learning:
+		<ul>
+		    <li>Red: #c42126</li>
+		    <li>Blue: #0047af</li>
+	    </ul>
+	</ul>
+
+	<div class="line"></div>
+	
+	<h3>Business and Accounting Rules</h3>
+	<h4>Styling of Words in Formulas</h4>
+	        <div class="row">
+	            <div class="col">
+        	        <ul>
+	                    <li>Use title casing for words in formulas.</li>
+	                    <li>Do not set variables in \text{} tags.</li>
+	                    <li>Set acronyms in \text{} tags.</li>
+	                </ul>
+	            </div>
+                <div class="col"><b>Example: </b> <br><span>$$\text{Rate of Growth from Year}\;t\;\text{to Year}\;t+1=\frac{\text{RGDP}_{t+1}-\text{RGDP}_t}{\text{RGDP}_t}\times100$$</span>
+                </div>
+            </div>
+    
+        <div class="line"></div>
+	    
+
+            <h4>Block Equations</h4>
+                    <ul>
+                        <li>Do not repeat the output text (or answer positioned on the left side of the equation) in the second and subsequent lines of the formula. The output text should only be in the first line of the formula.</li>
+	                    <li>Stacked fractions should be used in block equations. If the denominator has a fraction, unstacked fraction can be used (example 4).</li>
+                    </ul>
+               
+            <h5>Example 1:</h5>
+            <p><span>$$\begin{aligned}\text{Working}\;\text{Capital}&=\text{Current}\;\text{Assets}\-\;\text{Current}\;\text{Liabilities}\\&=\$525{,}000-\$210{,}000\\&=\$315{,}000\end{aligned}$$</span></p>
+            <h5>Example 2:</h5>
+            <p>$$\begin{aligned}\text{Accounts}\;\text{Receivable}\;\text{Turnover}&=\frac{\text{Sales}}{\text{Average}\;\text{Accounts}\;\text{Receivable}}\\\\&=\frac{{\$1{,}000{,}000}}{{\$275{,}000}}\\\\&=3.64\end{aligned}$$</p>
+            <h5>Example 3:</h5>
+            <p>$$\begin{aligned}\text{PMT}&=\frac{0.04\;\times \$15{,}000{,}000}{1-(1.04)^{-3}}\\\\&=\frac{{\$6{,}000{,}000}}{{1-0.89}}\\\\&=\$5{,}405{,}228\end{aligned}$$</p>
+            <h5>Example 4:</h5>
+            <p><span>$$\begin{aligned}\text{Return on Stockholders' Equity}&=\frac{\text{Net Income}}{\text{Average Total Stockholders' Equity}}\\\\&=\frac{{\$35{,}000{,}000}}{{(\$400{,}000 +\$450{,}000)/2}}\\\\&=\$0.82\end{aligned}$$</span></p>
+            
+	
+	<div class="line"></div>
+
+	<h3>Biology and Chemistry Rules</h3>
+		<div class="row">
+		    <div class="col">
+    		    <h4>What Should Be KaTeX?</h4>
+    		    <ul>
+    		        <li>Chemical equations</li>
+    		        <li>Algebraic equations</li> 
+    		        <li>Calculations</li>
+    		    </ul>
+		    </div>
+		    <div class="col">
+		        <h4>What Should NOT Be KaTeX?</h4>
+    		    <ul>
+    		        <li>Chemical formulas & symbols</li>
+    		        <li>Variables</li>
+    		        <li>Numerical values</li>
+    		    </ul>
+		    </div>
+	    </div>
+    <h5>Example 1:</h5>
+    <p>The reaction between nitrogen gas (N<sub>2</sub>) and hydrogen gas (H<sub>2</sub>) forms ammonia gas (NH<sub>3</sub>).</p>
+    <span>$$\mathrm{N_2}(g)+\mathrm{3H_2}(g)\rightarrow\mathrm{2NH_3}(g)$$</span>
+    <h5>Example 2:</h5>
+    <p>Consider the reaction between magnesium (Mg) and copper oxide (CuO):</p>
+    <span>$$\mathrm{Mg}+\mathrm{CuO}\rightarrow\mathrm{Cu}+\mathrm{MgO}$$</span>
+    <p>It is possible to write the two half-reactions as:</p>
+    <span>$$\mathrm{Mg}\rightarrow\mathrm{Mg^{2+}}+\mathrm{2e^-}\hspace{25px}\text{(oxidation reaction)}$$</span>
+    <span>$$\mathrm{2e^-}+\mathrm{Cu^{2+}}\rightarrow\mathrm{Cu}\hspace{25px}\text{(reduction reaction)}$$</span>
+    <h5>Example 3:</h5>
+    <p>A 1.0-kg ball held 1.0 m above the ground has potential energy. The gravitational potential energy (<em>PE</em><sub>grav</sub>) of the ball is the product of its mass (<em>m</em>), the acceleration due to gravity (<em>g</em>), equal to approximately 9.8 m/s<sup>2</sup>, and the height (<em>h</em>) above Earth's surface.</p>
+	<span>$$\begin{aligned}PE_{\mathrm{grav}}&=mgh\\&=(1.0\mathrm{\;kg})(9.8\mathrm{\;m/s^2})(1.0\mathrm{\;m})\\&=9.8\mathrm{\;J}\end{aligned}$$</span>
+	        <h4>Science-Specific Font Styles</h4>
+	        <p><strong>Default italics: No markup</strong></p>
+	        <ul>
+	            <li>Algebraic variables</li>
+    	            <ul>
+    	                <li><span>$p^2+2pq+q^2=1$</span><br>
+    	                <div class="alert alert-secondary" role="alert">p^2+2pq+q^2=1</div></li>
+    	            </ul>
+	            <li>Reaction states</li>
+    	            <ul>
+    	                <li><span>$(s)$</span>, <span>$(l)$</span>, <span>$(g)$</span>, <span>$(aq)$</span><br>
+    	                <div class="alert alert-secondary" role="alert">(s), (l), (g), (aq)</div></li>
+    	            </ul>
+	        </ul>
+	        <p><strong>Non-italic KaTeX font: \mathrm{}</strong></p>
+	        <ul>
+	            <li>Chemical symbols in equations</li>
+	                <ul>
+    	                <li><span>$\mathrm{2CO+O_2}\rightarrow\mathrm{2CO_2}$</span><br>
+    	                <div class="alert alert-secondary" role="alert">\mathrm{2CO+O_2}\rightarrow\mathrm{2CO_2}</div></li>
+    	            </ul>
+	            <li>Units in equations</li>
+	                <ul>
+    	                <li><span>$(12.01\mathrm{\;g/mol\;C}\times1)+(1.01\mathrm{\;g/mol\;H}\times4)=16.05\mathrm{\;g/mol\;CH_4}$</span><br>
+    	                <div class="alert alert-secondary" role="alert">(12.01\mathrm{\;g/mol\;C}\times1)+(1.01\mathrm{\;g/mol\;H}\times4)=16.05\mathrm{\;g/mol\;CH_4}</div></li>
+    	            </ul>
+            </ul>
+            <p><strong>Non-italic Evelyn Learning font: \text{}</strong></p>
+	        <ul>
+	            <li>Full words and phrases</li>
+	                <ul>
+    	                <li><span>$\mathrm{C_2H_2}\;(\text{ethyne})$</span><br>
+    	                <div class="alert alert-secondary" role="alert">\mathrm{C_2H_2}\;(\text{ethyne})</div></li>
+    	            </ul>
+            </ul>
+	        <h4>Science-Specific Notation</h4>
+	        <p><strong>Subscripts and superscripts</strong></p>
+	        <ul>
+	            <li>Use brackets to isolate subscripted or superscripted text</li>
+	                <ul>
+	                    <li><span>$\mathrm{{NO_2}^+}$</span><br>
+	                    <div class="alert alert-secondary" role="alert">\mathrm{{NO_2}^+}</div></li>
+	                    <li><span>$\mathrm{{Cr_2O_7}^{2-}}$</span><br>
+	                <div class="alert alert-secondary" role="alert">\mathrm{{Cr_2O_7}^{2-}}</div></li>
+	                </ul>
+	        </ul>
+	        <p><strong>Bonds, functional groups, and radicals</strong></p>
+	        <ul>
+	            <li>Use brackets to isolate lines that indicate bonds</li>
+	            <ul>
+	                <li><span>$\mathrm{C{=}C}$</span><br>
+	                <div class="alert alert-secondary" role="alert">\mathrm{C{=}C}</div></li>
+	                <li><span>$\mathrm{{âˆ’}OH}$</span><br>
+	                <div class="alert alert-secondary" role="alert">\mathrm{{âˆ’}OH}</div></li>
+	                <li><span>$\mathrm{NO_3\cdot}$</span><br>
+	                <div class="alert alert-secondary" role="alert">\mathrm{NO_3\cdot}</div></li>
+	           </ul>
+	        </ul>
+	        <p><strong>Reaction arrows</strong></p>
+	        <ul>
+	            <li>Equilibrium arrows always have the top arrow pointing right</li>
+	            <ul>
+	                <li><span>$\mathrm{N_2+3H_2}\rightarrow\mathrm{2NH_3}$</span><br>
+	                <div class="alert alert-secondary" role="alert">\mathrm{N_2+3H_2}\rightarrow\mathrm{2NH_3}</div></li>
+	                <li><span>$\mathrm{N_2+3H_2}\rightleftarrows\mathrm{2NH_3}$</span><br>
+	                <div class="alert alert-secondary" role="alert">\mathrm{N_2+3H_2}\rightleftarrows\mathrm{2NH_3}</div></li>
+	                <li><span>$\mathrm{N_2+3H_2}\rightleftharpoons\mathrm{2NH_3}$</span><br>
+	                <div class="alert alert-secondary" role="alert">\mathrm{N_2+3H_2}\rightleftharpoons\mathrm{2NH_3}</div></li>
+	            </ul>
+	        </ul>
+	        <p><strong>Units</strong></p>
+	        <ul>
+	            <li>Spaces must be added following values and before units</li>
+	            <ul>
+	            <li><span>$\mathrm{9.81\;m/s^2}$</span><br>
+	            <div class="alert alert-secondary" role="alert">\mathrm{9.81\;m/s^2}</div></li>
+	            <li><span>$\mathrm{100\;kg}$</span><br>
+	            <div class="alert alert-secondary" role="alert">\mathrm{100\;kg}</div></li>
+	           </ul>
+	        </ul>
+	        <p><strong>Special symbols</strong></p>
+	        <ul>
+	            <li>Certain symbols are defined with specific functions</li>
+	            <ul>
+	            <li><span>$\degree\mathrm{C}$</span><br>
+	                <div class="alert alert-secondary" role="alert">\degree\mathrm{C}</div></li>
+	            <li><span>$\Delta{G}^\circ$</span><br>
+	                <div class="alert alert-secondary" role="alert">\Delta{G}^\circ</div></li>
+	        </ul>
+	        </ul>
+
+
+	
+	<div class="line"></div>
+	
+	<h3>Mathematics Rules</h3>
+	<h4>Items in Inline Formulas</h4>
+	<p><it>Inline formulas should be short strings only.</it></p>
+        <ul>
+            <li>Variables: <span>$x$</span>, <span>$2x$</span>, <span>$x$-axis</span></li>
+            <li>Fractions: <span>$\frac{1}{2}$</span>, <span>$\frac{3}{4}x$</span>, <span>$\frac{5x}{6}$</span></li>
+            <li>Ordered pairs: <span>$(x, y)$</span>, <span>$(1, 2)$</span></li>
+        </ul>
+	
+	<h4>Multiplication Symbols</h4>
+	<p>Use the multiplication symbol that is utilized in the textbook that the solution is being authoring for.  This will be the most helpful to students.</p>
+	<ul>
+		<li>If your textbook uses a centralized dot for multiplication, use <code>\cdot</code> for KaTeX (e.g., <span>$2x\cdot3$</span>).</li>
+		<li>If the textbook uses the x you can use <code>\times</code> for KaTeX (e.g., <span>$2x\times3$</span>).</li>
+		<li>If the textbook uses * you can utilize the * symbol in the KaTeX (e.g., <span>$2x*3$</span>).</li>
+	</ul>
+	<h4>Math Special Styling</h4>
+        <ul>
+            <li>Put all equations and expressions in KaTeX.</li>
+            <li>Numerals in running text <ital>should not</ital> be in KaTeX, e.g., -2, -1, 0, 1, 2, 3, etc. <ital>Exception: Put numerals with \pm tags in KaTeX, e.g.,</ital> <span>$\pm1$</span>.</li>
+            <li>Use a new line tag \\ to increase the vertical space in between rows in matrices with fractions.</li>
+            <li>Use stacked fractions \frac{}{}, NOT unstacked fractions.</li>
+            <li>Use {cases} tags for systems of equations. DO NOT use {matrix} tags.</li>
+            <li>DO NOT use \rm{} or \mathrm tags. Use \text{} tags instead.</li>
+            <li>Use \scriptsize{} tag for the index of a radical.</li>
+            <li>Use \footnotesize{} tag for subscripts and superscripts that are fractions.</li>
+			<li>Use \log for logarithms, e.g., \log_{2}x.</li>
+			<li>KaTeX should be structured so only one = sign exists per line of a calculation. \begin{aligned} and \end{aligned} tags should be utilized to align a series of calculations on the = sign 
+				by utilizing the & symbol before the = sign in the KaTeX.  \\ must be utilized to create line breaks within aligned tags.</li>
+			<li>Once simplified, the left portion of an equation should not be included in subsequent calculation steps.</li>
+        </ul>
+<div class="row">
+	  <div class="col"><b>Example:</b><br>
+	  <span>$$\begin{aligned}f'(x)&=\lim_{h\to 0}\frac{h^2+2 h x}{h}\\&=\lim_{h\to 0}\left(h+2x\right)\\&=2x\end{aligned}$$</span></div>
+</div>	  
+<div class="row">
+	  <div class="alert alert-secondary col" role="alert">\begin{aligned}f'(x)&=\lim_{h\to 0}\frac{h^2+2 h x}{h}\\&=\lim_{h\to 0}\left(h+2x\right)\\&=2x\end{aligned}</div>
+</div>
+<p><b>Other Examples:</b></p>
+<div class="row">
+	  <div class="col"><b>Matrices with Fractions Example:</b><br>
+	  <span>$$\begin{aligned}\frac{1}{3}B&=\begin{bmatrix} \frac{1}{3}(2) &  \frac{1}{3}(-1) & \frac{1}{3}(0) & \frac{1}{3}(1) \\ \\ \frac{1}{3}(4) & \frac{1}{3}(3) & \frac{1}{3}(7) & \frac{1}{3}(4) \\ \\ \frac{1}{3}(1) & \frac{1}{3}(4) & \frac{1}{3}(-2) & \frac{1}{3}(-3) \end{bmatrix} \\ \\ &=\begin{bmatrix} \frac{2}{3} &  -\frac{1}{3} & 0 & \frac{1}{3} \\ \\ \frac{4}{3} & 1 & \frac{7}{3} & \frac{4}{3} \\ \\ \frac{1}{3} & \frac{4}{3} & -\frac{2}{3} & -1 \end{bmatrix}\end{aligned}$$</span></div>
+	  <div class="col"><b>Cases Tag Example:</b><br>
+	  <span>$$\begin{cases}\phantom{-}3x\phantom{^{2}}+2y^2=41& [1]\\-2x^2-2y^2=-50&[3]\end{cases}$$</span></div>
+	  <div class="col"><b>Radical with Index Tag Example:</b><br>
+	  <span>$$\sqrt[\scriptsize{3}]{8x^{3}} - \sqrt[\scriptsize{3}]{27}$$</span></div>
+</div>
+	  

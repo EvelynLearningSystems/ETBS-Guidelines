@@ -1,0 +1,178 @@
+
+<head/><h2>Solution Template</h2>
+
+<h4>A Simple Example</h4>
+<p>Here is a simple example using our template:</p>
+<pre><code class="html">&lt;article&gt;
+    &lt;header&gt;
+        &lt;meta name=&quot;solution_id&quot; content=&quot;12345&quot;&gt;
+        &lt;meta name=&quot;question_code&quot; content=&quot;0010A2&quot;&gt;
+        &lt;address&gt;
+            &lt;span property=&quot;author_email&quot;&gt;chandan.kumar@evelynlearning.com&lt;/span&gt;
+            &lt;time property=&quot;date_created&quot;&gt;2019-02-24&lt;/time&gt;
+        &lt;/address&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;section class=&quot;answer&quot; data-type=&quot;number&quot;&gt;
+            31
+        &lt;/section&gt;
+        &lt;section class=&quot;step_by_step&quot;&gt;
+            &lt;div data-type=&quot;step&quot; data-id=&quot;1&quot;&gt;
+                &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+                    Order of operations says that we apply multiplication first.
+                &lt;/span&gt;
+                &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+                    $$= 4 + 30 - 3$$
+                &lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div data-type=&quot;step&quot; data-id=&quot;2&quot;&gt;
+                &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+                    Order of operations says that addition and subtration are applied left to right. This gives our final answer.
+                &lt;/span&gt;
+                &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+                    $$= 31$$
+                &lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/section&gt;
+    &lt;/main&gt;
+&lt;/article&gt;
+</code></pre>
+
+<p>Let's go through this example line by line to define the full template.</p>
+
+<h4>Basic Structure</h4>
+
+<p>Every solution has an <code>&lt;article&gt;</code> tag as its outermost parent. The article tag has no attributes.</p>
+
+<pre><code class="html">&lt;article&gt;
+    ...
+&lt;/article&gt;</code></pre>
+
+<h4>Header</h4>
+
+<p>The header portion of a solution defines necessary metadata to identify the solution and is surrounded by <code>&lt;header&gt;</code> tags. None of this information is publically displayed.</p>
+
+<pre><code class="html">&lt;header&gt;
+    &lt;meta name=&quot;solution_id&quot; content=&quot;12345&quot;&gt;
+    &lt;meta name=&quot;question_code&quot; content=&quot;0010A2&quot;&gt;
+    &lt;address&gt;
+        &lt;span property=&quot;author_email&quot;&gt;chandan.kumar@evelynlearning.com&lt;/span&gt;
+        &lt;time property=&quot;date_created&quot;&gt;2019-02-24&lt;/time&gt;
+    &lt;/address&gt;
+&lt;/header&gt;</code></pre>
+
+<p>First, we have two <code>&lt;meta&gt;</code> tags. These tags have a name attribute which states the name of the metadata and a content attribute which states the value. We will always have the following two <code>&lt;meta&gt;</code> tags:</p>
+<ol>
+    <li><b>solution_id</b> - the solution_id for the solution your are authoring, found in your assignment list.</li>
+    <li><b>question_code</b> - the question_code for the question you are referencing while authoring, found in your assignment list.</li>
+</ol>
+
+<p>Next we have the author information. This information is surrounding by <code>&lt;address&gt;</code> tags. Within the block, there is a <code>&lt;span&gt;</code> tag with a property attribute set to "author_email". This tag should contain your email address and is how we identify who wrote a solution. Always use the same email while authoring.</p>
+
+<p>The next tag in the <code>&lt;address&gt;</code> block is a <code>&lt;time&gt;</code> tag with a property attribute of "date_created". This tag should contain the date you started authoring the solution, in YYYY-MM-DD format. This is the only acceptable format for the "date_created" value.</p>
+
+<h4>Solution Body</h4>
+<p>The body of the solution is contained in the <code>&lt;main&gt;</code> block. This is the content that will be displayed to our students.</p>
+
+<pre><code class="html">&lt;main&gt;
+    ...
+&lt;/main&gt;</code></pre>
+
+<p>Within the <code>&lt;main&gt;</code> block, parts of the solution will be separated into <code>&lt;section&gt;</code> blocks. Each section corresponds to a component of the solution, such as the final answer, a video, or a step by step explanation. The <code>&lt;section&gt;</code> tag's class specifies what type of component it is and the full component is contained inside. The specific combination of section blocks for each question type is described in <a href="#question_types" onclick="loadHTML('content/template_examples/question_types.html')">Question Types</a>.</p>
+
+<p>Section Classes:</p>
+<ul>
+    <li><b>answer</b> - contains the final answer(s) for the question</li>
+    <li><b>explanation</b> - contains the explanation for the correct answer option or solution</li>
+    <li><b>wrong_explanation</b> - contains the explanation for the incorrect answer option(s) for MCQ or MS questions</li>
+    <li><b>step_by_step</b> - contains the step-by-step explanation for the question</li>
+    <li><b>sample_response</b> - contains a sample response for the question (used when a single correct solution is not applicable)</li>
+</ul>
+
+<h4>Answer Section</h4>
+
+<pre><code class="html">&lt;section class=&quot;answer&quot; data-type=&quot;number&quot;&gt;
+    31
+&lt;/section&gt;</code></pre>
+
+<p>The answer section requires a "data-type" attribute specifying the type of content contained within. See below for available data types.</p>
+
+<h4>Explanation Section</h4>
+
+<pre><code class="html">&lt;section class=&quot;explanation&quot; data-type=&quot;text&quot;&gt;
+    This is some explanation for the correct answer option.
+&lt;/section&gt;</code></pre>
+
+<p>The explanation section doesn't exist in our example, but is very similar to the answer section. It requires a "data-type" attribute specifying the type of content contained within. See below for available data types.</p>
+
+<h4>Wrong Explanation Section</h4>
+
+<pre><code class="html">&lt;section class=&quot;wrong_explanation&quot; data-type=&quot;text&quot; data-answer="A"&gt;
+    This is some explanation as to why answer option A is incorrect for an MCQ or MS question.
+&lt;/section&gt;</code></pre>
+
+<p>The "wrong_explanation" section doesn't exist in our example, but is very similar to the answer section. It requires a "data-type" attribute specifying the type of content contained within. See below for available data types.</p>
+
+<h4>Step By Step Section</h4>
+
+<pre><code class="html">&lt;section class=&quot;step_by_step&quot;&gt;
+    &lt;div data-type=&quot;step&quot; data-id=&quot;1&quot;&gt;
+        &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+            Order of operations says that we apply multiplication first.
+        &lt;/span&gt;
+        &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+            $$= 4 + 30 - 3$$
+        &lt;/span&gt;
+    &lt;/div&gt;
+    &lt;div data-type=&quot;step&quot; data-id=&quot;2&quot;&gt;
+        &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+            Order of operations says that addition and subtration are applied left to right. This gives our final answer.
+        &lt;/span&gt;
+        &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+            $$= 31$$
+        &lt;/span&gt;
+    &lt;/div&gt;
+&lt;/section&gt;</code></pre>
+
+<p>The Step By Step section is a wrapper for multiple <code>&lt;div&gt;</code> blocks, each containing a step. Steps may optionally be grouped into larger <code>&lt;div&gt;</code> blocks representing question parts.</p>
+
+<p>A step div looks like this:</p>
+<pre><code class="html">&lt;div data-type=&quot;step&quot; data-id=&quot;1&quot;&gt;
+    ...
+&lt;/div&gt;</code></pre>
+<p>The "data-type" attribute is always set to "step" and the "data-id" attribute is set to the number of the step. Always start numbering steps at 1 and count up by whole numbers. Never skip a number or use a fractional number (such as 1.5).</p>
+
+<h4>The Step Block</h4>
+
+<pre><code class="html">&lt;div data-type=&quot;step&quot; data-id=&quot;2&quot;&gt;
+    &lt;span class=&quot;left&quot; data-type=&quot;text&quot;&gt;
+        Order of operations says that addition and subtration are applied left to right. This gives our final answer.
+    &lt;/span&gt;
+    &lt;span class=&quot;right&quot; data-type=&quot;formula&quot;&gt;
+        $$= 31$$
+    &lt;/span&gt;
+&lt;/div&gt;</code></pre>
+
+<p>The step block contains the content of a step in your explanation. Steps can either contain a single chunk of content (in which case you should add a "data-type" attribute to the step <code>&lt;div&gt;</code> tag) or a two column layout. Two column layouts should be used as often as possible and consist of two <code>&lt;span&gt;</code> blocks with a class of "left" or "right". You must have exactly one <code>&lt;span&gt;</code> with a left class and one with a right class. You will also need a "data-type" attribute for each <code>&lt;span&gt;</code>.</p>
+
+<h4>Questions with Multiple Parts</h4>
+<p>A part div looks like this:</p>
+<pre><code class="html">&lt;div data-type=&quot;part&quot; data-id=&quot;a&quot;&gt;
+    &lt;div data-type=&quot;step&quot; data-id=&quot;1&quot;&gt;
+        ...
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p>The "data-type" attribute is always set to "part" and the "data-id" attribute is set to the part identifier, as found in your assignment.</p>
+
+<h4>Data Types</h4>
+<p>If no data type is provided, the default is "text". If multiple data types are present in a section (e.g, an image or formula in addition to text), simply assign "text" as the data type attribute. </p>
+<ul>
+    <li><b>number</b> - the content of the block is a single number (includes dollar amounts, fractions, irrational numbers like pi, etc.)</li>
+    <li><b>formula</b> - the content of the block is a single katex formula. See the <a href="#formulas" onclick="loadHTML('content/formulas.html')">Formula Guidelines</a> for more details.</li>
+    <li><b>image</b> - the content of the block is an image. See the <a href="#images" onclick="loadHTML('content/graphs.html')">Image Guidelines</a> for more details.</li>
+    <li><b>graph</b> - the content of the block is a graph. See the <a href="#graphs" onclick="loadHTML('content/graphs.html')">Graph Guidelines</a> for more details.</li>
+    <li><b>video</b> - the content of the block is a video</li>
+    <li><b>mcq_option</b> - the content of the block is an answer identifier (a, b, etc.) from an MCQ or MS question.</li>
+    <li><b>boolean</b> - the content of the block is true or false.</li>
+    <li><b>text</b> - the content of the block is plain text (there shouldn't be another data type that fits better)</li>
+</ul>

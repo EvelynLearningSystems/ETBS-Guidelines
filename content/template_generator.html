@@ -1,0 +1,99 @@
+
+<head/><h2>Template Generator</h2>
+
+<form onsubmit="return false">
+    <div class="row">
+        <div class="col">
+            <label class="form-check-label" for="solution_id">Solution ID</label>
+        </div>
+        <div class="col">
+            <label class="form-check-label" for="question_code">Question Code</label>
+        </div>
+        <div class="col">
+            <label class="form-check-label" for="email">Email</label>
+        </div>
+        <div class="col">
+            <label class="form-check-label" for="date">Date</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <input type="text" class="form-control" placeholder="#" id="solution_id">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="######" id="question_code" size="6">
+        </div>
+        <div class="col">
+            <input type="text" class="form-control" placeholder="you@example.com" id="email">
+        </div>
+        <div class="col">
+            <input type="date" class="form-control" id="date">
+        </div>
+    </div>
+    <br><p>Select a question type.</p>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="MCQ">
+        <label class="form-check-label" for="inlineRadio1">MCQ</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="MS">
+        <label class="form-check-label" for="inlineRadio2">MS</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="TCQ">
+        <label class="form-check-label" for="inlineRadio3">TCQ</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="FIB">
+        <label class="form-check-label" for="inlineRadio4">FIB</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="SA">
+        <label class="form-check-label" for="inlineRadio5">SA</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="ES">
+        <label class="form-check-label" for="inlineRadio6">ES</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio7" value="CALC">
+        <label class="form-check-label" for="inlineRadio7">CALC</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio8" value="ORD">
+        <label class="form-check-label" for="inlineRadio8">ORD</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio9" value="DRW">
+        <label class="form-check-label" for="inlineRadio9">DRW</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio10" value="GR">
+        <label class="form-check-label" for="inlineRadio10">GR</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio11" value="MAT">
+        <label class="form-check-label" for="inlineRadio11">MAT</label>
+    </div>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio12" value="CL">
+        <label class="form-check-label" for="inlineRadio12">CL</label>
+    </div>
+    <div class="row">
+        <div class="col">
+                <br><button class="btn btn-primary" onclick="generate()">Generate</button>
+        </div>
+    </div>
+</form>
+
+<div class="line"></div>
+
+<div class="row">
+    <div class="col" style="text-align: center;">
+        <textarea style="width: 900px; height: 400px;" id="output">
+
+        </textarea>
+    </div>
+</div>
+
+<script type="text/javascript">Date.prototype.toDateInputValue=(function(){var local=new Date(this);local.setMinutes(this.getMinutes()-this.getTimezoneOffset());return local.toJSON().slice(0,10);});$('#date').val(new Date().toDateInputValue());function generate(){var solution_id=$('#solution_id').val();var question_code=$('#question_code').val();var email=$('#email').val();var date=$('#date').val();var type=$('input[name="inlineRadioOptions"]:checked').val();var code='';if(!solution_id)code+='solution_id missing\n';if(!question_code)code+='question_code missing\n';if(!email)code+='email missing\n';if(!date)code+='date missing\n';if(!type)code+='type missing\n';if(code){}else if(type==='MCQ'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="mcq_option">\n'+'            X\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="X">\n'+'            XXX\n'+'        </section>\n'+'        <section class="wrong_explanation" data-type="text" data-answer="X">\n'+'            XXX\n'+'        </section>\n'+'        <section class="wrong_explanation" data-type="text" data-answer="X">\n'+'            XXX\n'+'        </section>\n'+'        <section class="wrong_explanation" data-type="text" data-answer="X">\n'+'            XXX\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="1">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="2">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='MS'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="mcq_option">X</section>\n'+'        <section class="answer" data-type="mcq_option">X</section>\n'+'        <section class="explanation" data-type="text" data-answer="X">\n'+'            XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="X">\n'+'            XXX\n'+'        </section>\n'+'        <section class="wrong_explanation" data-type="text" data-answer="X">\n'+'            XXX\n'+'        </section>\n'+'        <section class="wrong_explanation" data-type="text" data-answer="X">\n'+'            XXX\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="1">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="2">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='TCQ'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="boolean">true/false</section>\n'+'        <section class="explanation" data-type="text">\n'+'            XXX\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="1">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='FIB'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="text" data-answer="1">XXX</section>\n'+'        <section class="answer" data-type="text" data-answer="2">XXX</section>\n'+'        <section class="explanation" data-type="text" data-answer="1">\n'+'            XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="2">\n'+'            XXX\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="1">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="2">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='SA'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="text">\n'+'            XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text">\n'+'            XXX\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="1">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='ES'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="explanation" data-type="text">\n'+'            XXX\n'+'        </section>\n'+'        <section class="answer" data-type="text">\n'+'            <p>XXX</p>\n'+'            <p>XXX</p>\n'+'            <p>XXX</p>\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='CALC'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="number">\n'+'            XXX\n'+'        </section>\n'+'        <section class="step_by_step">\n'+'            <div data-type="step" data-id="1">\n'+'               <span class="left" data-type="text">\n'+'                   XXX\n'+'               </span>\n'+'               <span class="right" data-type="formula">\n'+'                   XXX\n'+'               </span>\n'+'            </div>\n'+'            <div data-type="step" data-id="2">\n'+'               <span class="left" data-type="text">\n'+'                   XXX\n'+'               </span>\n'+'               <span class="right" data-type="formula">\n'+'                   XXX\n'+'               </span>\n'+'            </div>\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='ORD'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="number" data-answer="1">X</section>\n'+'        <section class="answer" data-type="number" data-answer="2">X</section>\n'+'        <section class="answer" data-type="number" data-answer="3">X</section>\n'+'        <section class="answer" data-type="number" data-answer="4">X</section>\n'+'        <section class="explanation" data-type="text" data-answer="1">\n'+'               XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="2">\n'+'               XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="3">\n'+'               XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="4">\n'+'               XXX\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="1">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="2">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='DRW'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="image">\n'+'            <div>\n'+'               <img src="images/XXX.svg">\n'+'            </div>\n'+'        </section>\n'+'        <section class="explanation" data-type="text">\n'+'               XXX\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='GR'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="graph">\n'+'                   XXX\n'+'        </section>\n'+'        <section class="step_by_step">\n'+'            <div data-type="step" data-id="1">\n'+'               <span class="left" data-type="text">\n'+'                   XXX\n'+'               </span>\n'+'               <span class="right" data-type="formula">\n'+'                   XXX\n'+'               </span>\n'+'            </div>\n'+'            <div data-type="step" data-id="2">\n'+'               <span class="left" data-type="text">\n'+'                   XXX\n'+'               </span>\n'+'               <span class="right" data-type="formula">\n'+'                   XXX\n'+'               </span>\n'+'            </div>\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='MAT'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="answer" data-type="text" data-answer="1">X</section>\n'+'        <section class="answer" data-type="text" data-answer="2">X</section>\n'+'        <section class="answer" data-type="text" data-answer="3">X</section>\n'+'        <section class="explanation" data-type="text" data-answer="1">\n'+'               XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="2">\n'+'               XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="3">\n'+'               XXX\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="1">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="2">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}else if(type==='CL'){code='<article>\n'+'    <header>\n'+'        <meta name="solution_id" content="'+solution_id+'">\n'+'        <meta name="question_code" content="'+question_code+'">\n'+'        <address>\n'+'            <span property="author_email">'+email+'</span>\n'+'            <time property="date_created">'+date+'</time>\n'+'        </address>\n'+'    </header>\n'+'    <main>\n'+'        <section class="group" data-type="text" data-answer="1">X</section>\n'+'        <section class="group" data-type="text" data-answer="2">X</section>\n'+'        <section class="group" data-type="text" data-answer="3">X</section>\n'+'        <section class="answer" data-type="text" data-answer="a">X</section>\n'+'        <section class="answer" data-type="text" data-answer="b">X</section>\n'+'        <section class="answer" data-type="text" data-answer="c">X</section>\n'+'        <section class="explanation" data-type="text" data-answer="1">\n'+'               XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="2">\n'+'               XXX\n'+'        </section>\n'+'        <section class="explanation" data-type="text" data-answer="3">\n'+'               XXX\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="1">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section class="hint" data-type="text" data-id="2">\n'+'            [Hint text]\n'+'        </section>\n'+'        <section data-type="link">\n'+'            <a href="https://www.somelink.com">Title of Video</a>\n'+'        </section>\n'+'    </main>\n'+'</article>';}$('#output').text(code);}</script>
