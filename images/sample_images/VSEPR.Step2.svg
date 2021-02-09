@@ -1,0 +1,26 @@
+<?xml version="1.0" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="52px" height="51px" viewBox="0 0 52 51" style="background-color: #ffffff00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" >
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 25.5845 28.971)" style="font:normal normal normal 200px 'Helvetica'" >
+S</text>
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 42.6711 40.1198)" style="font:normal normal normal 200px 'Helvetica'" >
+F</text>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 2167.78,2184.29 L 2134.48,2234.2 L 1994.08,2111.68 L 2000.76,2101.68 L 2167.78,2184.29 Z " />
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 44.6309 21.9517)" style="font:normal normal normal 200px 'Helvetica'" >
+F</text>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 2178.06,1914.48 L 2199.17,1970.64 L 2187.41,1973.54 L 2167.3,1920.05 L 2178.06,1914.48 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 2121.29,1943.86 L 2137.11,1985.94 L 2125.35,1988.84 L 2110.53,1949.43 L 2121.29,1943.86 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 2064.52,1973.24 L 2075.05,2001.25 L 2063.28,2004.15 L 2053.76,1978.81 L 2064.52,1973.24 Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 2007.75,2002.62 L 2012.98,2016.55 L 2001.22,2019.45 L 1996.99,2008.19 L 2007.75,2002.62 Z " />
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 25.9629 9.66306)" style="font:normal normal normal 200px 'Helvetica'" >
+F</text>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 1903,1764.84 L 1915.03,1764.84 L 1915.03,1940.98 L 1903,1940.98 L 1903,1764.84 Z " />
+<text x="0" y="0" stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 25.9629 48.2789)" style="font:normal normal normal 200px 'Helvetica'" >
+F</text>
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 1915.03,2329.09 L 1903,2329.09 L 1903,2157.04 L 1915.03,2157.04 L 1915.03,2329.09 Z " />
+<path stroke="transparent" fill="#ffffff" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 1788.63,2041.29 C 1788.63,2103.22 1586.48,2156.73 1524.06,2156.73 C 1447.76,2156.73 1392.27,2140.38 1392.27,2041.29 C 1392.27,1942.2 1447.76,1925.86 1524.06,1925.86 C 1586.48,1925.86 1788.63,1979.36 1788.63,2041.29 " />
+<path stroke="#ffffff" stroke-width="1" fill="transparent" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 1788.63,2041.29 C 1788.63,2103.22 1586.48,2156.73 1524.06,2156.73 C 1447.76,2156.73 1392.27,2140.38 1392.27,2041.29 C 1392.27,1942.2 1447.76,1925.86 1524.06,1925.86 C 1586.48,1925.86 1788.63,1979.36 1788.63,2041.29 " />
+<path stroke="#000000" stroke-width="12" fill="transparent" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 1788.63,2041.29 C 1788.63,2103.22 1586.48,2156.73 1524.06,2156.73 C 1447.76,2156.73 1392.27,2140.38 1392.27,2041.29 C 1392.27,1942.2 1447.76,1925.86 1524.06,1925.86 C 1586.48,1925.86 1788.63,1979.36 1788.63,2041.29 " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 1483.75,2011.89 A 16.7111,16.7111 0 1 0 1517.17,2011.89A 16.7111,16.7111 0 1 0 1483.75,2011.89Z " />
+<path stroke="transparent" fill="#000000" transform="matrix(0.05 0 0 0.05 -67 -77)" d="M 1483.75,2087.09 A 16.7111,16.7111 0 1 0 1517.17,2087.09A 16.7111,16.7111 0 1 0 1483.75,2087.09Z " />
+</svg>
